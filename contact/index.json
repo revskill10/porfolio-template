@@ -1,0 +1,62 @@
+[
+  { "key": "pageTitle", "value": "Let's Create" },
+  { "key": "pageDescription", "value": "Ready to bring your vision to life? I'm passionate about collaborating with forward-thinking brands and individuals who value exceptional design. Let's discuss how we can create something extraordinary together." },
+  { "key": "contactTitle", "value": "Get in Touch" },
+  { "key": "email", "value": "maya.johnson@example.com" },
+  { "key": "phone", "value": "+1 (555) 234-5678" },
+  { "key": "location", "value": "Los Angeles, CA" },
+  { "key": "responseTime", "value": "Within 24 hours" },
+  { "key": "socialTitle", "value": "Follow My Work" },
+  {
+    "key": "socialLinks",
+    "value": [
+      {
+        "platform": "Dribbble",
+        "handle": "@mayajohnson",
+        "url": "https://dribbble.com/mayajohnson",
+        "icon": "DR",
+        "gradient": "from-pink-500 to-rose-500"
+      },
+      {
+        "platform": "Behance",
+        "handle": "Maya Johnson",
+        "url": "https://behance.net/mayajohnson",
+        "icon": "BE",
+        "gradient": "from-blue-600 to-indigo-600"
+      },
+      {
+        "platform": "Instagram",
+        "handle": "@maya.creates",
+        "url": "https://instagram.com/maya.creates",
+        "icon": "IG",
+        "gradient": "from-purple-500 to-pink-500"
+      },
+      {
+        "platform": "LinkedIn",
+        "handle": "Maya Johnson",
+        "url": "https://linkedin.com/in/mayajohnson",
+        "icon": "LI",
+        "gradient": "from-blue-600 to-blue-800"
+      },
+      {
+        "platform": "Twitter",
+        "handle": "@maya_designs",
+        "url": "https://twitter.com/maya_designs",
+        "icon": "TW",
+        "gradient": "from-sky-500 to-blue-600"
+      },
+      {
+        "platform": "Pinterest",
+        "handle": "Maya Johnson",
+        "url": "https://pinterest.com/mayajohnson",
+        "icon": "PI",
+        "gradient": "from-red-500 to-red-700"
+      }
+    ]
+  },
+  { "key": "formTitle", "value": "Start Your Project" },
+  { "key": "formButton", "value": "Send Project Brief" },
+  { "key": "ctaTitle", "value": "Ready to Make an Impact?" },
+  { "key": "ctaDescription", "value": "Every great project starts with a conversation. Let's discuss your vision and explore how we can create something that truly stands out in the market." },
+  { "key": "portfolioUrl", "value": "../portfolio" }
+]

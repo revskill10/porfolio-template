@@ -1,0 +1,110 @@
+<div>
+  <div className="min-h-screen bg-black text-white">
+    <!-- Header -->
+    <div className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">{{pageTitle}}</span>
+        </h1>
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto">{{pageDescription}}</p>
+      </div>
+    </div>
+
+    <!-- Filter Categories -->
+    <div className="py-12 bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap justify-center gap-4">
+          <for data-array="categories">
+            <button className="px-6 py-3 bg-gray-800 text-gray-300 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 border border-gray-700 hover:border-purple-500">
+              {{item}}
+            </button>
+          </for>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div className="py-20 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <for data-array="projects">
+            <div className="group relative overflow-hidden rounded-2xl bg-gray-900 hover:transform hover:scale-105 transition-all duration-500 cursor-pointer">
+              <!-- Project Image/Preview -->
+              <div className="aspect-square bg-gradient-to-br {{item.gradient}} flex items-center justify-center relative overflow-hidden">
+                <span className="text-8xl opacity-60 group-hover:scale-110 transition-transform duration-500">{{item.icon}}</span>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
+              </div>
+              
+              <!-- Project Info -->
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full border border-purple-600/30">{{item.category}}</span>
+                  <span className="text-sm text-gray-500">{{item.year}}</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">{{item.title}}</h3>
+                <p className="text-gray-400 text-sm mb-4 line-clamp-2">{{item.description}}</p>
+                
+                <!-- Tags -->
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <for data-array="item.tags">
+                    <span className="text-xs px-2 py-1 bg-gray-800 text-gray-400 rounded">{{item}}</span>
+                  </for>
+                </div>
+                
+                <!-- Project Links -->
+                <div className="flex gap-3">
+                  <if data-condition="item.liveUrl">
+                    <a href="{{item.liveUrl}}" className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 text-sm font-medium">
+                      View Live
+                    </a>
+                  </if>
+                  <if data-condition="item.caseStudyUrl">
+                    <a href="{{item.caseStudyUrl}}" className="flex-1 text-center px-4 py-2 border border-gray-600 text-gray-300 rounded-lg hover:border-purple-500 hover:text-purple-400 transition-all duration-300 text-sm font-medium">
+                      Case Study
+                    </a>
+                  </if>
+                </div>
+              </div>
+              
+              <!-- Hover Overlay -->
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                <div className="text-center">
+                  <h4 className="text-lg font-bold text-white mb-2">{{item.title}}</h4>
+                  <p className="text-gray-300 text-sm mb-4 px-4">{{item.shortDescription}}</p>
+                  <div className="flex gap-2 justify-center">
+                    <if data-condition="item.liveUrl">
+                      <a href="{{item.liveUrl}}" className="px-4 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">
+                        View
+                      </a>
+                    </if>
+                    <if data-condition="item.caseStudyUrl">
+                      <a href="{{item.caseStudyUrl}}" className="px-4 py-2 border border-white text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
+                        Details
+                      </a>
+                    </if>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </for>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div className="py-20 bg-gradient-to-r from-purple-900 to-pink-900">
+      <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-white mb-6">{{ctaTitle}}</h2>
+        <p className="text-xl text-purple-200 mb-8">{{ctaDescription}}</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="../contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-purple-900 bg-white rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Start a Project
+          </a>
+          <a href="mailto:{{email}}" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-white rounded-full hover:bg-white hover:text-purple-900 transition-all duration-300">
+            Send Message
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

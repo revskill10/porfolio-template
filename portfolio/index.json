@@ -1,0 +1,119 @@
+[
+  { "key": "pageTitle", "value": "My Portfolio" },
+  { "key": "pageDescription", "value": "A curated collection of my creative work spanning brand identity, digital design, and art direction. Each project tells a unique story and showcases different aspects of my creative process." },
+  {
+    "key": "categories",
+    "value": ["All", "Brand Identity", "Digital Design", "Art Direction", "Print Design", "Packaging"]
+  },
+  {
+    "key": "projects",
+    "value": [
+      {
+        "title": "Zenith Coffee Rebrand",
+        "shortDescription": "Premium coffee brand identity",
+        "description": "Complete brand identity redesign for a premium coffee roastery, including logo design, packaging system, and digital brand guidelines. The project focused on creating a sophisticated yet approachable brand that reflects the artisanal quality of their coffee.",
+        "category": "Brand Identity",
+        "year": "2024",
+        "icon": "☕",
+        "gradient": "from-amber-600 to-orange-600",
+        "tags": ["Logo Design", "Packaging", "Brand Guidelines", "Typography"],
+        "liveUrl": "https://zenithcoffee.example.com",
+        "caseStudyUrl": "#"
+      },
+      {
+        "title": "EcoFlow Mobile App",
+        "shortDescription": "Sustainability tracking app",
+        "description": "UI/UX design for a mobile application that helps users track and reduce their environmental footprint. The design emphasizes clarity, motivation, and actionable insights through beautiful data visualization.",
+        "category": "Digital Design",
+        "year": "2024",
+        "icon": "🌱",
+        "gradient": "from-green-500 to-emerald-600",
+        "tags": ["Mobile App", "UI/UX", "Data Viz", "Sustainability"],
+        "liveUrl": "https://ecoflow.example.com",
+        "caseStudyUrl": "#"
+      },
+      {
+        "title": "Lumina Fashion Campaign",
+        "shortDescription": "Luxury fashion art direction",
+        "description": "Art direction and visual design for Lumina's seasonal campaign. Created a cohesive visual language that captures the brand's elegance while appealing to a younger demographic.",
+        "category": "Art Direction",
+        "year": "2023",
+        "icon": "✨",
+        "gradient": "from-purple-600 to-pink-600",
+        "tags": ["Fashion", "Photography", "Campaign", "Luxury"],
+        "caseStudyUrl": "#"
+      },
+      {
+        "title": "TechFlow Website",
+        "shortDescription": "B2B SaaS platform redesign",
+        "description": "Complete website redesign for a B2B SaaS platform, focusing on conversion optimization and user experience. Increased conversion rates by 40% through strategic design improvements.",
+        "category": "Digital Design",
+        "year": "2023",
+        "icon": "🚀",
+        "gradient": "from-blue-600 to-indigo-700",
+        "tags": ["Web Design", "SaaS", "Conversion", "B2B"],
+        "liveUrl": "https://techflow.example.com",
+        "caseStudyUrl": "#"
+      },
+      {
+        "title": "Artisan Bakery Identity",
+        "shortDescription": "Local bakery brand design",
+        "description": "Brand identity design for a local artisan bakery, including logo, signage, packaging, and marketing materials. The design celebrates traditional craftsmanship with a modern twist.",
+        "category": "Brand Identity",
+        "year": "2023",
+        "icon": "🥖",
+        "gradient": "from-yellow-600 to-orange-500",
+        "tags": ["Local Business", "Packaging", "Signage", "Traditional"],
+        "caseStudyUrl": "#"
+      },
+      {
+        "title": "Wellness App Interface",
+        "shortDescription": "Mental health app design",
+        "description": "UI/UX design for a mental wellness application focused on meditation and mindfulness. The interface prioritizes calm, accessibility, and user engagement through thoughtful interactions.",
+        "category": "Digital Design",
+        "year": "2023",
+        "icon": "🧘",
+        "gradient": "from-teal-500 to-blue-500",
+        "tags": ["Wellness", "Mobile App", "Accessibility", "Mindfulness"],
+        "liveUrl": "https://mindfulapp.example.com",
+        "caseStudyUrl": "#"
+      },
+      {
+        "title": "Music Festival Branding",
+        "shortDescription": "Event identity and materials",
+        "description": "Complete visual identity for an indie music festival, including logo, poster series, merchandise, and digital assets. The design captures the energy and diversity of the music lineup.",
+        "category": "Art Direction",
+        "year": "2022",
+        "icon": "🎵",
+        "gradient": "from-pink-500 to-purple-600",
+        "tags": ["Event Design", "Posters", "Merchandise", "Music"],
+        "caseStudyUrl": "#"
+      },
+      {
+        "title": "Organic Skincare Packaging",
+        "shortDescription": "Sustainable beauty packaging",
+        "description": "Packaging design for an organic skincare line emphasizing sustainability and natural ingredients. The design uses eco-friendly materials and minimalist aesthetics.",
+        "category": "Packaging",
+        "year": "2022",
+        "icon": "🌿",
+        "gradient": "from-green-400 to-teal-500",
+        "tags": ["Sustainable", "Beauty", "Organic", "Minimalist"],
+        "caseStudyUrl": "#"
+      },
+      {
+        "title": "Tech Startup Pitch Deck",
+        "shortDescription": "Investor presentation design",
+        "description": "Presentation design for a fintech startup's Series A funding round. Created compelling visual narratives that helped secure $10M in funding.",
+        "category": "Print Design",
+        "year": "2022",
+        "icon": "📊",
+        "gradient": "from-indigo-600 to-purple-600",
+        "tags": ["Presentation", "Startup", "Fintech", "Investment"],
+        "caseStudyUrl": "#"
+      }
+    ]
+  },
+  { "key": "ctaTitle", "value": "Ready to Create Something Amazing?" },
+  { "key": "ctaDescription", "value": "Let's collaborate on your next project and bring your vision to life with creative excellence." },
+  { "key": "email", "value": "maya.johnson@example.com" }
+]
