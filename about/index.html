@@ -18,7 +18,7 @@
       <div className="bg-gray-50 p-8 rounded-lg mb-16">
         <h3 className="text-2xl font-semibold mb-6">{{skillsTitle}}</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <for data-array="skills">
+          <for data-key="skills">
             <div className="bg-white p-4 rounded border text-center">
               <span className="font-medium">{{item}}</span>
             </div>
@@ -30,7 +30,7 @@
       <div>
         <h3 className="text-2xl font-semibold mb-6">{{experienceTitle}}</h3>
         <div className="space-y-6">
-          <for data-array="experience">
+          <for data-key="experience">
             <div className="border-l-4 border-blue-500 pl-6">
               <h4 className="text-lg font-semibold text-gray-900">{{item.role}}</h4>
               <p className="text-blue-600 mb-2">{{item.company}} • {{item.period}}</p>
