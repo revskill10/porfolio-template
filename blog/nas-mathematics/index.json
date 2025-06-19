@@ -1,56 +1,53 @@
-[
-  { "key": "title", "value": "The Mathematics Behind Neural Architecture Search" },
-  { "key": "subtitle", "value": "A comprehensive exploration of the **mathematical foundations** underlying differentiable neural architecture search, from bilevel optimization to convergence guarantees." },
-  { "key": "category", "value": "Research" },
-  { "key": "publishDate", "value": "December 15, 2024" },
-  { "key": "readTime", "value": "12" },
-  { "key": "views", "value": "2,347" },
-  { "key": "likes", "value": "89" },
-  { "key": "introduction", "value": "Neural Architecture Search (NAS) has revolutionized the field of deep learning by automating the design of neural network architectures. While early methods relied on **reinforcement learning** or **evolutionary algorithms**, recent advances in **differentiable architecture search** have made the process more efficient and mathematically principled.\n\nIn this article, we'll dive deep into the mathematical foundations that make differentiable NAS possible, exploring the bilevel optimization problem at its core and the elegant solutions that have emerged." },
-  { "key": "mathFoundationText", "value": "At the heart of neural architecture search lies a **bilevel optimization problem**. Unlike standard neural network training, where we optimize only the network weights, NAS requires us to simultaneously optimize both the architecture parameters and the network weights.\n\nThis creates a hierarchical optimization structure where the lower-level problem (weight optimization) must be solved for each candidate architecture in the upper-level problem (architecture optimization)." },
-  { "key": "gradientComputationText", "value": "The key insight in differentiable NAS is that we can compute gradients of the validation loss with respect to architecture parameters using the **chain rule**. However, this requires careful handling of the implicit function theorem since the optimal weights depend on the architecture parameters." },
-  { "key": "implementationText", "value": "The DARTS (Differentiable Architecture Search) algorithm provides an elegant solution to the bilevel optimization problem by using a **continuous relaxation** of the architecture search space. Instead of searching over discrete architectural choices, DARTS parameterizes the search space using continuous variables." },
-  { "key": "dartsCodeSrc", "value": "../../code/nas_optimizer.py" },
-  { "key": "codeExplanation", "value": "This implementation demonstrates the core concepts of DARTS:\n\n1. **Continuous Architecture Parameters**: The `alpha` parameters represent the importance of each operation\n2. **Mixed Operations**: Each edge computes a weighted combination of all possible operations\n3. **Bilevel Optimization**: Separate optimizers handle architecture and weight updates\n4. **Architecture Extraction**: The final discrete architecture is obtained by taking the argmax of alpha parameters" },
-  { "key": "convergenceText", "value": "One of the key theoretical contributions in differentiable NAS is establishing **convergence guarantees** for the bilevel optimization process. This is non-trivial because the optimization landscape is highly non-convex and the bilevel structure introduces additional complexity." },
-  { "key": "proofSketchText", "value": "The convergence analysis relies on establishing that the bilevel optimization can be approximated by a single-level problem under certain conditions. The key insight is that if the lower-level problem (weight optimization) converges sufficiently fast, then the overall algorithm behaves similarly to standard gradient descent on the architecture parameters." },
-  { "key": "experimentalText", "value": "To validate our theoretical analysis, we conducted extensive experiments on standard benchmarks including CIFAR-10 and ImageNet. The results demonstrate that our method achieves competitive accuracy while significantly reducing search time compared to previous approaches." },
-  { "key": "conclusionText", "value": "Differentiable neural architecture search represents a significant advancement in automated machine learning. By formulating architecture search as a **bilevel optimization problem** and using continuous relaxations, we can leverage powerful gradient-based optimization techniques.\n\nThe mathematical foundations we've explored provide both theoretical understanding and practical algorithms that have proven effective across a wide range of applications. As the field continues to evolve, these principles will likely remain central to future developments in automated architecture design." },
-  {
-    "key": "references",
-    "value": [
-      {
-        "id": "1",
-        "authors": "Liu, H., Simonyan, K., & Yang, Y.",
-        "title": "DARTS: Differentiable Architecture Search",
-        "venue": "International Conference on Learning Representations",
-        "year": "2019",
-        "url": "https://arxiv.org/abs/1806.09055"
-      },
-      {
-        "id": "2", 
-        "authors": "Pham, H., Guan, M., Zoph, B., Le, Q., & Dean, J.",
-        "title": "Efficient Neural Architecture Search via Parameters Sharing",
-        "venue": "International Conference on Machine Learning",
-        "year": "2018",
-        "url": "https://arxiv.org/abs/1802.03268"
-      },
-      {
-        "id": "3",
-        "authors": "Zoph, B. & Le, Q. V.",
-        "title": "Neural Architecture Search with Reinforcement Learning",
-        "venue": "International Conference on Learning Representations",
-        "year": "2017",
-        "url": "https://arxiv.org/abs/1611.01578"
-      },
-      {
-        "id": "4",
-        "authors": "Real, E., Moore, S., Selle, A., Saxena, S., Suematsu, Y. L., Tan, J., Le, Q. V., & Kurakin, A.",
-        "title": "Large-Scale Evolution of Image Classifiers",
-        "venue": "International Conference on Machine Learning",
-        "year": "2017",
-        "url": "https://arxiv.org/abs/1703.01041"
-      }
-    ]
-  }
-]
+{
+  "title": "The Mathematics Behind Neural Architecture Search",
+  "subtitle": "A comprehensive exploration of the **mathematical foundations** underlying differentiable neural architecture search, from bilevel optimization to convergence guarantees.",
+  "category": "Research",
+  "publishDate": "December 15, 2024",
+  "readTime": "12",
+  "views": "2,347",
+  "likes": "89",
+  "introduction": "Neural Architecture Search (NAS) has revolutionized the field of deep learning by automating the design of neural network architectures. While early methods relied on **reinforcement learning** or **evolutionary algorithms**, recent advances in **differentiable architecture search** have made the process more efficient and mathematically principled.\n\nIn this article, we'll dive deep into the mathematical foundations that make differentiable NAS possible, exploring the bilevel optimization problem at its core and the elegant solutions that have emerged.",
+  "mathFoundationText": "At the heart of neural architecture search lies a **bilevel optimization problem**. Unlike standard neural network training, where we optimize only the network weights, NAS requires us to simultaneously optimize both the architecture parameters and the network weights.\n\nThis creates a hierarchical optimization structure where the lower-level problem (weight optimization) must be solved for each candidate architecture in the upper-level problem (architecture optimization).",
+  "gradientComputationText": "The key insight in differentiable NAS is that we can compute gradients of the validation loss with respect to architecture parameters using the **chain rule**. However, this requires careful handling of the implicit function theorem since the optimal weights depend on the architecture parameters.",
+  "implementationText": "The DARTS (Differentiable Architecture Search) algorithm provides an elegant solution to the bilevel optimization problem by using a **continuous relaxation** of the architecture search space. Instead of searching over discrete architectural choices, DARTS parameterizes the search space using continuous variables.",
+  "dartsCodeSrc": "../../code/nas_optimizer.py",
+  "codeExplanation": "This implementation demonstrates the core concepts of DARTS:\n\n1. **Continuous Architecture Parameters**: The `alpha` parameters represent the importance of each operation\n2. **Mixed Operations**: Each edge computes a weighted combination of all possible operations\n3. **Bilevel Optimization**: Separate optimizers handle architecture and weight updates\n4. **Architecture Extraction**: The final discrete architecture is obtained by taking the argmax of alpha parameters",
+  "convergenceText": "One of the key theoretical contributions in differentiable NAS is establishing **convergence guarantees** for the bilevel optimization process. This is non-trivial because the optimization landscape is highly non-convex and the bilevel structure introduces additional complexity.",
+  "proofSketchText": "The convergence analysis relies on establishing that the bilevel optimization can be approximated by a single-level problem under certain conditions. The key insight is that if the lower-level problem (weight optimization) converges sufficiently fast, then the overall algorithm behaves similarly to standard gradient descent on the architecture parameters.",
+  "experimentalText": "To validate our theoretical analysis, we conducted extensive experiments on standard benchmarks including CIFAR-10 and ImageNet. The results demonstrate that our method achieves competitive accuracy while significantly reducing search time compared to previous approaches.",
+  "conclusionText": "Differentiable neural architecture search represents a significant advancement in automated machine learning. By formulating architecture search as a **bilevel optimization problem** and using continuous relaxations, we can leverage powerful gradient-based optimization techniques.\n\nThe mathematical foundations we've explored provide both theoretical understanding and practical algorithms that have proven effective across a wide range of applications. As the field continues to evolve, these principles will likely remain central to future developments in automated architecture design.",
+  "references": [
+    {
+      "id": "1",
+      "authors": "Liu, H., Simonyan, K., & Yang, Y.",
+      "title": "DARTS: Differentiable Architecture Search",
+      "venue": "International Conference on Learning Representations",
+      "year": "2019",
+      "url": "https://arxiv.org/abs/1806.09055"
+    },
+    {
+      "id": "2",
+      "authors": "Pham, H., Guan, M., Zoph, B., Le, Q., & Dean, J.",
+      "title": "Efficient Neural Architecture Search via Parameters Sharing",
+      "venue": "International Conference on Machine Learning",
+      "year": "2018",
+      "url": "https://arxiv.org/abs/1802.03268"
+    },
+    {
+      "id": "3",
+      "authors": "Zoph, B. & Le, Q. V.",
+      "title": "Neural Architecture Search with Reinforcement Learning",
+      "venue": "International Conference on Learning Representations",
+      "year": "2017",
+      "url": "https://arxiv.org/abs/1611.01578"
+    },
+    {
+      "id": "4",
+      "authors": "Real, E., Moore, S., Selle, A., Saxena, S., Suematsu, Y. L., Tan, J., Le, Q. V., & Kurakin, A.",
+      "title": "Large-Scale Evolution of Image Classifiers",
+      "venue": "International Conference on Machine Learning",
+      "year": "2017",
+      "url": "https://arxiv.org/abs/1703.01041"
+    }
+  ]
+}
