@@ -1,0 +1,205 @@
+<div>
+  <!-- Markdown Showcase Example -->
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-foreground mb-4">Advanced Markdown Showcase</h1>
+      <p class="text-xl text-muted-foreground">
+        Demonstrating GitHub Flavored Markdown, Math Support, and File Inclusion
+      </p>
+    </div>
+
+    <!-- Basic Markdown Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Basic GitHub Flavored Markdown</h2>
+      
+      <div data-widget="card" class="p-6">
+        <div data-widget="markdown">
+# Welcome to Advanced Markdown
+
+This example demonstrates **GitHub Flavored Markdown** with enhanced features:
+
+## Features Supported
+
+- [x] **GitHub Flavored Markdown** (GFM)
+- [x] **Mathematical expressions** with KaTeX
+- [x] **Syntax highlighting** for code blocks
+- [x] **Tables** with proper styling
+- [x] **Task lists** and checkboxes
+- [x] **Strikethrough** text
+- [x] **Autolinked URLs**
+- [x] **Custom widgets** integration
+
+## Code Example
+
+```python
+def fibonacci(n):
+    """Generate Fibonacci sequence up to n terms."""
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    
+    sequence = [0, 1]
+    for i in range(2, n):
+        sequence.append(sequence[i-1] + sequence[i-2])
+    
+    return sequence
+
+# Example usage
+print(fibonacci(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
+
+## Mathematical Expressions
+
+Inline math: The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+Block math:
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+
+## Tables
+
+| Algorithm | Time Complexity | Space Complexity | Use Case |
+|-----------|----------------|------------------|----------|
+| Quick Sort | O(n log n) | O(log n) | General sorting |
+| Merge Sort | O(n log n) | O(n) | Stable sorting |
+| Heap Sort | O(n log n) | O(1) | Memory constrained |
+| Bubble Sort | O(n²) | O(1) | Educational |
+
+## Task Lists
+
+- [x] Implement basic markdown parsing
+- [x] Add GitHub Flavored Markdown support
+- [x] Integrate mathematical expressions
+- [ ] Add custom widget support
+- [ ] Implement file inclusion
+- [ ] Add Markdoc support
+
+## Links and References
+
+- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+- [KaTeX Documentation](https://katex.org/)
+- [React Markdown](https://github.com/remarkjs/react-markdown)
+
+> **Note**: This is a blockquote demonstrating styled quote blocks with proper formatting and emphasis.
+
+## Strikethrough and Emphasis
+
+You can use ~~strikethrough~~ text, **bold text**, *italic text*, and ***bold italic text***.
+
+## Automatic URL Linking
+
+Visit https://github.com for more information about Git repositories.
+        </div>
+      </div>
+    </section>
+
+    <!-- External Markdown File Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">External Markdown File Loading</h2>
+      
+      <div data-widget="card" class="p-6">
+        <h3 class="text-lg font-semibold mb-4">Loading from External File</h3>
+        <div data-widget="markdown" src="./content/advanced-features.md" class="border-l-4 border-blue-500 pl-4">
+          <!-- Fallback content if file loading fails -->
+          Loading external markdown content...
+        </div>
+      </div>
+    </section>
+
+    <!-- Mathematical Content Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Advanced Mathematical Content</h2>
+      
+      <div data-widget="card" class="p-6">
+        <div data-widget="markdown">
+# Mathematical Concepts
+
+## Linear Algebra
+
+The **eigenvalue equation** for a matrix $A$ is:
+$$A\mathbf{v} = \lambda\mathbf{v}$$
+
+Where $\lambda$ is the eigenvalue and $\mathbf{v}$ is the corresponding eigenvector.
+
+## Calculus
+
+The **fundamental theorem of calculus** states:
+$$\int_a^b f'(x) dx = f(b) - f(a)$$
+
+## Statistics
+
+The **normal distribution** probability density function:
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+
+## Complex Analysis
+
+**Euler's formula** connects trigonometry and complex exponentials:
+$$e^{i\theta} = \cos\theta + i\sin\theta$$
+
+This leads to the famous **Euler's identity**:
+$$e^{i\pi} + 1 = 0$$
+        </div>
+      </div>
+    </section>
+
+    <!-- Markdoc Example (if supported) -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Markdoc with Custom Widgets</h2>
+      
+      <div data-widget="card" class="p-6">
+        <h3 class="text-lg font-semibold mb-4">Enhanced Markdown with Widget Support</h3>
+        <div data-widget="markdown" type="markdoc" allow-widgets="true">
+# Markdoc Example
+
+This content is processed with **Markdoc** which allows for custom widgets and enhanced functionality.
+
+{% widget type="badge" variant="secondary" %}
+Custom Widget
+{% /widget %}
+
+{% widget type="button" variant="default" %}
+Interactive Button
+{% /widget %}
+
+## Custom Components
+
+Markdoc allows you to embed custom components directly in your markdown:
+
+{% widget type="card" title="Custom Card" %}
+This is content inside a custom card widget embedded in Markdoc.
+{% /widget %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Feature Comparison</h2>
+      
+      <div data-widget="card" class="p-6">
+        <div data-widget="markdown">
+| Feature | Basic Markdown | GitHub Flavored | Our Enhanced Version |
+|---------|---------------|-----------------|---------------------|
+| Headers | ✅ | ✅ | ✅ |
+| Lists | ✅ | ✅ | ✅ |
+| Links | ✅ | ✅ | ✅ |
+| Code Blocks | ✅ | ✅ | ✅ with highlighting |
+| Tables | ❌ | ✅ | ✅ with styling |
+| Task Lists | ❌ | ✅ | ✅ |
+| Strikethrough | ❌ | ✅ | ✅ |
+| Math | ❌ | ❌ | ✅ with KaTeX |
+| Custom Widgets | ❌ | ❌ | ✅ with Markdoc |
+| File Inclusion | ❌ | ❌ | ✅ |
+| Auto URL Linking | ❌ | ✅ | ✅ |
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    
+    <h1 class="text-3xl font-bold text-foreground mb-8">Code Widget Test</h1>
+    
+    <!-- Test 1: Inline Code -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-4">Test 1: Inline Code</h2>
+      <div data-widget="code" 
+           language="python" 
+           title="inline-example.py"
+           show-line-numbers="true">
+def hello_world():
+    """A simple hello world function."""
+    print("Hello, World!")
+    return "success"
+
+if __name__ == "__main__":
+    result = hello_world()
+    print(f"Result: {result}")
+      </div>
+    </section>
+
+    <!-- Test 2: External File Loading -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-4">Test 2: External File Loading</h2>
+      <div data-widget="code" 
+           language="python" 
+           src="./test-code.py"
+           title="test-code.py"
+           show-line-numbers="true">
+        <!-- Fallback content -->
+        Loading external code file...
+      </div>
+    </section>
+
+    <!-- Test 3: Creative Portfolio Code -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-4">Test 3: Creative Portfolio Code</h2>
+      <div data-widget="code" 
+           language="python" 
+           src="../creative-portfolio/code/attention.py"
+           title="attention.py"
+           show-line-numbers="true">
+        <!-- Fallback content -->
+        Loading attention.py from creative portfolio...
+      </div>
+    </section>
+
+    <!-- Test 4: Absolute Path -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-4">Test 4: Absolute Path</h2>
+      <div data-widget="code" 
+           language="python" 
+           src="/examples/creative-portfolio/code/distributed_trainer.py"
+           title="distributed_trainer.py"
+           show-line-numbers="true">
+        <!-- Fallback content -->
+        Loading distributed_trainer.py with absolute path...
+      </div>
+    </section>
+
+  </div>
+</div>

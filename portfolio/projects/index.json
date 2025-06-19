@@ -1,0 +1,113 @@
+[
+  {
+    "key": "projectName",
+    "value": "E-Commerce Platform"
+  },
+  {
+    "key": "projectDescription", 
+    "value": "A comprehensive **full-stack e-commerce solution** built with modern technologies. Features user authentication, payment processing, inventory management, and an admin dashboard."
+  },
+  {
+    "key": "technologies",
+    "value": ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe", "AWS", "Docker"]
+  },
+  {
+    "key": "liveUrl",
+    "value": "https://ecommerce-demo.example.com"
+  },
+  {
+    "key": "githubUrl", 
+    "value": "https://github.com/johndoe/ecommerce-platform"
+  },
+  {
+    "key": "screenshots",
+    "value": [
+      {
+        "url": "./assets/homepage.png",
+        "caption": "Homepage with featured products and categories"
+      },
+      {
+        "url": "./assets/product-page.png", 
+        "caption": "Product detail page with reviews and recommendations"
+      },
+      {
+        "url": "./assets/checkout.png",
+        "caption": "Secure checkout process with Stripe integration"
+      },
+      {
+        "url": "./assets/admin-dashboard.png",
+        "caption": "Admin dashboard for inventory and order management"
+      }
+    ]
+  },
+  {
+    "key": "features",
+    "value": [
+      {
+        "title": "User Authentication",
+        "description": "Secure login/signup with JWT tokens and password hashing"
+      },
+      {
+        "title": "Product Catalog",
+        "description": "Dynamic product listings with search, filtering, and sorting"
+      },
+      {
+        "title": "Shopping Cart",
+        "description": "Persistent cart with real-time updates and quantity management"
+      },
+      {
+        "title": "Payment Processing",
+        "description": "Secure payments with Stripe integration and order tracking"
+      },
+      {
+        "title": "Admin Dashboard",
+        "description": "Complete admin interface for managing products, orders, and users"
+      },
+      {
+        "title": "Responsive Design",
+        "description": "Mobile-first design that works perfectly on all devices"
+      }
+    ]
+  },
+  {
+    "key": "technicalDetails",
+    "value": "## Architecture\n\nThe application follows a **microservices architecture** with separate services for:\n\n- **Frontend**: React with TypeScript and Redux for state management\n- **API Gateway**: Express.js with rate limiting and authentication middleware\n- **User Service**: Handles authentication and user management\n- **Product Service**: Manages product catalog and inventory\n- **Order Service**: Processes orders and payments\n- **Database**: PostgreSQL with optimized queries and indexing\n\n## Deployment\n\nDeployed on **AWS** using:\n- **ECS** for container orchestration\n- **RDS** for managed PostgreSQL\n- **CloudFront** for CDN\n- **S3** for static assets\n- **Route 53** for DNS management"
+  },
+  {
+    "key": "codeExamples",
+    "value": [
+      {
+        "title": "Product API Endpoint",
+        "language": "javascript",
+        "code": "// GET /api/products\napp.get('/api/products', async (req, res) => {\n  try {\n    const { page = 1, limit = 10, category, search } = req.query;\n    \n    let query = 'SELECT * FROM products WHERE active = true';\n    const params = [];\n    \n    if (category) {\n      query += ' AND category = $' + (params.length + 1);\n      params.push(category);\n    }\n    \n    if (search) {\n      query += ' AND (name ILIKE $' + (params.length + 1) + ' OR description ILIKE $' + (params.length + 2) + ')';\n      params.push(`%${search}%`, `%${search}%`);\n    }\n    \n    query += ' ORDER BY created_at DESC LIMIT $' + (params.length + 1) + ' OFFSET $' + (params.length + 2);\n    params.push(limit, (page - 1) * limit);\n    \n    const result = await db.query(query, params);\n    \n    res.json({\n      products: result.rows,\n      pagination: {\n        page: parseInt(page),\n        limit: parseInt(limit),\n        total: result.rowCount\n      }\n    });\n  } catch (error) {\n    res.status(500).json({ error: 'Failed to fetch products' });\n  }\n});",
+        "explanation": "This endpoint handles product listing with **pagination**, **filtering**, and **search** functionality. It uses parameterized queries to prevent SQL injection and includes proper error handling."
+      },
+      {
+        "title": "React Product Component",
+        "language": "typescript", 
+        "code": "interface Product {\n  id: string;\n  name: string;\n  price: number;\n  image: string;\n  description: string;\n}\n\ninterface ProductCardProps {\n  product: Product;\n  onAddToCart: (productId: string) => void;\n}\n\nconst ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {\n  const [isLoading, setIsLoading] = useState(false);\n  \n  const handleAddToCart = async () => {\n    setIsLoading(true);\n    try {\n      await onAddToCart(product.id);\n      toast.success('Added to cart!');\n    } catch (error) {\n      toast.error('Failed to add to cart');\n    } finally {\n      setIsLoading(false);\n    }\n  };\n  \n  return (\n    <div className=\"product-card\">\n      <img src={product.image} alt={product.name} />\n      <h3>{product.name}</h3>\n      <p className=\"price\">${product.price}</p>\n      <p className=\"description\">{product.description}</p>\n      <button \n        onClick={handleAddToCart}\n        disabled={isLoading}\n        className=\"add-to-cart-btn\"\n      >\n        {isLoading ? 'Adding...' : 'Add to Cart'}\n      </button>\n    </div>\n  );\n};",
+        "explanation": "A **TypeScript React component** for displaying products with proper type definitions, loading states, and error handling. Uses modern React hooks and includes user feedback with toast notifications."
+      }
+    ]
+  },
+  {
+    "key": "challenges",
+    "value": [
+      {
+        "title": "Performance Optimization",
+        "problem": "The initial version had **slow page load times** due to large product images and inefficient database queries. Users were experiencing delays when browsing the catalog.",
+        "solution": "Implemented **image optimization** with WebP format and lazy loading. Added **database indexing** on frequently queried columns and implemented **Redis caching** for product data. This reduced page load times by 60%."
+      },
+      {
+        "title": "Payment Security",
+        "problem": "Ensuring **PCI compliance** and secure payment processing while maintaining a smooth user experience was challenging, especially handling sensitive card data.",
+        "solution": "Integrated **Stripe Elements** for secure card input handling, ensuring card data never touches our servers. Implemented **webhook verification** for payment confirmations and added comprehensive **audit logging** for all transactions."
+      },
+      {
+        "title": "Inventory Management",
+        "problem": "**Race conditions** occurred when multiple users tried to purchase the last item in stock simultaneously, leading to overselling and customer complaints.",
+        "solution": "Implemented **optimistic locking** with database transactions and added a **reservation system** that temporarily holds inventory during checkout. Also added real-time stock updates using WebSockets."
+      }
+    ]
+  }
+]

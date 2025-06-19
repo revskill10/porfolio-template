@@ -1,205 +1,139 @@
 [
-  { "key": "pageTitle", "value": "Research Portfolio" },
-  { "key": "pageDescription", "value": "A comprehensive showcase of my **AI research projects**, **software applications**, and **academic contributions**. Each project demonstrates the intersection of theoretical computer science and practical engineering solutions." },
   {
-    "key": "categories",
+    "key": "name",
+    "value": "John Doe"
+  },
+  {
+    "key": "title", 
+    "value": "Developer"
+  },
+  {
+    "key": "bio",
+    "value": "Passionate **full-stack developer** with 5+ years of experience building modern web applications. I love creating elegant solutions to complex problems."
+  },
+  {
+    "key": "aboutTitle",
+    "value": "About Me"
+  },
+  {
+    "key": "aboutContent",
+    "value": "## My Journey\n\nI started my journey in web development 5 years ago and have been passionate about creating amazing user experiences ever since.\n\n### What I Do\n\n- **Frontend Development**: React, Vue.js, TypeScript\n- **Backend Development**: Node.js, Python, PostgreSQL\n- **DevOps**: Docker, AWS, CI/CD\n\nI believe in writing clean, maintainable code and following best practices."
+  },
+  {
+    "key": "profileImage",
+    "value": "./assets/profile.jpg"
+  },
+  {
+    "key": "skillsTitle",
+    "value": "My Skills"
+  },
+  {
+    "key": "skills",
     "value": [
-      { "name": "All Projects", "slug": "all" },
-      { "name": "AI Research", "slug": "ai-research" },
-      { "name": "Machine Learning", "slug": "ml" },
-      { "name": "Distributed Systems", "slug": "distributed" },
-      { "name": "Computer Vision", "slug": "cv" },
-      { "name": "NLP", "slug": "nlp" },
-      { "name": "Web Applications", "slug": "web" }
+      {
+        "icon": "⚛️",
+        "name": "React",
+        "description": "Building modern, interactive user interfaces with React and TypeScript"
+      },
+      {
+        "icon": "🚀",
+        "name": "Node.js",
+        "description": "Server-side development with Express, APIs, and microservices"
+      },
+      {
+        "icon": "🎨",
+        "name": "UI/UX Design",
+        "description": "Creating beautiful, user-friendly interfaces with modern design principles"
+      },
+      {
+        "icon": "☁️",
+        "name": "Cloud Services",
+        "description": "Deploying and scaling applications on AWS, Docker, and Kubernetes"
+      },
+      {
+        "icon": "📱",
+        "name": "Mobile Development",
+        "description": "Cross-platform mobile apps with React Native and Flutter"
+      },
+      {
+        "icon": "🔧",
+        "name": "DevOps",
+        "description": "CI/CD pipelines, automated testing, and infrastructure as code"
+      }
     ]
+  },
+  {
+    "key": "projectsTitle",
+    "value": "Featured Projects"
+  },
+  {
+    "key": "projectsDescription",
+    "value": "Here are some of my recent projects that showcase my skills and experience."
   },
   {
     "key": "projects",
     "value": [
       {
-        "title": "Neural Architecture Search Platform",
-        "description": "End-to-end platform for **automated neural architecture discovery** with distributed training capabilities. Implements novel differentiable pruning techniques and evolutionary optimization.",
-        "category": "ai-research",
-        "year": "2024",
-        "image": "./assets/projects/nas-platform.png",
-        "technologies": ["PyTorch", "React", "TypeScript", "Docker", "Kubernetes"],
-        "stars": 342,
-        "forks": 67,
-        "views": "12.5k",
-        "liveUrl": "https://nas-platform.example.com",
-        "githubUrl": "https://github.com/alexchen/nas-platform",
-        "paperUrl": "https://arxiv.org/abs/2024.12345"
+        "name": "E-Commerce Platform",
+        "description": "A full-stack e-commerce solution with **React**, **Node.js**, and **PostgreSQL**. Features include user authentication, payment processing, and admin dashboard.",
+        "image": "./assets/projects/ecommerce.png",
+        "technologies": ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+        "liveUrl": "https://ecommerce-demo.example.com",
+        "githubUrl": "https://github.com/johndoe/ecommerce-platform"
       },
       {
-        "title": "Real-time ML Inference API",
-        "description": "High-performance **REST API** for serving machine learning models with **sub-100ms latency** and auto-scaling capabilities. Handles 10k+ requests per second.",
-        "category": "ml",
-        "year": "2024",
-        "image": "./assets/projects/ml-api.png",
-        "technologies": ["FastAPI", "PyTorch", "Redis", "Docker", "AWS"],
-        "stars": 189,
-        "forks": 34,
-        "views": "8.2k",
-        "liveUrl": "https://ml-api.example.com",
-        "githubUrl": "https://github.com/alexchen/ml-inference-api"
+        "name": "Task Management App",
+        "description": "A collaborative task management application built with **Vue.js** and **Firebase**. Real-time updates and team collaboration features.",
+        "image": "./assets/projects/taskapp.png", 
+        "technologies": ["Vue.js", "Firebase", "Vuetify", "PWA"],
+        "liveUrl": "https://taskapp-demo.example.com",
+        "githubUrl": "https://github.com/johndoe/task-management"
       },
       {
-        "title": "Federated Learning Framework",
-        "description": "**Privacy-preserving distributed learning** system with adaptive compression and fault tolerance. Reduces communication overhead by 5x while maintaining model accuracy.",
-        "category": "distributed",
-        "year": "2023",
-        "image": "./assets/projects/federated-learning.png",
-        "technologies": ["Python", "gRPC", "TensorFlow", "Kubernetes", "Prometheus"],
-        "stars": 267,
-        "forks": 45,
-        "views": "15.1k",
-        "liveUrl": "https://federated-demo.example.com",
-        "githubUrl": "https://github.com/alexchen/federated-framework",
-        "paperUrl": "https://arxiv.org/abs/2023.67890"
-      },
-      {
-        "title": "TechFlow Website",
-        "shortDescription": "B2B SaaS platform redesign",
-        "description": "Complete website redesign for a B2B SaaS platform, focusing on conversion optimization and user experience. Increased conversion rates by 40% through strategic design improvements.",
-        "category": "Digital Design",
-        "year": "2023",
-        "icon": "🚀",
-        "gradient": "from-blue-600 to-indigo-700",
-        "tags": ["Web Design", "SaaS", "Conversion", "B2B"],
-        "liveUrl": "https://techflow.example.com",
-        "caseStudyUrl": "#"
-      },
-      {
-        "title": "Artisan Bakery Identity",
-        "shortDescription": "Local bakery brand design",
-        "description": "Brand identity design for a local artisan bakery, including logo, signage, packaging, and marketing materials. The design celebrates traditional craftsmanship with a modern twist.",
-        "category": "Brand Identity",
-        "year": "2023",
-        "icon": "🥖",
-        "gradient": "from-yellow-600 to-orange-500",
-        "tags": ["Local Business", "Packaging", "Signage", "Traditional"],
-        "caseStudyUrl": "#"
-      },
-      {
-        "title": "Wellness App Interface",
-        "shortDescription": "Mental health app design",
-        "description": "UI/UX design for a mental wellness application focused on meditation and mindfulness. The interface prioritizes calm, accessibility, and user engagement through thoughtful interactions.",
-        "category": "Digital Design",
-        "year": "2023",
-        "icon": "🧘",
-        "gradient": "from-teal-500 to-blue-500",
-        "tags": ["Wellness", "Mobile App", "Accessibility", "Mindfulness"],
-        "liveUrl": "https://mindfulapp.example.com",
-        "caseStudyUrl": "#"
-      },
-      {
-        "title": "Music Festival Branding",
-        "shortDescription": "Event identity and materials",
-        "description": "Complete visual identity for an indie music festival, including logo, poster series, merchandise, and digital assets. The design captures the energy and diversity of the music lineup.",
-        "category": "Art Direction",
-        "year": "2022",
-        "icon": "🎵",
-        "gradient": "from-pink-500 to-purple-600",
-        "tags": ["Event Design", "Posters", "Merchandise", "Music"],
-        "caseStudyUrl": "#"
-      },
-      {
-        "title": "Organic Skincare Packaging",
-        "shortDescription": "Sustainable beauty packaging",
-        "description": "Packaging design for an organic skincare line emphasizing sustainability and natural ingredients. The design uses eco-friendly materials and minimalist aesthetics.",
-        "category": "Packaging",
-        "year": "2022",
-        "icon": "🌿",
-        "gradient": "from-green-400 to-teal-500",
-        "tags": ["Sustainable", "Beauty", "Organic", "Minimalist"],
-        "caseStudyUrl": "#"
-      },
-      {
-        "title": "Tech Startup Pitch Deck",
-        "shortDescription": "Investor presentation design",
-        "description": "Presentation design for a fintech startup's Series A funding round. Created compelling visual narratives that helped secure $10M in funding.",
-        "category": "Print Design",
-        "year": "2022",
-        "icon": "📊",
-        "gradient": "from-indigo-600 to-purple-600",
-        "tags": ["Presentation", "Startup", "Fintech", "Investment"],
-        "caseStudyUrl": "#"
+        "name": "Weather Dashboard",
+        "description": "A responsive weather dashboard with **React** and **TypeScript**. Features weather forecasts, maps, and data visualization.",
+        "image": "./assets/projects/weather.png",
+        "technologies": ["React", "TypeScript", "Chart.js", "OpenWeather API"],
+        "liveUrl": "https://weather-dashboard.example.com",
+        "githubUrl": "https://github.com/johndoe/weather-dashboard"
       }
     ]
   },
   {
-    "key": "algorithms",
-    "value": [
-      {
-        "name": "Adaptive Neural Architecture Search",
-        "description": "A novel approach to **neural architecture search** that dynamically adjusts search strategies based on performance feedback and resource constraints.",
-        "timeComplexity": "O(n \\log n \\cdot d)",
-        "spaceComplexity": "O(n \\cdot d)",
-        "recurrence": "T(n) = \\begin{cases} O(1) & \\text{if } n \\leq 1 \\\\ 2T(n/2) + O(n \\cdot d) & \\text{if } n > 1 \\end{cases}",
-        "language": "python",
-        "filename": "adaptive_nas.py",
-        "code": "class AdaptiveNAS:\n    def __init__(self, search_space, performance_threshold=0.95):\n        self.search_space = search_space\n        self.performance_threshold = performance_threshold\n        self.population = self._initialize_population()\n        self.generation = 0\n    \n    def search(self, max_generations=100):\n        \"\"\"Main search loop with adaptive strategy selection\"\"\"\n        for gen in range(max_generations):\n            # Evaluate current population\n            fitness_scores = self._evaluate_population()\n            \n            # Adaptive strategy selection based on convergence\n            if self._is_converging(fitness_scores):\n                strategy = 'exploitation'  # Focus on local search\n            else:\n                strategy = 'exploration'   # Diversify search\n            \n            # Generate next generation\n            self.population = self._evolve_population(\n                strategy, fitness_scores\n            )\n            \n            # Early stopping if threshold reached\n            best_fitness = max(fitness_scores)\n            if best_fitness >= self.performance_threshold:\n                break\n                \n            self.generation += 1\n        \n        return self._get_best_architecture()\n    \n    def _evolve_population(self, strategy, fitness_scores):\n        \"\"\"Evolve population using adaptive strategy\"\"\"\n        if strategy == 'exploitation':\n            # Local search around best candidates\n            return self._local_search(fitness_scores)\n        else:\n            # Global exploration with mutation\n            return self._global_exploration(fitness_scores)",
-        "performance": {
-          "speed": "2.3s",
-          "accuracy": "94.7%"
-        },
-        "implementationUrl": "https://github.com/alexchen/adaptive-nas",
-        "visualizationUrl": "https://nas-viz.example.com"
-      }
-    ]
+    "key": "contactTitle",
+    "value": "Let's Work Together"
   },
   {
-    "key": "publications",
+    "key": "contactDescription",
+    "value": "I'm always interested in new opportunities and collaborations. Feel free to reach out!"
+  },
+  {
+    "key": "contactMethods",
     "value": [
       {
-        "title": "Efficient Neural Architecture Search with Differentiable Pruning",
-        "authors": "Alex Chen, Sarah Kim, Michael Zhang",
-        "venue": "International Conference on Machine Learning (ICML)",
-        "year": "2024",
-        "abstract": "We propose a novel approach to **neural architecture search** that combines differentiable pruning with evolutionary optimization. Our method reduces search time by 10x while achieving state-of-the-art accuracy on ImageNet classification.",
-        "image": "./assets/papers/nas-paper.png",
-        "pdfUrl": "https://arxiv.org/abs/2024.12345",
-        "codeUrl": "https://github.com/alexchen/efficient-nas",
-        "datasetUrl": "https://datasets.example.com/nas-benchmark",
-        "citations": 127,
-        "impactFactor": "4.8",
-        "award": "Best Paper Award",
-        "contributions": [
-          {
-            "description": "Architecture weight update rule",
-            "formula": "\\alpha_{t+1} = \\alpha_t - \\eta \\nabla_{\\alpha} \\mathcal{L}_{val}(w^*(\\alpha_t), \\alpha_t)"
-          },
-          {
-            "description": "Pruning probability function",
-            "formula": "p(\\alpha_i) = \\sigma\\left(\\frac{\\alpha_i - \\mu}{\\tau}\\right)"
-          }
-        ]
+        "icon": "📧",
+        "name": "Email",
+        "label": "john@example.com",
+        "url": "mailto:john@example.com"
       },
       {
-        "title": "Scalable Federated Learning with Adaptive Compression",
-        "authors": "Alex Chen, Jennifer Liu, David Park, Lisa Wang",
-        "venue": "Neural Information Processing Systems (NeurIPS)",
-        "year": "2023",
-        "abstract": "This paper introduces an **adaptive compression scheme** for federated learning that dynamically adjusts compression rates based on model convergence and communication constraints, achieving 5x reduction in communication overhead.",
-        "image": "./assets/papers/federated-paper.png",
-        "pdfUrl": "https://arxiv.org/abs/2023.67890",
-        "codeUrl": "https://github.com/alexchen/adaptive-federated",
-        "citations": 89,
-        "impactFactor": "5.2",
-        "contributions": [
-          {
-            "description": "Adaptive compression rate",
-            "formula": "r_t = r_{min} + (r_{max} - r_{min}) \\cdot e^{-\\lambda \\cdot \\text{convergence}_t}"
-          },
-          {
-            "description": "Global model update",
-            "formula": "w_{t+1} = w_t - \\eta \\sum_{k=1}^{K} \\frac{n_k}{n} \\Delta w_k^{(t)}"
-          }
-        ]
+        "icon": "💼",
+        "name": "LinkedIn",
+        "label": "Connect on LinkedIn",
+        "url": "https://linkedin.com/in/johndoe"
+      },
+      {
+        "icon": "🐙",
+        "name": "GitHub",
+        "label": "View My Code",
+        "url": "https://github.com/johndoe"
+      },
+      {
+        "icon": "🐦",
+        "name": "Twitter",
+        "label": "Follow Me",
+        "url": "https://twitter.com/johndoe"
       }
     ]
-  },
-  { "key": "ctaTitle", "value": "Ready to Collaborate?" },
-  { "key": "ctaDescription", "value": "Let's work together on **cutting-edge AI research** or build innovative software solutions that push the boundaries of what's possible." },
-  { "key": "email", "value": "alex.chen@example.com" }
+  }
 ]

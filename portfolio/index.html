@@ -1,344 +1,173 @@
 <div>
-  <!-- Include Header Component -->
-  <div data-include="../components/header"></div>
-
-  <!-- Hero Section with Widget Demonstrations -->
-  <section class="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 text-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div data-widget="badge" variant="outline" class="mb-6 px-6 py-2 text-purple-300 border-purple-300 text-lg">
-        Portfolio Showcase
-      </div>
-      <h1 class="text-5xl md:text-7xl font-bold mb-8">
-        <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">{{pageTitle}}</span>
-      </h1>
-      <div data-widget="markdown" class="text-xl text-gray-300 mb-12 max-w-4xl mx-auto">
-        {{pageDescription}}
-      </div>
-
-      <!-- Filter Categories using Button Widgets -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <div data-each="categories" data-as="category">
-          <div data-widget="button"
-               variant="outline"
-               class="border-white/30 text-white hover:bg-white/10 filter-btn"
-               data-filter="{{category.slug}}">
-            {{category.name}}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Grid with Advanced Widgets -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div data-each="projects" data-as="project">
-          <div data-widget="card"
-               class="group h-full overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 project-card"
-               data-category="{{project.category}}">
-
-            <!-- Project Image with Widget -->
-            <div class="relative overflow-hidden">
-              <div data-widget="image"
-                   src="{{project.image}}"
-                   alt="{{project.title}}"
-                   class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-              </div>
-
-              <!-- Overlay with Button Widgets -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                <div class="flex space-x-3">
-                  <div data-widget="button"
-                       variant="default"
-                       size="sm"
-                       href="{{project.liveUrl}}"
-                       target="_blank"
-                       class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white">
-                    🚀 Live Demo
-                  </div>
-                  <div data-widget="button"
-                       variant="outline"
-                       size="sm"
-                       href="{{project.githubUrl}}"
-                       target="_blank"
-                       class="border-white/30 text-white hover:bg-white/20">
-                    💻 Code
-                  </div>
-                </div>
-              </div>
-
-              <!-- Category Badge Widget -->
-              <div class="absolute top-4 left-4">
-                <div data-widget="badge" variant="secondary" class="bg-black/50 text-white backdrop-blur-sm">
-                  {{project.category}}
-                </div>
-              </div>
-            </div>
-
-            <!-- Project Info -->
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-3">
-                <h3 class="text-xl font-bold text-gray-900">{{project.title}}</h3>
-                <span class="text-sm text-gray-500">{{project.year}}</span>
-              </div>
-
-              <!-- Markdown Widget for Description -->
-              <div data-widget="markdown" class="text-gray-600 mb-4 prose prose-sm">
-                {{project.description}}
-              </div>
-
-              <!-- Technology Badge Widgets -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <div data-each="project.technologies" data-as="tech">
-                  <div data-widget="badge" variant="outline" class="text-xs">
-                    {{tech}}
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project Metrics -->
-              <div class="flex justify-between text-sm text-gray-500 pt-4 border-t">
-                <span>⭐ {{project.stars}} stars</span>
-                <span>🍴 {{project.forks}} forks</span>
-                <span>👀 {{project.views}} views</span>
-              </div>
-
-              <!-- Conditional Research Paper Link -->
-              <div data-condition="project.paperUrl">
-                <div class="mt-4 pt-4 border-t">
-                  <div data-widget="button"
-                       variant="outline"
-                       size="sm"
-                       href="{{project.paperUrl}}"
-                       target="_blank"
-                       class="w-full">
-                    📄 Read Research Paper
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Algorithm Showcase with Math Widgets -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-blue-600 border-blue-200 text-lg">
-          Algorithm Showcase
-        </div>
-        <h2 class="text-4xl font-bold text-gray-900 mb-6">Featured Algorithms</h2>
-        <p class="text-xl text-gray-600">Mathematical analysis and implementation details</p>
-      </div>
-
-      <div class="space-y-12">
-        <div data-each="algorithms" data-as="algorithm">
-          <div data-widget="card" class="p-8 border-0 shadow-lg">
-            <div class="grid lg:grid-cols-2 gap-8">
-              <div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">{{algorithm.name}}</h3>
-                <div data-widget="markdown" class="prose prose-gray mb-6">
-                  {{algorithm.description}}
-                </div>
-
-                <!-- Complexity Analysis with Math Widgets -->
-                <div class="bg-blue-50 p-6 rounded-lg mb-6">
-                  <h4 class="font-semibold text-gray-900 mb-4">Complexity Analysis:</h4>
-                  <div class="space-y-3">
-                    <div class="flex items-center space-x-4">
-                      <span class="text-gray-700 w-32">Time Complexity:</span>
-                      <div data-widget="inline-math">{{algorithm.timeComplexity}}</div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                      <span class="text-gray-700 w-32">Space Complexity:</span>
-                      <div data-widget="inline-math">{{algorithm.spaceComplexity}}</div>
-                    </div>
-                  </div>
-
-                  <!-- Mathematical Formula with Block Math Widget -->
-                  <div class="mt-6">
-                    <p class="text-gray-700 mb-3">Recurrence Relation:</p>
-                    <div data-widget="block-math">{{algorithm.recurrence}}</div>
-                  </div>
-                </div>
-
-                <div class="flex space-x-4">
-                  <div data-widget="button"
-                       variant="default"
-                       href="{{algorithm.implementationUrl}}"
-                       target="_blank">
-                    View Implementation
-                  </div>
-                  <div data-widget="button"
-                       variant="outline"
-                       href="{{algorithm.visualizationUrl}}"
-                       target="_blank">
-                    Interactive Demo
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <!-- Code Widget with Syntax Highlighting -->
-                <div data-widget="code"
-                     language="{{algorithm.language}}"
-                     title="{{algorithm.filename}}"
-                     show-line-numbers="true"
-                     max-height="400px">
-                  {{algorithm.code}}
-                </div>
-
-                <!-- Performance Metrics with Card Widgets -->
-                <div class="mt-6 grid grid-cols-2 gap-4">
-                  <div data-widget="card" class="p-4 text-center bg-green-50 border-green-200">
-                    <div class="text-2xl font-bold text-green-600">{{algorithm.performance.speed}}</div>
-                    <div class="text-sm text-gray-600">Avg. Runtime</div>
-                  </div>
-                  <div data-widget="card" class="p-4 text-center bg-purple-50 border-purple-200">
-                    <div class="text-2xl font-bold text-purple-600">{{algorithm.performance.accuracy}}</div>
-                    <div class="text-sm text-gray-600">Accuracy</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Research Publications with Advanced Features -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-green-600 border-green-200 text-lg">
-          Publications
-        </div>
-        <h2 class="text-4xl font-bold text-gray-900 mb-6">Research Papers</h2>
-        <p class="text-xl text-gray-600">Academic contributions and peer-reviewed research</p>
-      </div>
-
-      <div class="space-y-8">
-        <div data-each="publications" data-as="paper">
-          <div data-widget="card" class="p-8 hover:shadow-lg transition-shadow duration-300">
-            <div class="flex flex-col lg:flex-row gap-8">
-              <div class="flex-1">
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">{{paper.title}}</h3>
-                <div class="text-lg text-gray-600 mb-2">{{paper.authors}}</div>
-                <div class="text-green-600 font-medium mb-4">{{paper.venue}} • {{paper.year}}</div>
-
-                <!-- Markdown Widget for Abstract -->
-                <div data-widget="markdown" class="prose prose-gray mb-6">
-                  {{paper.abstract}}
-                </div>
-
-                <!-- Key Contributions with Math Widgets -->
-                <div class="bg-gray-50 p-6 rounded-lg mb-6">
-                  <h4 class="font-semibold text-gray-900 mb-4">Key Mathematical Contributions:</h4>
-                  <div class="space-y-4">
-                    <div data-each="paper.contributions" data-as="contribution">
-                      <div>
-                        <p class="text-gray-700 mb-2">{{contribution.description}}:</p>
-                        <div data-widget="block-math">{{contribution.formula}}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                  <div data-widget="button"
-                       variant="default"
-                       href="{{paper.pdfUrl}}"
-                       target="_blank">
-                    📄 Read Paper
-                  </div>
-                  <div data-widget="button"
-                       variant="outline"
-                       href="{{paper.codeUrl}}"
-                       target="_blank">
-                    💻 Source Code
-                  </div>
-                  <!-- Conditional Dataset Link -->
-                  <div data-condition="paper.datasetUrl">
-                    <div data-widget="button"
-                         variant="outline"
-                         href="{{paper.datasetUrl}}"
-                         target="_blank">
-                      📊 Dataset
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="lg:w-80">
-                <!-- Image Widget for Paper Visualization -->
-                <div data-widget="image"
-                     src="{{paper.image}}"
-                     alt="{{paper.title}}"
-                     class="w-full h-48 object-cover rounded-lg shadow-md mb-4">
-                </div>
-
-                <!-- Citation and Impact with Card Widgets -->
-                <div class="space-y-3">
-                  <div data-widget="card" class="p-4 bg-blue-50 border-blue-200">
-                    <div class="text-center">
-                      <div class="text-2xl font-bold text-blue-600">{{paper.citations}}</div>
-                      <div class="text-sm text-gray-600">Citations</div>
-                    </div>
-                  </div>
-
-                  <div data-widget="card" class="p-4 bg-green-50 border-green-200">
-                    <div class="text-center">
-                      <div class="text-lg font-bold text-green-600">{{paper.impactFactor}}</div>
-                      <div class="text-sm text-gray-600">Impact Factor</div>
-                    </div>
-                  </div>
-
-                  <!-- Conditional Award Badge -->
-                  <div data-condition="paper.award">
-                    <div data-widget="badge" variant="default" class="w-full text-center bg-yellow-100 text-yellow-800 border-yellow-300">
-                      🏆 {{paper.award}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action with Button Widgets -->
-  <section class="py-20 bg-gradient-to-r from-purple-900 to-pink-900">
+  <!-- Hero Section -->
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
     <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-white mb-6">{{ctaTitle}}</h2>
-      <div data-widget="markdown" class="text-xl text-purple-200 mb-8">
-        {{ctaDescription}}
+      <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+        {{name}}
+        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          {{title}}
+        </span>
+      </h1>
+      <div data-widget="markdown" class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+        {{bio}}
       </div>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
         <div data-widget="button"
              variant="default"
              size="lg"
-             href="../contact"
-             class="bg-white text-purple-900 hover:bg-gray-100 px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
-          Start a Project
+             href="#projects">
+          View Projects
         </div>
         <div data-widget="button"
              variant="outline"
              size="lg"
-             href="mailto:{{email}}"
-             class="border-2 border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4 rounded-full transition-all duration-300">
-          Send Message
+             href="#contact">
+          Get In Touch
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-4 py-2 text-blue-600 border-blue-200">
+          About Me
+        </div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">{{aboutTitle}}</h2>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div data-widget="markdown" class="prose prose-lg">
+            {{aboutContent}}
+          </div>
+        </div>
+        <div>
+          <div data-widget="image" 
+               src="{{profileImage}}" 
+               alt="{{name}}"
+               class="rounded-lg shadow-lg">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Include Footer Component -->
-  <div data-include="../components/footer"></div>
+  <!-- Skills Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-4 py-2 text-blue-600 border-blue-200">
+          Skills
+        </div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">{{skillsTitle}}</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div data-each="skills" data-as="skill">
+          <div data-widget="card" class="text-center">
+            <div class="p-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">{{skill.icon}}</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">{{skill.name}}</h3>
+              <p class="text-gray-600">{{skill.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-4 py-2 text-blue-600 border-blue-200">
+          Projects
+        </div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">{{projectsTitle}}</h2>
+        <div data-widget="markdown" class="text-xl text-gray-600 max-w-3xl mx-auto">
+          {{projectsDescription}}
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div data-each="projects" data-as="project">
+          <div data-widget="card" class="h-full">
+            <div class="p-6">
+              <div data-widget="image" 
+                   src="{{project.image}}" 
+                   alt="{{project.name}}"
+                   class="w-full h-48 object-cover rounded-lg mb-4">
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">{{project.name}}</h3>
+              <div data-widget="markdown" class="text-gray-600 mb-4">
+                {{project.description}}
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <div data-each="project.technologies" data-as="tech">
+                  <div data-widget="badge" variant="secondary" class="text-xs">
+                    {{tech}}
+                  </div>
+                </div>
+              </div>
+              <div class="flex space-x-3">
+                <div data-widget="button" 
+                     variant="default" 
+                     size="sm"
+                     href="{{project.liveUrl}}"
+                     target="_blank">
+                  Live Demo
+                </div>
+                <div data-widget="button" 
+                     variant="outline" 
+                     size="sm"
+                     href="{{project.githubUrl}}"
+                     target="_blank">
+                  Source Code
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-4 py-2 text-blue-600 border-blue-200">
+          Contact
+        </div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">{{contactTitle}}</h2>
+        <div data-widget="markdown" class="text-xl text-gray-600">
+          {{contactDescription}}
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div data-each="contactMethods" data-as="method">
+          <div data-widget="card" class="text-center">
+            <div class="p-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">{{method.icon}}</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">{{method.name}}</h3>
+              <div data-widget="button" 
+                   variant="outline"
+                   href="{{method.url}}"
+                   target="_blank">
+                {{method.label}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

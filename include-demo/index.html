@@ -1,0 +1,135 @@
+<div>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-foreground mb-4">{{title}}</h1>
+      <p class="text-xl text-muted-foreground">{{subtitle}}</p>
+    </div>
+
+    <!-- Main Content from Markdown with Includes -->
+    <section class="mb-12">
+      <div data-widget="card" class="p-8">
+        <div data-widget="markdown" 
+             src="./content.md" 
+             type="markdown"
+             allow-widgets="true"
+             class="markdown-with-includes">
+          <!-- Fallback content -->
+          <div class="flex items-center justify-center p-8">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            <span class="ml-3 text-muted-foreground">Loading content with includes...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example of Direct Include in HTML -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Direct Include Example</h2>
+      
+      <div data-widget="card" class="p-6">
+        <h3 class="text-lg font-semibold mb-4">Including Creative Portfolio Header</h3>
+        <div class="border-l-4 border-blue-500 pl-4">
+          <include data-include="../creative-portfolio/components/header/index.html"></include>
+        </div>
+      </div>
+    </section>
+
+    <!-- Markdoc Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Markdoc Include Example</h2>
+      
+      <div data-widget="card" class="p-6">
+        <div data-widget="markdown" 
+             type="markdoc" 
+             allow-widgets="true">
+# Markdoc with Includes
+
+This content is processed with **Markdoc** and supports includes:
+
+{% include "../creative-portfolio/research" %}
+
+You can also include markdown files:
+
+{% include "./example-content.md" %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance and Error Handling Demo -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Error Handling Demo</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Valid Include -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-semibold mb-4">Valid Include</h3>
+          <div data-widget="markdown">
+{% include "../creative-portfolio/contact" %}
+          </div>
+        </div>
+        
+        <!-- Invalid Include (for error demo) -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-semibold mb-4">Invalid Include (Error Demo)</h3>
+          <div data-widget="markdown">
+{% include "./non-existent-path" %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nested Includes Demo -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Nested Includes Demo</h2>
+      
+      <div data-widget="card" class="p-6">
+        <div data-widget="markdown" src="./nested-example.md">
+          Loading nested include example...
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-foreground mb-6">Technical Implementation</h2>
+      
+      <div data-widget="card" class="p-6">
+        <div data-widget="markdown">
+## How It Works
+
+The enhanced markdown renderer supports includes through:
+
+1. **Custom Remark Plugin**: Parses `{% include "path" %}` syntax
+2. **Dynamic Component**: `DynamicInclude` handles loading and rendering
+3. **Path Resolution**: Relative paths resolved from current location
+4. **Recursive Rendering**: Uses existing XML renderer for portfolio pages
+5. **Error Handling**: Graceful fallbacks for missing content
+
+### Supported Include Types
+
+- **Portfolio Pages**: `{% include "../about" %}` (loads index.html + index.json)
+- **Markdown Files**: `{% include "./content.md" %}` (loads and renders markdown)
+- **Components**: `{% include "../components/header" %}` (loads component templates)
+
+### Path Resolution
+
+```
+Current: /examples/include-demo/
+Include: "../creative-portfolio/about"
+Resolved: /examples/creative-portfolio/about
+```
+
+### Performance Features
+
+- **Async Loading**: Content loads asynchronously with loading indicators
+- **Error Boundaries**: Failed includes don't break the entire page
+- **Caching**: GitHub API responses are cached for performance
+- **Lazy Loading**: Includes only load when needed
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

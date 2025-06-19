@@ -1,0 +1,157 @@
+<div>
+  <!-- Header -->
+  <div class="bg-gradient-to-r from-blue-600 to-purple-600 py-20">
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+        {{projectName}}
+      </h1>
+      <div data-widget="markdown" class="text-xl text-blue-100 mb-8">
+        {{projectDescription}}
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        <div data-each="technologies" data-as="tech">
+          <div data-widget="badge" variant="secondary" class="bg-white/20 text-white border-white/30">
+            {{tech}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Details -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Screenshots -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">Screenshots</h2>
+          <div class="space-y-6">
+            <div data-each="screenshots" data-as="screenshot">
+              <div data-widget="image" 
+                   src="{{screenshot.url}}" 
+                   alt="{{screenshot.caption}}"
+                   class="w-full rounded-lg shadow-lg">
+              </div>
+              <p class="text-gray-600 text-center mt-2">{{screenshot.caption}}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Info -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">Project Overview</h2>
+          
+          <!-- Features -->
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Key Features</h3>
+            <div class="space-y-3">
+              <div data-each="features" data-as="feature">
+                <div class="flex items-start space-x-3">
+                  <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
+                    <span class="text-green-600 text-sm">✓</span>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900">{{feature.title}}</h4>
+                    <p class="text-gray-600 text-sm">{{feature.description}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Details -->
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Technical Details</h3>
+            <div data-widget="markdown" class="prose prose-gray">
+              {{technicalDetails}}
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="flex space-x-4">
+            <div data-widget="button" 
+                 variant="default"
+                 href="{{liveUrl}}"
+                 target="_blank">
+              View Live Demo
+            </div>
+            <div data-widget="button" 
+                 variant="outline"
+                 href="{{githubUrl}}"
+                 target="_blank">
+              View Source Code
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Examples -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Code Examples</h2>
+        <p class="text-xl text-gray-600">Here are some key code snippets from the project</p>
+      </div>
+
+      <div class="space-y-8">
+        <div data-each="codeExamples" data-as="example">
+          <div data-widget="code" 
+               language="{{example.language}}"
+               title="{{example.title}}"
+               show-line-numbers="true">
+            {{example.code}}
+          </div>
+          <div data-widget="markdown" class="mt-4 text-gray-600">
+            {{example.explanation}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges & Solutions -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Challenges & Solutions</h2>
+      </div>
+
+      <div class="space-y-8">
+        <div data-each="challenges" data-as="challenge">
+          <div data-widget="card">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">{{challenge.title}}</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-medium text-red-600 mb-2">Challenge</h4>
+                  <div data-widget="markdown" class="text-gray-600">
+                    {{challenge.problem}}
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-green-600 mb-2">Solution</h4>
+                  <div data-widget="markdown" class="text-gray-600">
+                    {{challenge.solution}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Portfolio -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <div data-widget="button" 
+           variant="outline"
+           href="../">
+        ← Back to Portfolio
+      </div>
+    </div>
+  </section>
+</div>
