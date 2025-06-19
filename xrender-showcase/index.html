@@ -21,17 +21,19 @@
       <div class="border rounded-lg p-4">
         <div data-widget="xtable" data-search="true" data-pagination="true">
           <columns>
+            <text name="id" title="ID" width="60" />
             <text name="name" title="Name" width="150" />
-            <text name="email" title="Email" width="200" valueType="text" />
-            <text name="role" title="Role" width="120">
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
-            </text>
+            <text name="email" title="Email" width="200" />
+            <tag name="status" title="Status" width="100">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </tag>
           </columns>
-
+          
           <data>
-            <row name="John Doe" email="john@example.com" role="admin" />
-            <row name="Jane Smith" email="jane@example.com" role="user" />
+            <row id="1" name="John Doe" email="john@example.com" status="active" />
+            <row id="2" name="Jane Smith" email="jane@example.com" status="active" />
+            <row id="3" name="Bob Johnson" email="bob@example.com" status="inactive" />
           </data>
         </div>
       </div>
