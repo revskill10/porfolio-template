@@ -1,7 +1,0 @@
-[
-  {"key": "name", "value": "Footer"},
-  {"key": "description", "value": "Site footer with links and contact info"},
-  {"key": "version", "value": "1.0.0"},
-  {"key": "dependencies", "value": []},
-  {"key": "props", "value": {}}
-]
