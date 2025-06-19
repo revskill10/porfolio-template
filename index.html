@@ -1,92 +1,167 @@
 <div>
-  <!-- Header Navigation -->
-  <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50">
-    <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between h-16">
-        <!-- Logo/Home Link -->
-        <a href="./" className="text-xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent hover:from-pink-300 hover:to-blue-300 transition-all duration-300">
-          {{name}}
-        </a>
-        
-        <!-- Navigation Links -->
-        <div className="flex items-center space-x-8">
-          <a href="./portfolio" className="text-gray-300 hover:text-white transition-colors duration-300 font-medium">
-            Portfolio
-          </a>
-          <a href="./about" className="text-gray-300 hover:text-white transition-colors duration-300 font-medium">
-            About
-          </a>
-          <a href="./contact" className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full hover:from-pink-600 hover:to-purple-600 transition-all duration-300 font-medium">
-            Contact
-          </a>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <div className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
+  <!-- Hero Section with Enhanced Widgets -->
+  <div class="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
     <!-- Animated Background -->
-    <div className="absolute inset-0 opacity-20">
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
     </div>
-    
-    <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-      <div className="mb-8">
-        <div className="w-40 h-40 mx-auto mb-8 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full animate-spin-slow"></div>
-          <div className="absolute inset-2 bg-black rounded-full flex items-center justify-center">
-            <span className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">{{initials}}</span>
-          </div>
+
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <div data-widget="image"
+             src="{{profileImage}}"
+             alt="{{name}}"
+             class="w-40 h-40 mx-auto mb-8 rounded-full border-4 border-gradient-to-r from-pink-500 to-purple-500 shadow-2xl">
         </div>
       </div>
-      
-      <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-        <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">{{name}}</span>
+
+      <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+        <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">{{name}}</span>
       </h1>
-      
-      <p className="text-2xl md:text-3xl text-gray-300 mb-4">
+
+      <p class="text-2xl md:text-3xl text-gray-300 mb-4">
         {{title}}
       </p>
-      
-      <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+
+      <div data-widget="markdown" class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
         {{tagline}}
-      </p>
-      
-      <div className="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="./portfolio" className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-pink-500 to-purple-500 rounded-full hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25">
-          <span className="relative z-10">View My Work</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </a>
-        <a href="./contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-white/30 rounded-full hover:border-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+        <div data-widget="button"
+             variant="default"
+             size="lg"
+             href="./portfolio"
+             class="group relative bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+          View My Work
+        </div>
+        <div data-widget="button"
+             variant="outline"
+             size="lg"
+             href="./contact"
+             class="border-2 border-white/30 text-white hover:border-white hover:bg-white/10 text-lg px-8 py-4 rounded-full transition-all duration-300 backdrop-blur-sm">
           Let's Collaborate
-        </a>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex justify-center space-x-8">
+        <div data-each="socialLinks" data-as="social">
+          <a href="{{social.url}}" target="_blank" class="text-white hover:text-pink-300 transition-colors duration-300">
+            <div class="w-8 h-8 flex items-center justify-center">
+              <span class="text-2xl">{{social.icon}}</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Services Section -->
-  <div className="py-20 bg-gray-900">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white mb-6">{{servicesTitle}}</h2>
-        <p className="text-xl text-gray-400">{{servicesDescription}}</p>
+  <!-- About Section with Math Examples -->
+  <section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-pink-400 border-pink-400 text-lg">
+          About Me
+        </div>
+        <h2 class="text-4xl font-bold text-white mb-6">{{aboutTitle}}</h2>
+        <div data-widget="markdown" class="text-xl text-gray-400 max-w-4xl mx-auto">
+          {{aboutDescription}}
+        </div>
       </div>
-      
-      <div className="grid md:grid-cols-3 gap-8">
-        <div data-each="services" data-as="item">
-          <div className="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-r {{item.gradient}} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300"></div>
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-gradient-to-r {{item.gradient}} rounded-xl flex items-center justify-center mb-6">
-                <span className="text-2xl">{{item.icon}}</span>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div data-widget="markdown" class="prose prose-lg prose-invert max-w-none mb-8">
+            {{aboutContent}}
+          </div>
+
+          <!-- Mathematical Expertise -->
+          <div data-widget="card" class="p-6 bg-gray-800/50 border border-gray-700">
+            <h3 class="text-xl font-bold text-white mb-4">Mathematical Modeling</h3>
+            <p class="text-gray-400 mb-4">I specialize in algorithm optimization and complexity analysis:</p>
+
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <span class="text-gray-300">Time Complexity:</span>
+                <div data-widget="inline-math">O(n \log n)</div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">{{item.title}}</h3>
-              <p className="text-gray-400 mb-6">{{item.description}}</p>
-              <div className="flex flex-wrap gap-2">
-                <div data-each="item.tools" data-as="tool">
-                  <span className="text-xs px-3 py-1 bg-gray-700 text-gray-300 rounded-full">{{tool}}</span>
+              <div class="flex items-center space-x-4">
+                <span class="text-gray-300">Space Complexity:</span>
+                <div data-widget="inline-math">O(n)</div>
+              </div>
+              <div class="mt-6">
+                <p class="text-gray-400 mb-3">Recursive relation for divide-and-conquer algorithms:</p>
+                <div data-widget="block-math">
+                  T(n) = \begin{cases}
+                  O(1) & \text{if } n \leq 1 \\
+                  2T(n/2) + O(n) & \text{if } n > 1
+                  \end{cases}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <!-- Skills Grid -->
+          <div class="grid grid-cols-2 gap-6">
+            <div data-each="skills" data-as="skill">
+              <div data-widget="card" class="p-6 bg-gray-800/50 border border-gray-700 text-center hover:border-pink-500/50 transition-colors duration-300">
+                <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span class="text-white text-xl">{{skill.icon}}</span>
+                </div>
+                <h4 class="font-semibold text-white mb-2">{{skill.name}}</h4>
+                <p class="text-gray-400 text-sm">{{skill.level}}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Statistics -->
+          <div class="grid grid-cols-2 gap-6">
+            <div data-each="stats" data-as="stat">
+              <div data-widget="card" class="p-6 bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20 text-center">
+                <div class="text-3xl font-bold text-pink-400 mb-2">{{stat.value}}</div>
+                <div class="text-gray-400">{{stat.label}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 bg-black">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-purple-400 border-purple-400 text-lg">
+          Services
+        </div>
+        <h2 class="text-4xl font-bold text-white mb-6">{{servicesTitle}}</h2>
+        <div data-widget="markdown" class="text-xl text-gray-400 max-w-4xl mx-auto">
+          {{servicesDescription}}
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div data-each="services" data-as="service">
+          <div data-widget="card" class="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative z-10 p-8">
+              <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mb-6">
+                <span class="text-2xl">{{service.icon}}</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4">{{service.title}}</h3>
+              <div data-widget="markdown" class="text-gray-400 mb-6">
+                {{service.description}}
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div data-each="service.tools" data-as="tool">
+                  <div data-widget="badge" variant="secondary" class="text-xs bg-gray-700 text-gray-300">
+                    {{tool}}
+                  </div>
                 </div>
               </div>
             </div>
@@ -94,44 +169,202 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Featured Work Preview -->
-  <div className="py-20 bg-black">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white mb-6">{{featuredTitle}}</h2>
-        <p className="text-xl text-gray-400">{{featuredDescription}}</p>
+  <!-- Code Showcase Section -->
+  <section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-blue-400 border-blue-400 text-lg">
+          Code Showcase
+        </div>
+        <h2 class="text-4xl font-bold text-white mb-6">Featured Code</h2>
+        <p class="text-xl text-gray-400">Examples of my technical expertise and problem-solving approach</p>
       </div>
-      
-      <div className="grid md:grid-cols-2 gap-8">
-        <div data-each="featuredWork" data-as="item">
-          <div className="group relative overflow-hidden rounded-2xl bg-gray-900 hover:transform hover:scale-105 transition-all duration-500">
-            <div className="aspect-video bg-gradient-to-br {{item.gradient}} flex items-center justify-center">
-              <span className="text-6xl opacity-80">{{item.icon}}</span>
+
+      <div class="space-y-12">
+        <div data-each="codeExamples" data-as="example">
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">{{example.title}}</h3>
+            <div data-widget="markdown" class="text-gray-400 mb-6 prose prose-invert">
+              {{example.description}}
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">{{item.title}}</h3>
-              <p className="text-gray-400 mb-4">{{item.description}}</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-purple-400">{{item.category}}</span>
-                <span className="text-sm text-gray-500">{{item.year}}</span>
+
+            <div data-widget="code"
+                 language="{{example.language}}"
+                 title="{{example.filename}}"
+                 show-line-numbers="true"
+                 class="mb-6">
+              {{example.code}}
+            </div>
+
+            <!-- Algorithm Analysis -->
+            <div data-condition="example.complexity">
+              <div data-widget="card" class="p-6 bg-blue-900/20 border border-blue-500/30">
+                <h4 class="font-semibold text-white mb-4">Algorithm Analysis:</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <span class="text-gray-300">Time Complexity: </span>
+                    <div data-widget="inline-math">{{example.complexity.time}}</div>
+                  </div>
+                  <div>
+                    <span class="text-gray-300">Space Complexity: </span>
+                    <div data-widget="inline-math">{{example.complexity.space}}</div>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div data-widget="markdown" class="text-gray-400 prose prose-invert prose-sm">
+                    {{example.complexity.explanation}}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
-              <a href="./portfolio" className="px-6 py-2 bg-white text-black rounded-full font-medium hover:bg-gray-200 transition-colors">
-                View Project
-              </a>
             </div>
           </div>
         </div>
       </div>
-      
-      <div className="text-center mt-12">
-        <a href="./portfolio" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
-          View All Work
-        </a>
+    </div>
+  </section>
+
+  <!-- Research & Publications -->
+  <section class="py-20 bg-black">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-green-400 border-green-400 text-lg">
+          Research
+        </div>
+        <h2 class="text-4xl font-bold text-white mb-6">Publications & Research</h2>
+        <p class="text-xl text-gray-400">Academic contributions and research work</p>
+      </div>
+
+      <div class="space-y-8">
+        <div data-each="publications" data-as="paper">
+          <div data-widget="card" class="p-8 bg-gray-800/50 border border-gray-700 hover:border-green-500/50 transition-colors duration-300">
+            <div class="flex flex-col lg:flex-row gap-8">
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-white mb-3">{{paper.title}}</h3>
+                <div class="text-lg text-gray-400 mb-4">{{paper.authors}}</div>
+                <div class="text-green-400 font-medium mb-4">{{paper.venue}} • {{paper.year}}</div>
+
+                <div data-widget="markdown" class="prose prose-invert mb-6">
+                  {{paper.abstract}}
+                </div>
+
+                <!-- Mathematical Contributions -->
+                <div class="bg-gray-900/50 p-6 rounded-lg mb-6">
+                  <h4 class="font-semibold text-white mb-4">Key Mathematical Contributions:</h4>
+                  <div class="space-y-4">
+                    <div data-each="paper.keyFormulas" data-as="formula">
+                      <div>
+                        <p class="text-gray-400 mb-2">{{formula.description}}:</p>
+                        <div data-widget="block-math">{{formula.equation}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex space-x-4">
+                  <div data-widget="button"
+                       variant="default"
+                       href="{{paper.pdfUrl}}"
+                       target="_blank"
+                       class="bg-green-600 hover:bg-green-700">
+                    📄 Read Paper
+                  </div>
+                  <div data-widget="button"
+                       variant="outline"
+                       href="{{paper.codeUrl}}"
+                       target="_blank"
+                       class="border-green-500 text-green-400 hover:bg-green-500/10">
+                    💻 View Code
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:w-80">
+                <div data-widget="image"
+                     src="{{paper.image}}"
+                     alt="{{paper.title}}"
+                     class="w-full h-48 object-cover rounded-lg shadow-md mb-4">
+                </div>
+
+                <!-- Citation Info -->
+                <div class="p-4 bg-gray-900/50 rounded-lg">
+                  <div class="text-sm text-gray-400 mb-2">Citations: {{paper.citations}}</div>
+                  <div class="text-xs text-gray-500">Impact Factor: {{paper.impactFactor}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Featured Work Preview -->
+  <section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-purple-400 border-purple-400 text-lg">
+          Featured Work
+        </div>
+        <h2 class="text-4xl font-bold text-white mb-6">{{featuredTitle}}</h2>
+        <div data-widget="markdown" class="text-xl text-gray-400 max-w-4xl mx-auto">
+          {{featuredDescription}}
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div data-each="featuredWork" data-as="project">
+          <div data-widget="card" class="group relative overflow-hidden bg-gray-800 hover:transform hover:scale-105 transition-all duration-500">
+            <div data-widget="image"
+                 src="{{project.image}}"
+                 alt="{{project.title}}"
+                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xl font-bold mb-2">{{project.title}}</h3>
+              <p class="text-gray-300 mb-4">{{project.description}}</p>
+              <div class="flex space-x-3">
+                <div data-widget="button"
+                     variant="default"
+                     size="sm"
+                     href="{{project.liveUrl}}"
+                     target="_blank"
+                     class="bg-white/20 backdrop-blur-sm hover:bg-white/30">
+                  Live Demo
+                </div>
+                <div data-widget="button"
+                     variant="outline"
+                     size="sm"
+                     href="{{project.githubUrl}}"
+                     target="_blank"
+                     class="border-white/30 text-white hover:bg-white/20">
+                  Code
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <div data-widget="badge" variant="secondary" class="text-xs">
+                  {{project.category}}
+                </div>
+                <span class="text-sm text-gray-500">{{project.year}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <div data-widget="button"
+             variant="default"
+             size="lg"
+             href="./portfolio"
+             class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+          View All Work
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

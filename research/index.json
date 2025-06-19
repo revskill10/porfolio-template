@@ -1,0 +1,171 @@
+[
+  { "key": "researchTitle", "value": "Research & Publications" },
+  { "key": "researchDescription", "value": "Advancing the frontiers of **artificial intelligence** through rigorous research, mathematical innovation, and collaborative discovery. My work spans theoretical foundations to practical applications." },
+  {
+    "key": "researchStats",
+    "value": [
+      { "value": "15+", "label": "Publications" },
+      { "value": "500+", "label": "Citations" },
+      { "value": "3", "label": "Best Paper Awards" },
+      { "value": "8", "label": "Collaborations" }
+    ]
+  },
+  {
+    "key": "researchAreas",
+    "value": [
+      {
+        "icon": "🧠",
+        "name": "Neural Architecture Search",
+        "description": "Developing **automated methods** for discovering optimal neural network architectures using evolutionary algorithms and differentiable search techniques.",
+        "techniques": ["Differentiable NAS", "Evolutionary Search", "Progressive Search", "One-Shot NAS"]
+      },
+      {
+        "icon": "🔗",
+        "name": "Federated Learning",
+        "description": "Creating **privacy-preserving** distributed learning systems that enable collaborative training without centralizing sensitive data.",
+        "techniques": ["Secure Aggregation", "Differential Privacy", "Adaptive Compression", "Byzantine Robustness"]
+      },
+      {
+        "icon": "⚡",
+        "name": "Distributed Systems",
+        "description": "Building **scalable infrastructure** for large-scale machine learning with fault tolerance and efficient resource utilization.",
+        "techniques": ["Consensus Algorithms", "Load Balancing", "Fault Tolerance", "Auto-scaling"]
+      },
+      {
+        "icon": "👁️",
+        "name": "Computer Vision",
+        "description": "Advancing **visual understanding** through novel architectures for object detection, segmentation, and scene understanding.",
+        "techniques": ["Object Detection", "Semantic Segmentation", "3D Vision", "Video Analysis"]
+      },
+      {
+        "icon": "💬",
+        "name": "Natural Language Processing",
+        "description": "Developing **language models** and understanding systems for multilingual and multimodal applications.",
+        "techniques": ["Transformer Models", "Multilingual NLP", "Question Answering", "Text Generation"]
+      },
+      {
+        "icon": "🔬",
+        "name": "Algorithm Theory",
+        "description": "Theoretical analysis of **computational complexity** and optimization algorithms for machine learning problems.",
+        "techniques": ["Complexity Analysis", "Approximation Algorithms", "Online Learning", "Optimization Theory"]
+      }
+    ]
+  },
+  {
+    "key": "publications",
+    "value": [
+      {
+        "title": "Efficient Neural Architecture Search with Differentiable Pruning",
+        "authors": "Alex Chen, Sarah Kim, Michael Zhang, Jennifer Liu",
+        "venue": "ICML",
+        "year": "2024",
+        "award": "Best Paper Award",
+        "abstract": "We propose a novel approach to **neural architecture search** that combines differentiable pruning with evolutionary optimization. Our method reduces search time by 10x while achieving state-of-the-art accuracy on ImageNet classification.",
+        "image": "./assets/papers/nas-paper.png",
+        "pdfUrl": "https://arxiv.org/abs/2024.12345",
+        "codeUrl": "https://github.com/alexchen/efficient-nas",
+        "datasetUrl": "https://datasets.example.com/nas-benchmark",
+        "demoUrl": "https://nas-demo.example.com",
+        "citations": 127,
+        "impactFactor": "4.8",
+        "hIndex": "12",
+        "keyContributions": [
+          {
+            "title": "Differentiable Architecture Weights",
+            "formula": "\\alpha_{t+1} = \\alpha_t - \\eta \\nabla_{\\alpha} \\mathcal{L}_{val}(w^*(\\alpha_t), \\alpha_t)",
+            "explanation": "Architecture weights are updated using validation loss gradients, enabling end-to-end optimization."
+          },
+          {
+            "title": "Adaptive Pruning Function",
+            "formula": "p(\\alpha_i) = \\sigma\\left(\\frac{\\alpha_i - \\mu}{\\tau}\\right) \\cdot \\text{mask}(\\alpha_i)",
+            "explanation": "Pruning probability adapts based on architecture weight distribution and importance scores."
+          }
+        ],
+        "results": [
+          { "value": "94.7%", "metric": "ImageNet Accuracy" },
+          { "value": "10x", "metric": "Speed Improvement" },
+          { "value": "50%", "metric": "Memory Reduction" },
+          { "value": "0.95", "metric": "Kendall's Tau" }
+        ]
+      },
+      {
+        "title": "Scalable Federated Learning with Adaptive Compression",
+        "authors": "Alex Chen, Jennifer Liu, David Park, Lisa Wang, Robert Kim",
+        "venue": "NeurIPS",
+        "year": "2023",
+        "abstract": "This paper introduces an **adaptive compression scheme** for federated learning that dynamically adjusts compression rates based on model convergence and communication constraints, achieving 5x reduction in communication overhead.",
+        "image": "./assets/papers/federated-paper.png",
+        "pdfUrl": "https://arxiv.org/abs/2023.67890",
+        "codeUrl": "https://github.com/alexchen/adaptive-federated",
+        "citations": 89,
+        "impactFactor": "5.2",
+        "keyContributions": [
+          {
+            "title": "Adaptive Compression Rate",
+            "formula": "r_t = r_{\\min} + (r_{\\max} - r_{\\min}) \\cdot e^{-\\lambda \\cdot \\text{convergence}_t}",
+            "explanation": "Compression rate adapts exponentially based on convergence metrics and communication constraints."
+          },
+          {
+            "title": "Federated Averaging with Compression",
+            "formula": "w_{t+1} = w_t - \\eta \\sum_{k=1}^{K} \\frac{n_k}{n} \\mathcal{C}(\\Delta w_k^{(t)}, r_t)",
+            "explanation": "Global model update incorporates compressed local updates with adaptive compression function."
+          }
+        ],
+        "results": [
+          { "value": "5x", "metric": "Communication Reduction" },
+          { "value": "98.2%", "metric": "Accuracy Retention" },
+          { "value": "3.2x", "metric": "Training Speedup" },
+          { "value": "40%", "metric": "Energy Savings" }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "theoreticalWork",
+    "value": [
+      {
+        "title": "Convergence Analysis of Differentiable Architecture Search",
+        "description": "We provide the first **theoretical convergence guarantees** for differentiable neural architecture search methods, establishing conditions under which the search process converges to optimal architectures.",
+        "theoremTitle": "Convergence Theorem",
+        "theorem": "\\text{Let } \\mathcal{A} = \\{\\alpha \\in \\mathbb{R}^d : \\|\\alpha\\|_1 = 1, \\alpha_i \\geq 0\\} \\text{ be the architecture simplex.} \\\\ \\text{Under Assumptions 1-3, the DARTS algorithm converges to a stationary point } \\alpha^* \\text{ such that:} \\\\ \\|\\nabla_{\\alpha} \\mathcal{L}_{val}(w^*(\\alpha^*), \\alpha^*)\\|_2 \\leq \\epsilon \\text{ with probability } 1-\\delta",
+        "proofSketch": "The proof uses stochastic approximation theory and establishes that the bilevel optimization converges under smoothness and convexity assumptions on the validation loss.",
+        "corollaries": [
+          {
+            "title": "Linear Convergence Rate",
+            "statement": "\\mathbb{E}[\\|\\alpha_t - \\alpha^*\\|^2] \\leq (1-\\mu)^t \\|\\alpha_0 - \\alpha^*\\|^2"
+          },
+          {
+            "title": "Sample Complexity",
+            "statement": "T = O\\left(\\frac{1}{\\epsilon^2} \\log\\left(\\frac{1}{\\delta}\\right)\\right)"
+          }
+        ]
+      }
+    ]
+  },
+  { "key": "collaborationDescription", "value": "I'm always interested in **collaborative research** opportunities with academic institutions, industry partners, and fellow researchers. Let's push the boundaries of AI together." },
+  {
+    "key": "collaborationTypes",
+    "value": [
+      {
+        "icon": "🎓",
+        "name": "Academic Partnerships",
+        "description": "Joint research projects with **universities** and research institutions, including student mentoring and grant applications."
+      },
+      {
+        "icon": "🏢",
+        "name": "Industry Collaboration",
+        "description": "Applied research partnerships with **technology companies** to solve real-world problems and transfer research to production."
+      },
+      {
+        "icon": "🌍",
+        "name": "Open Source Projects",
+        "description": "Contributing to and leading **open-source initiatives** that advance the field and benefit the broader research community."
+      },
+      {
+        "icon": "📝",
+        "name": "Paper Collaborations",
+        "description": "Co-authoring **research papers** and contributing to peer review processes for top-tier conferences and journals."
+      }
+    ]
+  }
+]

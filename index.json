@@ -1,72 +1,184 @@
 [
-  { "key": "initials", "value": "MJ" },
-  { "key": "name", "value": "Maya Johnson" },
-  { "key": "title", "value": "Creative Director & Designer" },
-  { "key": "tagline", "value": "Crafting visual stories that captivate, inspire, and transform brands into unforgettable experiences." },
+  { "key": "name", "value": "Dr. Alex Chen" },
+  { "key": "title", "value": "AI Research Scientist & Full-Stack Developer" },
+  { "key": "tagline", "value": "Bridging the gap between **cutting-edge AI research** and practical software solutions. Passionate about machine learning, algorithm optimization, and creating intelligent systems that solve real-world problems." },
+  { "key": "profileImage", "value": "./assets/profile.jpg" },
+  {
+    "key": "socialLinks",
+    "value": [
+      { "icon": "🐙", "url": "https://github.com/alexchen" },
+      { "icon": "💼", "url": "https://linkedin.com/in/alexchen" },
+      { "icon": "🐦", "url": "https://twitter.com/alexchen_ai" },
+      { "icon": "📧", "url": "mailto:alex@example.com" },
+      { "icon": "📚", "url": "https://scholar.google.com/citations?user=alexchen" }
+    ]
+  },
+  { "key": "aboutTitle", "value": "About Me" },
+  { "key": "aboutDescription", "value": "Combining **theoretical research** with **practical engineering** to push the boundaries of artificial intelligence and software development." },
+  { "key": "aboutContent", "value": "## My Journey\n\nI'm a passionate AI researcher and software engineer with a **Ph.D. in Computer Science** specializing in machine learning and distributed systems. My work spans from theoretical algorithm development to building production-scale AI applications.\n\n### Research Focus\n\n- **Deep Learning**: Neural architecture search, transformer models, and optimization\n- **Distributed Systems**: Scalable ML pipelines and edge computing\n- **Algorithm Design**: Complexity analysis and performance optimization\n\n### Industry Experience\n\nI've worked with leading tech companies and research institutions, developing AI solutions that serve millions of users while maintaining rigorous academic standards." },
+  {
+    "key": "skills",
+    "value": [
+      { "icon": "🧠", "name": "Machine Learning", "level": "Expert" },
+      { "icon": "⚛️", "name": "React/TypeScript", "level": "Advanced" },
+      { "icon": "🐍", "name": "Python/PyTorch", "level": "Expert" },
+      { "icon": "☁️", "name": "Cloud Architecture", "level": "Advanced" },
+      { "icon": "📊", "name": "Data Science", "level": "Expert" },
+      { "icon": "🔧", "name": "DevOps/MLOps", "level": "Advanced" }
+    ]
+  },
+  {
+    "key": "stats",
+    "value": [
+      { "value": "15+", "label": "Research Papers" },
+      { "value": "500+", "label": "Citations" },
+      { "value": "50+", "label": "Projects" },
+      { "value": "5", "label": "Years Experience" }
+    ]
+  },
   { "key": "servicesTitle", "value": "What I Do" },
-  { "key": "servicesDescription", "value": "Bringing creativity and strategy together to deliver exceptional results" },
+  { "key": "servicesDescription", "value": "Combining **research excellence** with **engineering expertise** to deliver innovative AI solutions and robust software systems." },
   {
     "key": "services",
     "value": [
       {
-        "title": "Brand Identity",
-        "description": "Creating cohesive visual identities that tell your brand's unique story and connect with your audience.",
-        "icon": "🎨",
-        "gradient": "from-pink-500 to-rose-500",
-        "tools": ["Illustrator", "Photoshop", "Figma", "InDesign"]
+        "title": "AI Research & Development",
+        "description": "Developing **novel algorithms** and **deep learning models** for computer vision, NLP, and reinforcement learning applications.",
+        "icon": "🧠",
+        "tools": ["PyTorch", "TensorFlow", "JAX", "Weights & Biases", "Jupyter"]
       },
       {
-        "title": "Digital Design",
-        "description": "Designing beautiful, user-centered digital experiences that engage and convert.",
+        "title": "Full-Stack Development",
+        "description": "Building **scalable web applications** and **APIs** using modern frameworks and cloud-native architectures.",
         "icon": "💻",
-        "gradient": "from-purple-500 to-indigo-500",
-        "tools": ["Figma", "Sketch", "Principle", "After Effects"]
+        "tools": ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "Docker"]
       },
       {
-        "title": "Art Direction",
-        "description": "Leading creative vision and ensuring consistent, impactful visual communication across all touchpoints.",
-        "icon": "🎬",
-        "gradient": "from-blue-500 to-cyan-500",
-        "tools": ["Creative Suite", "Cinema 4D", "Blender", "Lightroom"]
+        "title": "MLOps & Infrastructure",
+        "description": "Designing and implementing **ML pipelines**, **model deployment**, and **monitoring systems** for production environments.",
+        "icon": "☁️",
+        "tools": ["Kubernetes", "AWS", "MLflow", "Airflow", "Terraform", "Prometheus"]
       }
     ]
   },
-  { "key": "featuredTitle", "value": "Featured Work" },
-  { "key": "featuredDescription", "value": "A glimpse into some of my recent creative projects" },
+  {
+    "key": "codeExamples",
+    "value": [
+      {
+        "title": "Transformer Attention Mechanism",
+        "description": "Implementation of **multi-head attention** with optimized memory usage and computational efficiency.",
+        "language": "python",
+        "filename": "attention.py",
+        "code": "import torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nfrom typing import Optional\n\nclass MultiHeadAttention(nn.Module):\n    def __init__(self, d_model: int, num_heads: int, dropout: float = 0.1):\n        super().__init__()\n        assert d_model % num_heads == 0\n        \n        self.d_model = d_model\n        self.num_heads = num_heads\n        self.d_k = d_model // num_heads\n        \n        self.w_q = nn.Linear(d_model, d_model, bias=False)\n        self.w_k = nn.Linear(d_model, d_model, bias=False)\n        self.w_v = nn.Linear(d_model, d_model, bias=False)\n        self.w_o = nn.Linear(d_model, d_model)\n        \n        self.dropout = nn.Dropout(dropout)\n        self.scale = self.d_k ** -0.5\n    \n    def forward(self, query: torch.Tensor, key: torch.Tensor, value: torch.Tensor,\n                mask: Optional[torch.Tensor] = None) -> torch.Tensor:\n        batch_size, seq_len = query.size(0), query.size(1)\n        \n        # Linear transformations and reshape\n        Q = self.w_q(query).view(batch_size, seq_len, self.num_heads, self.d_k).transpose(1, 2)\n        K = self.w_k(key).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)\n        V = self.w_v(value).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)\n        \n        # Scaled dot-product attention\n        scores = torch.matmul(Q, K.transpose(-2, -1)) * self.scale\n        \n        if mask is not None:\n            scores = scores.masked_fill(mask == 0, -1e9)\n        \n        attention_weights = F.softmax(scores, dim=-1)\n        attention_weights = self.dropout(attention_weights)\n        \n        # Apply attention to values\n        context = torch.matmul(attention_weights, V)\n        \n        # Concatenate heads and put through final linear layer\n        context = context.transpose(1, 2).contiguous().view(\n            batch_size, seq_len, self.d_model\n        )\n        \n        return self.w_o(context)",
+        "complexity": {
+          "time": "O(n^2 \\cdot d)",
+          "space": "O(n^2 + n \\cdot d)",
+          "explanation": "Where **n** is the sequence length and **d** is the model dimension. The quadratic complexity comes from computing attention scores between all pairs of positions."
+        }
+      },
+      {
+        "title": "Distributed Training Coordinator",
+        "description": "A **fault-tolerant distributed training system** that handles node failures and dynamic scaling.",
+        "language": "python",
+        "filename": "distributed_trainer.py",
+        "code": "import torch\nimport torch.distributed as dist\nfrom torch.nn.parallel import DistributedDataParallel as DDP\nfrom typing import Dict, Any, Optional\nimport logging\nimport time\n\nclass DistributedTrainer:\n    def __init__(self, model: torch.nn.Module, config: Dict[str, Any]):\n        self.config = config\n        self.rank = dist.get_rank()\n        self.world_size = dist.get_world_size()\n        self.device = torch.device(f'cuda:{self.rank}')\n        \n        # Move model to device and wrap with DDP\n        self.model = model.to(self.device)\n        self.model = DDP(self.model, device_ids=[self.rank])\n        \n        self.optimizer = torch.optim.AdamW(\n            self.model.parameters(),\n            lr=config['learning_rate'] * self.world_size,  # Linear scaling\n            weight_decay=config['weight_decay']\n        )\n        \n        self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(\n            self.optimizer, T_max=config['max_epochs']\n        )\n        \n        self.logger = self._setup_logger()\n    \n    def train_epoch(self, dataloader, epoch: int) -> Dict[str, float]:\n        self.model.train()\n        total_loss = 0.0\n        num_batches = 0\n        \n        for batch_idx, (data, targets) in enumerate(dataloader):\n            data, targets = data.to(self.device), targets.to(self.device)\n            \n            self.optimizer.zero_grad()\n            \n            # Forward pass\n            outputs = self.model(data)\n            loss = F.cross_entropy(outputs, targets)\n            \n            # Backward pass\n            loss.backward()\n            \n            # Gradient clipping for stability\n            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)\n            \n            self.optimizer.step()\n            \n            total_loss += loss.item()\n            num_batches += 1\n            \n            if batch_idx % self.config['log_interval'] == 0 and self.rank == 0:\n                self.logger.info(\n                    f'Epoch {epoch}, Batch {batch_idx}, Loss: {loss.item():.4f}'\n                )\n        \n        # All-reduce to get global average loss\n        avg_loss = total_loss / num_batches\n        loss_tensor = torch.tensor(avg_loss, device=self.device)\n        dist.all_reduce(loss_tensor, op=dist.ReduceOp.SUM)\n        global_avg_loss = loss_tensor.item() / self.world_size\n        \n        return {'loss': global_avg_loss}\n    \n    def _setup_logger(self) -> logging.Logger:\n        logger = logging.getLogger(f'trainer_rank_{self.rank}')\n        if self.rank == 0:  # Only rank 0 logs to avoid duplication\n            handler = logging.StreamHandler()\n            formatter = logging.Formatter(\n                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'\n            )\n            handler.setFormatter(formatter)\n            logger.addHandler(handler)\n            logger.setLevel(logging.INFO)\n        return logger",
+        "complexity": {
+          "time": "O(\\frac{n}{p} \\cdot m)",
+          "space": "O(\\frac{n}{p} + m)",
+          "explanation": "Where **n** is the dataset size, **p** is the number of processes, and **m** is the model size. The linear scaling with processes provides near-optimal speedup."
+        }
+      }
+    ]
+  },
+  {
+    "key": "publications",
+    "value": [
+      {
+        "title": "Efficient Neural Architecture Search with Differentiable Pruning",
+        "authors": "Alex Chen, Sarah Kim, Michael Zhang",
+        "venue": "International Conference on Machine Learning (ICML)",
+        "year": "2024",
+        "abstract": "We propose a novel approach to **neural architecture search** that combines differentiable pruning with evolutionary optimization. Our method reduces search time by 10x while achieving state-of-the-art accuracy on ImageNet classification.",
+        "image": "./assets/papers/nas-paper.png",
+        "pdfUrl": "https://arxiv.org/abs/2024.12345",
+        "codeUrl": "https://github.com/alexchen/efficient-nas",
+        "citations": 127,
+        "impactFactor": "4.8",
+        "keyFormulas": [
+          {
+            "description": "Architecture weight update rule",
+            "equation": "\\alpha_{t+1} = \\alpha_t - \\eta \\nabla_{\\alpha} \\mathcal{L}_{val}(w^*(\\alpha_t), \\alpha_t)"
+          },
+          {
+            "description": "Pruning probability function",
+            "equation": "p(\\alpha_i) = \\sigma\\left(\\frac{\\alpha_i - \\mu}{\\tau}\\right)"
+          }
+        ]
+      },
+      {
+        "title": "Scalable Federated Learning with Adaptive Compression",
+        "authors": "Alex Chen, Jennifer Liu, David Park, Lisa Wang",
+        "venue": "Neural Information Processing Systems (NeurIPS)",
+        "year": "2023",
+        "abstract": "This paper introduces an **adaptive compression scheme** for federated learning that dynamically adjusts compression rates based on model convergence and communication constraints, achieving 5x reduction in communication overhead.",
+        "image": "./assets/papers/federated-paper.png",
+        "pdfUrl": "https://arxiv.org/abs/2023.67890",
+        "codeUrl": "https://github.com/alexchen/adaptive-federated",
+        "citations": 89,
+        "impactFactor": "5.2",
+        "keyFormulas": [
+          {
+            "description": "Adaptive compression rate",
+            "equation": "r_t = r_{min} + (r_{max} - r_{min}) \\cdot e^{-\\lambda \\cdot \\text{convergence}_t}"
+          },
+          {
+            "description": "Global model update",
+            "equation": "w_{t+1} = w_t - \\eta \\sum_{k=1}^{K} \\frac{n_k}{n} \\Delta w_k^{(t)}"
+          }
+        ]
+      }
+    ]
+  },
+  { "key": "featuredTitle", "value": "Featured Projects" },
+  { "key": "featuredDescription", "value": "A showcase of my recent **AI research projects** and **software applications** that demonstrate the intersection of theory and practice." },
   {
     "key": "featuredWork",
     "value": [
       {
-        "title": "Zenith Coffee Rebrand",
-        "description": "Complete brand identity redesign for a premium coffee roastery, including logo, packaging, and digital presence.",
-        "category": "Brand Identity",
+        "title": "Neural Architecture Search Platform",
+        "description": "End-to-end platform for automated neural architecture discovery with distributed training capabilities.",
+        "category": "AI Research",
         "year": "2024",
-        "icon": "☕",
-        "gradient": "from-amber-600 to-orange-600"
+        "image": "./assets/projects/nas-platform.png",
+        "liveUrl": "https://nas-platform.example.com",
+        "githubUrl": "https://github.com/alexchen/nas-platform"
       },
       {
-        "title": "EcoFlow Mobile App",
-        "description": "UI/UX design for a sustainability tracking app that helps users reduce their environmental footprint.",
-        "category": "Digital Design",
+        "title": "Real-time ML Inference API",
+        "description": "High-performance API serving machine learning models with sub-100ms latency and auto-scaling.",
+        "category": "MLOps",
         "year": "2024",
-        "icon": "🌱",
-        "gradient": "from-green-500 to-emerald-600"
+        "image": "./assets/projects/ml-api.png",
+        "liveUrl": "https://ml-api.example.com",
+        "githubUrl": "https://github.com/alexchen/ml-inference-api"
       },
       {
-        "title": "Lumina Fashion Campaign",
-        "description": "Art direction and visual design for a luxury fashion brand's seasonal campaign and lookbook.",
-        "category": "Art Direction",
+        "title": "Federated Learning Framework",
+        "description": "Privacy-preserving distributed learning system with adaptive compression and fault tolerance.",
+        "category": "Distributed Systems",
         "year": "2023",
-        "icon": "✨",
-        "gradient": "from-purple-600 to-pink-600"
+        "image": "./assets/projects/federated-learning.png",
+        "liveUrl": "https://federated-demo.example.com",
+        "githubUrl": "https://github.com/alexchen/federated-framework"
       },
       {
-        "title": "TechFlow Website",
-        "description": "Complete website redesign for a B2B SaaS platform, focusing on conversion optimization and user experience.",
-        "category": "Digital Design",
+        "title": "Computer Vision Pipeline",
+        "description": "Production-ready computer vision system for real-time object detection and tracking.",
+        "category": "Computer Vision",
         "year": "2023",
-        "icon": "🚀",
-        "gradient": "from-blue-600 to-indigo-700"
+        "image": "./assets/projects/cv-pipeline.png",
+        "liveUrl": "https://cv-demo.example.com",
+        "githubUrl": "https://github.com/alexchen/cv-pipeline"
       }
     ]
   }

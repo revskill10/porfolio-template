@@ -1,62 +1,68 @@
 [
-  { "key": "pageTitle", "value": "Let's Create" },
-  { "key": "pageDescription", "value": "Ready to bring your vision to life? I'm passionate about collaborating with forward-thinking brands and individuals who value exceptional design. Let's discuss how we can create something extraordinary together." },
-  { "key": "contactTitle", "value": "Get in Touch" },
-  { "key": "email", "value": "maya.johnson@example.com" },
-  { "key": "phone", "value": "+1 (555) 234-5678" },
-  { "key": "location", "value": "Los Angeles, CA" },
-  { "key": "responseTime", "value": "Within 24 hours" },
-  { "key": "socialTitle", "value": "Follow My Work" },
+  { "key": "pageTitle", "value": "Let's Collaborate" },
+  { "key": "pageDescription", "value": "Ready to push the boundaries of **AI research** or build innovative software solutions? I'd love to hear about your project and explore how we can create something extraordinary together." },
   {
-    "key": "socialLinks",
+    "key": "contactMethods",
     "value": [
       {
-        "platform": "Dribbble",
-        "handle": "@mayajohnson",
-        "url": "https://dribbble.com/mayajohnson",
-        "icon": "DR",
-        "gradient": "from-pink-500 to-rose-500"
+        "icon": "📧",
+        "name": "Email",
+        "description": "For detailed project discussions and **formal collaborations**. I respond within 24 hours.",
+        "label": "Send Email",
+        "url": "mailto:alex.chen@example.com"
       },
       {
-        "platform": "Behance",
-        "handle": "Maya Johnson",
-        "url": "https://behance.net/mayajohnson",
-        "icon": "BE",
-        "gradient": "from-blue-600 to-indigo-600"
+        "icon": "💼",
+        "name": "LinkedIn",
+        "description": "Connect for **professional networking** and industry discussions.",
+        "label": "Connect",
+        "url": "https://linkedin.com/in/alexchen"
       },
       {
-        "platform": "Instagram",
-        "handle": "@maya.creates",
-        "url": "https://instagram.com/maya.creates",
-        "icon": "IG",
-        "gradient": "from-purple-500 to-pink-500"
+        "icon": "🐙",
+        "name": "GitHub",
+        "description": "Explore my **open-source projects** and contribute to research code.",
+        "label": "View Code",
+        "url": "https://github.com/alexchen"
       },
       {
-        "platform": "LinkedIn",
-        "handle": "Maya Johnson",
-        "url": "https://linkedin.com/in/mayajohnson",
-        "icon": "LI",
-        "gradient": "from-blue-600 to-blue-800"
-      },
-      {
-        "platform": "Twitter",
-        "handle": "@maya_designs",
-        "url": "https://twitter.com/maya_designs",
-        "icon": "TW",
-        "gradient": "from-sky-500 to-blue-600"
-      },
-      {
-        "platform": "Pinterest",
-        "handle": "Maya Johnson",
-        "url": "https://pinterest.com/mayajohnson",
-        "icon": "PI",
-        "gradient": "from-red-500 to-red-700"
+        "icon": "📚",
+        "name": "Google Scholar",
+        "description": "Browse my **research publications** and academic contributions.",
+        "label": "View Papers",
+        "url": "https://scholar.google.com/citations?user=alexchen"
       }
     ]
   },
-  { "key": "formTitle", "value": "Start Your Project" },
-  { "key": "formButton", "value": "Send Project Brief" },
-  { "key": "ctaTitle", "value": "Ready to Make an Impact?" },
-  { "key": "ctaDescription", "value": "Every great project starts with a conversation. Let's discuss your vision and explore how we can create something that truly stands out in the market." },
-  { "key": "portfolioUrl", "value": "../portfolio" }
+  { "key": "formTitle", "value": "Send a Message" },
+  { "key": "formButton", "value": "Send Message" },
+  { "key": "email", "value": "alex.chen@example.com" },
+  { "key": "calendarUrl", "value": "https://calendly.com/alexchen/consultation" },
+  {
+    "key": "faqs",
+    "value": [
+      {
+        "question": "What types of projects do you work on?",
+        "answer": "I specialize in **AI research collaborations**, **machine learning consulting**, **software development**, and **academic partnerships**. I'm particularly interested in projects involving neural architecture search, federated learning, and distributed systems."
+      },
+      {
+        "question": "Do you work with startups or only established companies?",
+        "answer": "I work with organizations of all sizes! From **early-stage startups** looking to integrate AI into their products to **Fortune 500 companies** scaling their ML infrastructure. I also collaborate with **academic institutions** on research projects."
+      },
+      {
+        "question": "What's your typical project timeline?",
+        "answer": "Project timelines vary based on scope and complexity. **Research collaborations** typically run 3-12 months, **consulting engagements** are usually 1-6 months, and **software development** projects range from 2-8 months. I always provide detailed timelines during our initial consultation."
+      },
+      {
+        "question": "Do you offer ongoing support after project completion?",
+        "answer": "Yes! I provide **maintenance and support** for software projects, **mentoring** for research initiatives, and **consulting retainers** for ongoing AI strategy. I believe in building long-term partnerships with my collaborators."
+      },
+      {
+        "question": "Can you help with academic paper writing and publication?",
+        "answer": "Absolutely! I have extensive experience in **academic writing**, **peer review**, and **conference presentations**. I can help with paper structure, mathematical formulations, experimental design, and submission to top-tier venues like ICML, NeurIPS, and ICLR."
+      }
+    ]
+  },
+  { "key": "ctaTitle", "value": "Ready to Innovate Together?" },
+  { "key": "ctaDescription", "value": "Every breakthrough starts with a conversation. Let's discuss your **research goals** or **technical challenges** and explore how we can push the boundaries of what's possible." }
 ]

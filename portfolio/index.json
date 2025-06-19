@@ -1,47 +1,61 @@
 [
-  { "key": "pageTitle", "value": "My Portfolio" },
-  { "key": "pageDescription", "value": "A curated collection of my creative work spanning brand identity, digital design, and art direction. Each project tells a unique story and showcases different aspects of my creative process." },
+  { "key": "pageTitle", "value": "Research Portfolio" },
+  { "key": "pageDescription", "value": "A comprehensive showcase of my **AI research projects**, **software applications**, and **academic contributions**. Each project demonstrates the intersection of theoretical computer science and practical engineering solutions." },
   {
     "key": "categories",
-    "value": ["All", "Brand Identity", "Digital Design", "Art Direction", "Print Design", "Packaging"]
+    "value": [
+      { "name": "All Projects", "slug": "all" },
+      { "name": "AI Research", "slug": "ai-research" },
+      { "name": "Machine Learning", "slug": "ml" },
+      { "name": "Distributed Systems", "slug": "distributed" },
+      { "name": "Computer Vision", "slug": "cv" },
+      { "name": "NLP", "slug": "nlp" },
+      { "name": "Web Applications", "slug": "web" }
+    ]
   },
   {
     "key": "projects",
     "value": [
       {
-        "title": "Zenith Coffee Rebrand",
-        "shortDescription": "Premium coffee brand identity",
-        "description": "Complete brand identity redesign for a premium coffee roastery, including logo design, packaging system, and digital brand guidelines. The project focused on creating a sophisticated yet approachable brand that reflects the artisanal quality of their coffee.",
-        "category": "Brand Identity",
+        "title": "Neural Architecture Search Platform",
+        "description": "End-to-end platform for **automated neural architecture discovery** with distributed training capabilities. Implements novel differentiable pruning techniques and evolutionary optimization.",
+        "category": "ai-research",
         "year": "2024",
-        "icon": "☕",
-        "gradient": "from-amber-600 to-orange-600",
-        "tags": ["Logo Design", "Packaging", "Brand Guidelines", "Typography"],
-        "liveUrl": "https://zenithcoffee.example.com",
-        "caseStudyUrl": "#"
+        "image": "./assets/projects/nas-platform.png",
+        "technologies": ["PyTorch", "React", "TypeScript", "Docker", "Kubernetes"],
+        "stars": 342,
+        "forks": 67,
+        "views": "12.5k",
+        "liveUrl": "https://nas-platform.example.com",
+        "githubUrl": "https://github.com/alexchen/nas-platform",
+        "paperUrl": "https://arxiv.org/abs/2024.12345"
       },
       {
-        "title": "EcoFlow Mobile App",
-        "shortDescription": "Sustainability tracking app",
-        "description": "UI/UX design for a mobile application that helps users track and reduce their environmental footprint. The design emphasizes clarity, motivation, and actionable insights through beautiful data visualization.",
-        "category": "Digital Design",
+        "title": "Real-time ML Inference API",
+        "description": "High-performance **REST API** for serving machine learning models with **sub-100ms latency** and auto-scaling capabilities. Handles 10k+ requests per second.",
+        "category": "ml",
         "year": "2024",
-        "icon": "🌱",
-        "gradient": "from-green-500 to-emerald-600",
-        "tags": ["Mobile App", "UI/UX", "Data Viz", "Sustainability"],
-        "liveUrl": "https://ecoflow.example.com",
-        "caseStudyUrl": "#"
+        "image": "./assets/projects/ml-api.png",
+        "technologies": ["FastAPI", "PyTorch", "Redis", "Docker", "AWS"],
+        "stars": 189,
+        "forks": 34,
+        "views": "8.2k",
+        "liveUrl": "https://ml-api.example.com",
+        "githubUrl": "https://github.com/alexchen/ml-inference-api"
       },
       {
-        "title": "Lumina Fashion Campaign",
-        "shortDescription": "Luxury fashion art direction",
-        "description": "Art direction and visual design for Lumina's seasonal campaign. Created a cohesive visual language that captures the brand's elegance while appealing to a younger demographic.",
-        "category": "Art Direction",
+        "title": "Federated Learning Framework",
+        "description": "**Privacy-preserving distributed learning** system with adaptive compression and fault tolerance. Reduces communication overhead by 5x while maintaining model accuracy.",
+        "category": "distributed",
         "year": "2023",
-        "icon": "✨",
-        "gradient": "from-purple-600 to-pink-600",
-        "tags": ["Fashion", "Photography", "Campaign", "Luxury"],
-        "caseStudyUrl": "#"
+        "image": "./assets/projects/federated-learning.png",
+        "technologies": ["Python", "gRPC", "TensorFlow", "Kubernetes", "Prometheus"],
+        "stars": 267,
+        "forks": 45,
+        "views": "15.1k",
+        "liveUrl": "https://federated-demo.example.com",
+        "githubUrl": "https://github.com/alexchen/federated-framework",
+        "paperUrl": "https://arxiv.org/abs/2023.67890"
       },
       {
         "title": "TechFlow Website",
@@ -113,7 +127,79 @@
       }
     ]
   },
-  { "key": "ctaTitle", "value": "Ready to Create Something Amazing?" },
-  { "key": "ctaDescription", "value": "Let's collaborate on your next project and bring your vision to life with creative excellence." },
-  { "key": "email", "value": "maya.johnson@example.com" }
+  {
+    "key": "algorithms",
+    "value": [
+      {
+        "name": "Adaptive Neural Architecture Search",
+        "description": "A novel approach to **neural architecture search** that dynamically adjusts search strategies based on performance feedback and resource constraints.",
+        "timeComplexity": "O(n \\log n \\cdot d)",
+        "spaceComplexity": "O(n \\cdot d)",
+        "recurrence": "T(n) = \\begin{cases} O(1) & \\text{if } n \\leq 1 \\\\ 2T(n/2) + O(n \\cdot d) & \\text{if } n > 1 \\end{cases}",
+        "language": "python",
+        "filename": "adaptive_nas.py",
+        "code": "class AdaptiveNAS:\n    def __init__(self, search_space, performance_threshold=0.95):\n        self.search_space = search_space\n        self.performance_threshold = performance_threshold\n        self.population = self._initialize_population()\n        self.generation = 0\n    \n    def search(self, max_generations=100):\n        \"\"\"Main search loop with adaptive strategy selection\"\"\"\n        for gen in range(max_generations):\n            # Evaluate current population\n            fitness_scores = self._evaluate_population()\n            \n            # Adaptive strategy selection based on convergence\n            if self._is_converging(fitness_scores):\n                strategy = 'exploitation'  # Focus on local search\n            else:\n                strategy = 'exploration'   # Diversify search\n            \n            # Generate next generation\n            self.population = self._evolve_population(\n                strategy, fitness_scores\n            )\n            \n            # Early stopping if threshold reached\n            best_fitness = max(fitness_scores)\n            if best_fitness >= self.performance_threshold:\n                break\n                \n            self.generation += 1\n        \n        return self._get_best_architecture()\n    \n    def _evolve_population(self, strategy, fitness_scores):\n        \"\"\"Evolve population using adaptive strategy\"\"\"\n        if strategy == 'exploitation':\n            # Local search around best candidates\n            return self._local_search(fitness_scores)\n        else:\n            # Global exploration with mutation\n            return self._global_exploration(fitness_scores)",
+        "performance": {
+          "speed": "2.3s",
+          "accuracy": "94.7%"
+        },
+        "implementationUrl": "https://github.com/alexchen/adaptive-nas",
+        "visualizationUrl": "https://nas-viz.example.com"
+      }
+    ]
+  },
+  {
+    "key": "publications",
+    "value": [
+      {
+        "title": "Efficient Neural Architecture Search with Differentiable Pruning",
+        "authors": "Alex Chen, Sarah Kim, Michael Zhang",
+        "venue": "International Conference on Machine Learning (ICML)",
+        "year": "2024",
+        "abstract": "We propose a novel approach to **neural architecture search** that combines differentiable pruning with evolutionary optimization. Our method reduces search time by 10x while achieving state-of-the-art accuracy on ImageNet classification.",
+        "image": "./assets/papers/nas-paper.png",
+        "pdfUrl": "https://arxiv.org/abs/2024.12345",
+        "codeUrl": "https://github.com/alexchen/efficient-nas",
+        "datasetUrl": "https://datasets.example.com/nas-benchmark",
+        "citations": 127,
+        "impactFactor": "4.8",
+        "award": "Best Paper Award",
+        "contributions": [
+          {
+            "description": "Architecture weight update rule",
+            "formula": "\\alpha_{t+1} = \\alpha_t - \\eta \\nabla_{\\alpha} \\mathcal{L}_{val}(w^*(\\alpha_t), \\alpha_t)"
+          },
+          {
+            "description": "Pruning probability function",
+            "formula": "p(\\alpha_i) = \\sigma\\left(\\frac{\\alpha_i - \\mu}{\\tau}\\right)"
+          }
+        ]
+      },
+      {
+        "title": "Scalable Federated Learning with Adaptive Compression",
+        "authors": "Alex Chen, Jennifer Liu, David Park, Lisa Wang",
+        "venue": "Neural Information Processing Systems (NeurIPS)",
+        "year": "2023",
+        "abstract": "This paper introduces an **adaptive compression scheme** for federated learning that dynamically adjusts compression rates based on model convergence and communication constraints, achieving 5x reduction in communication overhead.",
+        "image": "./assets/papers/federated-paper.png",
+        "pdfUrl": "https://arxiv.org/abs/2023.67890",
+        "codeUrl": "https://github.com/alexchen/adaptive-federated",
+        "citations": 89,
+        "impactFactor": "5.2",
+        "contributions": [
+          {
+            "description": "Adaptive compression rate",
+            "formula": "r_t = r_{min} + (r_{max} - r_{min}) \\cdot e^{-\\lambda \\cdot \\text{convergence}_t}"
+          },
+          {
+            "description": "Global model update",
+            "formula": "w_{t+1} = w_t - \\eta \\sum_{k=1}^{K} \\frac{n_k}{n} \\Delta w_k^{(t)}"
+          }
+        ]
+      }
+    ]
+  },
+  { "key": "ctaTitle", "value": "Ready to Collaborate?" },
+  { "key": "ctaDescription", "value": "Let's work together on **cutting-edge AI research** or build innovative software solutions that push the boundaries of what's possible." },
+  { "key": "email", "value": "alex.chen@example.com" }
 ]
