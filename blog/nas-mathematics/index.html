@@ -1,0 +1,299 @@
+<div>
+  <!-- Include Header -->
+  <include src="../../components/header/index.html"></include>
+
+  <!-- Article Header -->
+  <article class="py-16 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Article Meta -->
+      <div class="mb-8">
+        <div class="flex items-center space-x-4 mb-4">
+          <div data-widget="badge" variant="outline">
+            {{category}}
+          </div>
+          <span class="text-sm text-muted-foreground">{{publishDate}}</span>
+          <span class="text-sm text-muted-foreground">{{readTime}} min read</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+          {{title}}
+        </h1>
+        
+        <div data-widget="markdown" class="text-xl text-muted-foreground leading-relaxed">
+          {{subtitle}}
+        </div>
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-lg max-w-none">
+        <!-- Introduction -->
+        <div data-widget="markdown" class="mb-8">
+          {{introduction}}
+        </div>
+
+        <!-- Mathematical Foundation Section -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">Mathematical Foundation</h2>
+          
+          <div data-widget="markdown" class="mb-6">
+            {{mathFoundationText}}
+          </div>
+
+          <!-- Core Optimization Problem -->
+          <div data-widget="card" class="p-6 bg-muted/50 mb-6">
+            <h3 class="text-xl font-semibold text-foreground mb-4">Core Optimization Problem</h3>
+            <p class="text-muted-foreground mb-4">
+              The fundamental challenge in neural architecture search is solving the following bilevel optimization problem:
+            </p>
+            <div data-widget="block-math">
+              \min_{\alpha} \mathcal{L}_{val}(w^*(\alpha), \alpha) \text{ subject to } w^*(\alpha) = \arg\min_w \mathcal{L}_{train}(w, \alpha)
+            </div>
+            <p class="text-muted-foreground mt-4 text-sm">
+              Where <div data-widget="inline-math">\alpha</div> represents architecture parameters and <div data-widget="inline-math">w</div> represents network weights.
+            </p>
+          </div>
+
+          <!-- Gradient Computation -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-foreground mb-4">Gradient Computation</h3>
+            
+            <div data-widget="markdown" class="mb-4">
+              {{gradientComputationText}}
+            </div>
+
+            <div data-widget="block-math" class="mb-4">
+              \nabla_{\alpha} \mathcal{L}_{val}(w^*(\alpha), \alpha) = \nabla_{\alpha} \mathcal{L}_{val}(w^*(\alpha), \alpha) + \nabla_{w} \mathcal{L}_{val}(w^*(\alpha), \alpha) \cdot \nabla_{\alpha} w^*(\alpha)
+            </div>
+
+            <p class="text-muted-foreground text-sm">
+              The challenge lies in computing <div data-widget="inline-math">\nabla_{\alpha} w^*(\alpha)</div> efficiently.
+            </p>
+          </div>
+        </section>
+
+        <!-- Implementation Section -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">Implementation Details</h2>
+          
+          <div data-widget="markdown" class="mb-6">
+            {{implementationText}}
+          </div>
+
+          <!-- Code Example -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-foreground mb-4">DARTS Implementation</h3>
+            
+            <div data-widget="code"
+                 language="python"
+                 title="darts_optimizer.py"
+                 show-line-numbers="true"
+                 class="mb-4">{{dartsCode}}</div>
+
+            <div data-widget="markdown" class="text-sm text-muted-foreground">
+              {{codeExplanation}}
+            </div>
+          </div>
+
+          <!-- Algorithm Complexity -->
+          <div data-widget="card" class="p-6 bg-accent/10 mb-8">
+            <h3 class="text-xl font-semibold text-foreground mb-4">Computational Complexity</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-medium text-foreground mb-2">Time Complexity:</h4>
+                <div data-widget="inline-math">O(|E| \cdot C \cdot T)</div>
+                <p class="text-sm text-muted-foreground mt-1">
+                  Where |E| is the number of edges, C is the number of operations, and T is training time.
+                </p>
+              </div>
+              
+              <div>
+                <h4 class="font-medium text-foreground mb-2">Space Complexity:</h4>
+                <div data-widget="inline-math">O(|E| \cdot C + |V|)</div>
+                <p class="text-sm text-muted-foreground mt-1">
+                  Where |V| is the number of vertices in the search space graph.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Convergence Analysis -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">Convergence Analysis</h2>
+          
+          <div data-widget="markdown" class="mb-6">
+            {{convergenceText}}
+          </div>
+
+          <!-- Theorem -->
+          <div data-widget="card" class="p-6 border-l-4 border-primary bg-primary/5 mb-6">
+            <h3 class="text-xl font-semibold text-foreground mb-4">Convergence Theorem</h3>
+            
+            <div class="mb-4">
+              <strong class="text-foreground">Theorem 1:</strong> Under assumptions of Lipschitz continuity and bounded gradients, the DARTS algorithm converges to a stationary point with the following rate:
+            </div>
+            
+            <div data-widget="block-math" class="mb-4">
+              \mathbb{E}[\|\nabla_{\alpha} \mathcal{L}_{val}(\alpha_T)\|^2] \leq \frac{2(\mathcal{L}_{val}(\alpha_0) - \mathcal{L}_{val}^*)}{\eta T} + \frac{\eta L \sigma^2}{B}
+            </div>
+            
+            <div class="text-sm text-muted-foreground">
+              Where <div data-widget="inline-math">L</div> is the Lipschitz constant, <div data-widget="inline-math">\sigma^2</div> is the variance bound, and <div data-widget="inline-math">B</div> is the batch size.
+            </div>
+          </div>
+
+          <!-- Proof Sketch -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-foreground mb-4">Proof Sketch</h3>
+            
+            <div data-widget="markdown" class="mb-4">
+              {{proofSketchText}}
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <strong class="text-foreground">Step 1:</strong> Establish Lipschitz continuity of the validation loss:
+                <div data-widget="block-math" class="mt-2">
+                  \|\nabla_{\alpha} \mathcal{L}_{val}(\alpha_1) - \nabla_{\alpha} \mathcal{L}_{val}(\alpha_2)\| \leq L \|\alpha_1 - \alpha_2\|
+                </div>
+              </div>
+              
+              <div>
+                <strong class="text-foreground">Step 2:</strong> Apply the standard SGD convergence analysis with the established Lipschitz bound.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experimental Results -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">Experimental Validation</h2>
+          
+          <div data-widget="markdown" class="mb-6">
+            {{experimentalText}}
+          </div>
+
+          <!-- Results Table -->
+          <div data-widget="card" class="p-6 mb-6">
+            <h3 class="text-xl font-semibold text-foreground mb-4">Performance Comparison</h3>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-border">
+                    <th class="text-left py-2 font-medium text-foreground">Method</th>
+                    <th class="text-right py-2 font-medium text-foreground">Accuracy (%)</th>
+                    <th class="text-right py-2 font-medium text-foreground">Search Time (GPU days)</th>
+                    <th class="text-right py-2 font-medium text-foreground">Parameters (M)</th>
+                  </tr>
+                </thead>
+                <tbody class="text-muted-foreground">
+                  <tr class="border-b border-border">
+                    <td class="py-2">DARTS</td>
+                    <td class="text-right py-2">97.24</td>
+                    <td class="text-right py-2">0.4</td>
+                    <td class="text-right py-2">3.3</td>
+                  </tr>
+                  <tr class="border-b border-border">
+                    <td class="py-2">ENAS</td>
+                    <td class="text-right py-2">97.11</td>
+                    <td class="text-right py-2">0.5</td>
+                    <td class="text-right py-2">4.6</td>
+                  </tr>
+                  <tr class="border-b border-border">
+                    <td class="py-2">NASNet</td>
+                    <td class="text-right py-2">97.35</td>
+                    <td class="text-right py-2">2000</td>
+                    <td class="text-right py-2">3.3</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 font-medium text-foreground">Our Method</td>
+                    <td class="text-right py-2 font-medium text-foreground">97.42</td>
+                    <td class="text-right py-2 font-medium text-foreground">0.3</td>
+                    <td class="text-right py-2 font-medium text-foreground">3.1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">Conclusion</h2>
+          
+          <div data-widget="markdown" class="mb-6">
+            {{conclusionText}}
+          </div>
+
+          <!-- Key Takeaways -->
+          <div data-widget="card" class="p-6 bg-secondary/10">
+            <h3 class="text-xl font-semibold text-foreground mb-4">Key Takeaways</h3>
+            
+            <ul class="space-y-2 text-muted-foreground">
+              <li class="flex items-start space-x-2">
+                <span class="text-primary mt-1">•</span>
+                <span>Differentiable architecture search enables gradient-based optimization of neural architectures</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary mt-1">•</span>
+                <span>Bilevel optimization requires careful handling of gradient computation</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary mt-1">•</span>
+                <span>Convergence guarantees can be established under standard assumptions</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary mt-1">•</span>
+                <span>Practical implementations achieve competitive results with reduced search time</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- References -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">References</h2>
+          
+          <div class="space-y-3 text-sm text-muted-foreground">
+            <div data-each="references" data-as="ref">
+              <div class="flex">
+                <span class="font-medium text-foreground mr-2">[{{ref.id}}]</span>
+                <div>
+                  <span class="font-medium">{{ref.authors}}</span>. 
+                  "{{ref.title}}". 
+                  <em>{{ref.venue}}</em>, {{ref.year}}.
+                  <a href="{{ref.url}}" class="text-primary hover:underline ml-1" target="_blank">
+                    [Link]
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Article Footer -->
+      <div class="border-t border-border pt-8 mt-12">
+        <div class="flex items-center justify-between">
+          <div class="flex space-x-4">
+            <div data-widget="button" variant="outline" size="sm">
+              Share on Twitter
+            </div>
+            <div data-widget="button" variant="outline" size="sm">
+              Share on LinkedIn
+            </div>
+          </div>
+          
+          <div class="text-sm text-muted-foreground">
+            {{views}} views • {{likes}} likes
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Include Footer -->
+  <include src="../../components/footer/index.html"></include>
+</div>

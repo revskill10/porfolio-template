@@ -1,0 +1,190 @@
+<div>
+  <!-- Include Header -->
+  <include src="../components/header/index.html"></include>
+
+  <!-- Blog Hero Section -->
+  <section class="py-20 bg-gradient-to-br from-background via-muted/50 to-background">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div data-widget="badge" variant="outline" class="mb-6">
+          Research Blog
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold text-foreground mb-6">
+          {{blogTitle}}
+        </h1>
+        <div data-widget="markdown" class="text-xl text-muted-foreground max-w-4xl mx-auto">
+          {{blogDescription}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Post -->
+  <section class="py-16 bg-background">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <div data-widget="badge" variant="secondary" class="mb-4">
+          Featured Post
+        </div>
+        <h2 class="text-3xl font-bold text-foreground mb-8">Latest Research Insights</h2>
+      </div>
+
+      <div data-widget="card" class="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="lg:flex">
+          <div class="lg:w-1/2">
+            <div data-widget="image"
+                 src="{{featuredPost.image}}"
+                 alt="{{featuredPost.title}}"
+                 class="w-full h-64 lg:h-full object-cover">
+            </div>
+          </div>
+          <div class="lg:w-1/2 p-8">
+            <div class="flex items-center space-x-4 mb-4">
+              <div data-widget="badge" variant="outline">
+                {{featuredPost.category}}
+              </div>
+              <span class="text-sm text-muted-foreground">{{featuredPost.date}}</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-foreground mb-4">{{featuredPost.title}}</h3>
+            
+            <div data-widget="markdown" class="text-muted-foreground mb-6 prose">
+              {{featuredPost.excerpt}}
+            </div>
+
+            <!-- Mathematical Preview -->
+            <div data-widget="card" class="p-4 bg-muted/50 mb-6">
+              <h4 class="font-semibold text-foreground mb-3">Key Mathematical Insight:</h4>
+              <div class="text-muted-foreground mb-2">{{featuredPost.mathDescription}}</div>
+              <div data-widget="block-math">{{featuredPost.mathFormula}}</div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4">
+                <span class="text-sm text-muted-foreground">{{featuredPost.readTime}} min read</span>
+                <span class="text-sm text-muted-foreground">{{featuredPost.views}} views</span>
+              </div>
+              <div data-widget="button"
+                   variant="default"
+                   href="{{featuredPost.url}}">
+                Read Full Post
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="py-16 bg-muted/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl font-bold text-foreground">Recent Posts</h2>
+        
+        <!-- Category Filter -->
+        <div class="flex space-x-2">
+          <div data-each="categories" data-as="category">
+            <div data-widget="button"
+                 variant="outline"
+                 size="sm"
+                 class="{{category.active ? 'bg-primary text-primary-foreground' : ''}}">
+              {{category.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div data-each="posts" data-as="post">
+          <div data-widget="card" class="group hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105 overflow-hidden">
+            <div data-widget="image"
+                 src="{{post.image}}"
+                 alt="{{post.title}}"
+                 class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center space-x-3 mb-3">
+                <div data-widget="badge" variant="secondary" class="text-xs">
+                  {{post.category}}
+                </div>
+                <span class="text-xs text-muted-foreground">{{post.date}}</span>
+              </div>
+              
+              <h3 class="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                {{post.title}}
+              </h3>
+              
+              <div data-widget="markdown" class="text-muted-foreground text-sm mb-4 line-clamp-3">
+                {{post.excerpt}}
+              </div>
+
+              <!-- Math Preview for Technical Posts -->
+              <div data-condition="post.hasMath">
+                <div class="bg-muted/50 p-3 rounded-lg mb-4">
+                  <div class="text-xs text-muted-foreground mb-1">Mathematical insight:</div>
+                  <div data-widget="inline-math" class="text-sm">{{post.mathPreview}}</div>
+                </div>
+              </div>
+
+              <!-- Code Preview for Technical Posts -->
+              <div data-condition="post.hasCode">
+                <div data-widget="code"
+                     language="{{post.codeLanguage}}"
+                     class="mb-4 text-xs">
+                  {{post.codePreview}}
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3 text-xs text-muted-foreground">
+                  <span>{{post.readTime}} min</span>
+                  <span>{{post.views}} views</span>
+                </div>
+                <div data-widget="button"
+                     variant="ghost"
+                     size="sm"
+                     href="{{post.url}}">
+                  Read More →
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="py-16 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div data-widget="card" class="p-8 bg-gradient-to-r from-primary/10 to-secondary/10">
+        <h2 class="text-3xl font-bold text-foreground mb-4">Stay Updated</h2>
+        <div data-widget="markdown" class="text-muted-foreground mb-8">
+          Get the latest **research insights**, **technical tutorials**, and **AI breakthroughs** delivered to your inbox. Join 1000+ researchers and engineers.
+        </div>
+        
+        <div class="max-w-md mx-auto flex space-x-3">
+          <input 
+            type="email" 
+            placeholder="Enter your email"
+            class="flex-1 px-4 py-3 border border-input rounded-lg bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+          <div data-widget="button" 
+               variant="default"
+               class="px-6 py-3">
+            Subscribe
+          </div>
+        </div>
+        
+        <p class="text-xs text-muted-foreground mt-4">
+          No spam, unsubscribe anytime. Read our privacy policy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include Footer -->
+  <include src="../components/footer/index.html"></include>
+</div>

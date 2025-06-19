@@ -1,0 +1,115 @@
+[
+  { "key": "blogTitle", "value": "Research & Insights" },
+  { "key": "blogDescription", "value": "Exploring the frontiers of **artificial intelligence**, **machine learning**, and **software engineering**. Deep dives into research, tutorials, and industry insights." },
+  {
+    "key": "featuredPost",
+    "value": {
+      "title": "The Mathematics Behind Neural Architecture Search",
+      "excerpt": "A deep dive into the **mathematical foundations** of differentiable neural architecture search, exploring how gradient-based optimization can discover optimal network structures.",
+      "category": "Research",
+      "date": "December 15, 2024",
+      "readTime": "12",
+      "views": "2.3k",
+      "image": "./assets/blog/nas-mathematics.png",
+      "url": "./blog/nas-mathematics",
+      "mathDescription": "The core optimization objective for architecture search",
+      "mathFormula": "\\min_{\\alpha} \\mathcal{L}_{val}(w^*(\\alpha), \\alpha) \\text{ s.t. } w^*(\\alpha) = \\arg\\min_w \\mathcal{L}_{train}(w, \\alpha)"
+    }
+  },
+  {
+    "key": "categories",
+    "value": [
+      { "name": "All", "slug": "all", "active": true },
+      { "name": "Research", "slug": "research", "active": false },
+      { "name": "Tutorials", "slug": "tutorials", "active": false },
+      { "name": "Industry", "slug": "industry", "active": false },
+      { "name": "Mathematics", "slug": "math", "active": false }
+    ]
+  },
+  {
+    "key": "posts",
+    "value": [
+      {
+        "title": "Implementing Federated Learning from Scratch",
+        "excerpt": "A comprehensive tutorial on building a **federated learning system** using Python and PyTorch, covering secure aggregation and privacy preservation.",
+        "category": "Tutorials",
+        "date": "December 10, 2024",
+        "readTime": "15",
+        "views": "1.8k",
+        "image": "./assets/blog/federated-tutorial.png",
+        "url": "./blog/federated-learning-tutorial",
+        "hasCode": true,
+        "codeLanguage": "python",
+        "codePreview": "class FederatedClient:\n    def __init__(self, model, data):\n        self.model = model\n        self.data = data\n    \n    def local_update(self, global_weights):\n        # Local training logic\n        pass",
+        "hasMath": true,
+        "mathPreview": "w_{t+1} = w_t - \\eta \\sum_{k=1}^{K} \\frac{n_k}{n} \\Delta w_k"
+      },
+      {
+        "title": "The Future of AI Hardware Acceleration",
+        "excerpt": "Exploring emerging **hardware architectures** for AI workloads, from neuromorphic chips to quantum computing applications in machine learning.",
+        "category": "Industry",
+        "date": "December 5, 2024",
+        "readTime": "8",
+        "views": "3.1k",
+        "image": "./assets/blog/ai-hardware.png",
+        "url": "./blog/ai-hardware-future",
+        "hasCode": false,
+        "hasMath": false
+      },
+      {
+        "title": "Attention Mechanisms: A Mathematical Deep Dive",
+        "excerpt": "Understanding the **mathematical foundations** of attention mechanisms in transformers, from scaled dot-product to multi-head attention.",
+        "category": "Mathematics",
+        "date": "November 28, 2024",
+        "readTime": "20",
+        "views": "4.2k",
+        "image": "./assets/blog/attention-math.png",
+        "url": "./blog/attention-mathematics",
+        "hasCode": true,
+        "codeLanguage": "python",
+        "codePreview": "def scaled_dot_product_attention(Q, K, V):\n    scores = torch.matmul(Q, K.transpose(-2, -1))\n    return torch.matmul(F.softmax(scores, dim=-1), V)",
+        "hasMath": true,
+        "mathPreview": "\\text{Attention}(Q,K,V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V"
+      },
+      {
+        "title": "Building Scalable ML Pipelines with Kubernetes",
+        "excerpt": "A practical guide to deploying and scaling **machine learning pipelines** using Kubernetes, including monitoring and auto-scaling strategies.",
+        "category": "Tutorials",
+        "date": "November 20, 2024",
+        "readTime": "18",
+        "views": "2.7k",
+        "image": "./assets/blog/k8s-ml-pipelines.png",
+        "url": "./blog/kubernetes-ml-pipelines",
+        "hasCode": true,
+        "codeLanguage": "yaml",
+        "codePreview": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: ml-inference-service\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: ml-inference",
+        "hasMath": false
+      },
+      {
+        "title": "Convergence Theory in Deep Learning",
+        "excerpt": "Exploring the **theoretical foundations** of convergence in deep neural networks, including recent advances in optimization theory.",
+        "category": "Research",
+        "date": "November 15, 2024",
+        "readTime": "25",
+        "views": "1.9k",
+        "image": "./assets/blog/convergence-theory.png",
+        "url": "./blog/convergence-theory",
+        "hasCode": false,
+        "hasMath": true,
+        "mathPreview": "\\|\\nabla f(x_t)\\|^2 \\leq \\frac{2(f(x_0) - f^*)}{\\eta T} + \\frac{\\eta L \\sigma^2}{B}"
+      },
+      {
+        "title": "The Rise of Edge AI: Challenges and Opportunities",
+        "excerpt": "Analyzing the **edge computing revolution** in AI, from mobile inference to IoT applications, and the technical challenges ahead.",
+        "category": "Industry",
+        "date": "November 8, 2024",
+        "readTime": "10",
+        "views": "3.8k",
+        "image": "./assets/blog/edge-ai.png",
+        "url": "./blog/edge-ai-revolution",
+        "hasCode": false,
+        "hasMath": false
+      }
+    ]
+  }
+]
