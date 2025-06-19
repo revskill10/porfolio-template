@@ -1,0 +1,274 @@
+<div>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Advanced XFlow XML Guide</h1>
+    <p class="text-muted-foreground mb-8">
+      Complete guide on how to express the advanced-xflow.md functionality using our XML renderer with full widget composition.
+    </p>
+
+    <!-- Original vs XML Comparison -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">React Code vs XML Renderer</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-4">Original React Code (advanced-xflow.md)</h3>
+          <div data-widget="code" language="javascript" class="text-xs">
+// Custom Node Widget
+const LLMNodeWidget = ({ data }) => {
+  const { model, temperature, maxTokens, systemPrompt } = data;
+  return (
+    &lt;Card size="small" bodyStyle={{ padding: '12px' }}&gt;
+      &lt;Space direction="vertical" size="small"&gt;
+        &lt;div style={{ padding: '8px 12px', background: '#f9fafb' }}&gt;
+          &lt;Typography.Text type="secondary"&gt;模型&lt;/Typography.Text&gt;
+          &lt;Tag color="blue"&gt;{model}&lt;/Tag&gt;
+        &lt;/div&gt;
+      &lt;/Space&gt;
+    &lt;/Card&gt;
+  );
+};
+
+// XFlow Usage
+&lt;XFlow
+  initialValues={{ nodes, edges }}
+  settings={settings}
+  widgets={{ LLMNodeWidget }}
+/&gt;
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-4">Our XML Renderer Equivalent</h3>
+          <div data-widget="code" language="html" class="text-xs">
+&lt;!-- Custom Node Widget using our widgets --&gt;
+&lt;div data-widget="xflow" data-height="600px"&gt;
+  &lt;nodes&gt;
+    &lt;llm id="llm1" x="300" y="140"
+         input="LLM Processing"
+         model="GPT-4"
+         temperature="0.7"
+         maxTokens="200"
+         systemPrompt="你是一个专业的AI助手" /&gt;
+  &lt;/nodes&gt;
+&lt;/div&gt;
+
+&lt;!-- Automatic widget composition --&gt;
+&lt;!-- Uses card + badge widgets internally --&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Node Types Mapping -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Node Types and XML Mapping</h2>
+      
+      <div data-widget="xtable" data-search="true" data-pagination="false">
+        <columns>
+          <text name="originalType" title="Original Type" width="120" />
+          <text name="xmlTag" title="XML Tag" width="120" />
+          <text name="description" title="Description" width="200" />
+          <text name="attributes" title="Key Attributes" width="250" />
+          <text name="widgets" title="Composed Widgets" width="150" />
+        </columns>
+        
+        <data>
+          <row originalType="LLM" xmlTag="&lt;llm&gt;" 
+               description="AI Language Model processing node"
+               attributes="model, temperature, maxTokens, systemPrompt"
+               widgets="card, badge, text" />
+          <row originalType="HTTP" xmlTag="&lt;http&gt;" 
+               description="HTTP API request node"
+               attributes="method, url, headers, body"
+               widgets="card, badge, code" />
+          <row originalType="Classifier" xmlTag="&lt;classifier&gt;" 
+               description="Content classification node"
+               attributes="categories, rules, defaultCategory"
+               widgets="card, badge, tag" />
+          <row originalType="Start" xmlTag="&lt;start&gt;" 
+               description="Workflow start point"
+               attributes="input, description"
+               widgets="card, text" />
+          <row originalType="End" xmlTag="&lt;end&gt;" 
+               description="Workflow end point"
+               attributes="input, description"
+               widgets="card, text" />
+        </data>
+      </div>
+    </section>
+
+    <!-- Settings Schema Mapping -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Settings Schema to FormRender</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-4">Original Settings Schema</h3>
+          <div data-widget="code" language="javascript" class="text-xs">
+settingSchema: {
+  type: 'object',
+  properties: {
+    model: {
+      type: 'string',
+      title: '模型',
+      widget: 'select',
+      enum: ['GPT-4', 'GPT-3.5', 'Claude'],
+      default: 'GPT-4',
+    },
+    temperature: {
+      type: 'number',
+      title: '温度',
+      widget: 'slider',
+      minimum: 0,
+      maximum: 1,
+      default: 0.7,
+    }
+  }
+}
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-4">Our FormRender XML</h3>
+          <div data-widget="code" language="html" class="text-xs">
+&lt;div data-widget="xform" data-display-type="column"&gt;
+  &lt;select name="model" title="模型" required&gt;
+    &lt;option value="GPT-4"&gt;GPT-4&lt;/option&gt;
+    &lt;option value="GPT-3.5"&gt;GPT-3.5&lt;/option&gt;
+    &lt;option value="Claude"&gt;Claude&lt;/option&gt;
+  &lt;/select&gt;
+  
+  &lt;number name="temperature" title="温度" 
+          min="0" max="1" step="0.1" 
+          default="0.7" /&gt;
+&lt;/div&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Complete Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Complete Advanced XFlow Example</h2>
+      
+      <div data-widget="card" class="p-6">
+        <h3 class="font-bold mb-4">Full XML Implementation</h3>
+        <div data-widget="code" language="html" class="text-sm">
+&lt;div data-widget="xflow" data-height="600px" data-readonly="false"&gt;
+  &lt;nodes&gt;
+    &lt;!-- Start Node --&gt;
+    &lt;start id="1" x="10" y="270" 
+           input="开始节点" 
+           description="Workflow starting point" /&gt;
+    
+    &lt;!-- LLM Processing Node --&gt;
+    &lt;llm id="2" x="300" y="140"
+         input="LLM Processing"
+         model="GPT-4"
+         temperature="0.7"
+         maxTokens="200"
+         systemPrompt="你是一个专业的AI助手，请帮助用户解决问题。" /&gt;
+    
+    &lt;!-- HTTP API Node --&gt;
+    &lt;http id="3" x="600" y="140"
+          input="API Request"
+          method="POST"
+          url="https://api.example.com/process"
+          headers='{"Content-Type": "application/json"}'
+          body='{"key": "value"}' /&gt;
+    
+    &lt;!-- Classification Node --&gt;
+    &lt;classifier id="4" x="900" y="140"
+               input="问题分类"
+               categories='["技术问题", "业务问题", "其他"]'
+               rules="根据问题描述的关键词进行分类"
+               defaultCategory="其他" /&gt;
+    
+    &lt;!-- End Node --&gt;
+    &lt;end id="7" x="1300" y="270" 
+         input="结束节点"
+         description="Workflow completion" /&gt;
+  &lt;/nodes&gt;
+  
+  &lt;edges&gt;
+    &lt;edge id="edge-1-2" source="1" target="2" /&gt;
+    &lt;edge id="edge-2-3" source="2" target="3" /&gt;
+    &lt;edge id="edge-3-4" source="3" target="4" /&gt;
+    &lt;edge id="edge-4-7" source="4" target="7" /&gt;
+  &lt;/edges&gt;
+&lt;/div&gt;
+        </div>
+      </div>
+    </section>
+
+    <!-- Widget Composition Benefits -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Widget Composition Benefits</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-3">🎯 Simplified Syntax</h3>
+          <div data-widget="markdown">
+            - **Declarative**: XML attributes instead of complex React props
+            - **Readable**: Clear node types and relationships
+            - **Maintainable**: Easy to modify and extend
+            - **No Code**: Pure markup, no JavaScript required
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-3">🔧 Automatic Composition</h3>
+          <div data-widget="markdown">
+            - **Widget Reuse**: Leverages existing card, badge, text widgets
+            - **Consistent Styling**: Unified design system
+            - **Type Safety**: Built-in validation and parsing
+            - **Performance**: Optimized rendering pipeline
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-3">🚀 Enhanced Features</h3>
+          <div data-widget="markdown">
+            - **FormRender Integration**: Node settings use form widgets
+            - **TableRender Analytics**: Workflow monitoring tables
+            - **Markdown Documentation**: Rich text explanations
+            - **Full Ecosystem**: All widgets work together
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Migration Guide -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Migration from React to XML</h2>
+      
+      <div data-widget="xtable" data-search="false" data-pagination="false">
+        <columns>
+          <text name="step" title="Step" width="60" />
+          <text name="reactCode" title="React Code Pattern" width="300" />
+          <text name="xmlEquivalent" title="XML Equivalent" width="300" />
+          <text name="notes" title="Notes" width="200" />
+        </columns>
+        
+        <data>
+          <row step="1" 
+               reactCode="const LLMNodeWidget = ({ data }) => ..."
+               xmlEquivalent="&lt;llm model=&quot;GPT-4&quot; temperature=&quot;0.7&quot; /&gt;"
+               notes="Attributes replace data props" />
+          <row step="2"
+               reactCode="&lt;Card&gt;&lt;Tag&gt;{model}&lt;/Tag&gt;&lt;/Card&gt;"
+               xmlEquivalent="Automatic card + badge composition"
+               notes="Built-in widget composition" />
+          <row step="3"
+               reactCode="settingSchema: { properties: {...} }"
+               xmlEquivalent="&lt;xform&gt;&lt;select&gt;&lt;option&gt;...&lt;/xform&gt;"
+               notes="FormRender XML syntax" />
+          <row step="4"
+               reactCode="widgets={{ LLMNodeWidget }}"
+               xmlEquivalent="Built-in widget registry"
+               notes="Automatic widget registration" />
+        </data>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+[
+  {
+    "key": "pageTitle",
+    "value": "X-Render Composable Widgets Demo"
+  },
+  {
+    "key": "pageDescription",
+    "value": "Demonstration of X-Render widgets working together with proper APIs and composable architecture"
+  }
+]

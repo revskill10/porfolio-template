@@ -1,0 +1,185 @@
+<div>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">X-Render Composable Widgets Demo</h1>
+    <p class="text-muted-foreground mb-8">
+      Demonstration of X-Render widgets working together with proper APIs from the documentation.
+    </p>
+
+    <!-- Form with proper form-render API -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">FormRender with useForm Hook</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="xform" data-display-type="column" data-label-width="120">
+          <fieldset title="User Information">
+            <input name="name" type="string" title="Full Name" required placeholder="Enter your full name" />
+            <input name="email" type="string" format="email" title="Email Address" required placeholder="your@email.com" />
+            <input name="phone" type="string" title="Phone Number" placeholder="+1 (555) 123-4567" />
+          </fieldset>
+          
+          <fieldset title="Preferences">
+            <select name="role" title="User Role" required>
+              <option value="admin">Administrator</option>
+              <option value="manager">Manager</option>
+              <option value="user">Regular User</option>
+            </select>
+            
+            <multiselect name="skills" title="Technical Skills" type="array">
+              <option value="javascript">JavaScript</option>
+              <option value="react">React</option>
+              <option value="vue">Vue.js</option>
+              <option value="angular">Angular</option>
+              <option value="nodejs">Node.js</option>
+              <option value="python">Python</option>
+            </multiselect>
+            
+            <number name="experience" title="Years of Experience" min="0" max="50" />
+            <textarea name="bio" title="Biography" placeholder="Tell us about yourself..." />
+            <checkbox name="newsletter" title="Subscribe to Newsletter" default="true" />
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table with proper table-render API -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">TableRender with Columns and Request API</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="xtable" data-search="true" data-pagination="true" data-toolbar="true">
+          <columns>
+            <text name="id" title="ID" width="60" />
+            <text name="name" title="Full Name" width="150" ellipsis="true" copyable="true" />
+            <text name="email" title="Email Address" width="200" />
+            <text name="role" title="Role" width="120">
+              <option value="admin">Administrator</option>
+              <option value="manager">Manager</option>
+              <option value="user">Regular User</option>
+            </text>
+            <tag name="status" title="Status" width="100">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="pending">Pending</option>
+            </tag>
+            <money name="salary" title="Salary" width="120" sorter="true" />
+            <date name="joinDate" title="Join Date" width="120" />
+            <progress name="completion" title="Profile Completion" width="140" />
+          </columns>
+          
+          <data>
+            <row id="1" name="John Doe" email="john@example.com" role="admin" status="active" salary="75000" joinDate="2024-01-15" completion="85" />
+            <row id="2" name="Jane Smith" email="jane@example.com" role="manager" status="active" salary="65000" joinDate="2024-01-16" completion="92" />
+            <row id="3" name="Bob Johnson" email="bob@example.com" role="user" status="inactive" salary="45000" joinDate="2024-01-17" completion="67" />
+            <row id="4" name="Alice Brown" email="alice@example.com" role="user" status="pending" salary="50000" joinDate="2024-01-18" completion="78" />
+          </data>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flow with proper XFlow API and form-render settings -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">XFlow with FormRender Node Settings</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="xflow" data-height="400px" data-readonly="false">
+          <nodes>
+            <start id="start" x="100" y="100" input="Start Workflow" description="Initialize the user onboarding process" />
+            <process id="collect" x="300" y="100" input="Collect Information" description="Gather user details and preferences" processType="manual" />
+            <decision id="validate" x="500" y="100" input="Validate Data" description="Check if all required information is provided" />
+            <process id="approve" x="400" y="250" input="Approve User" description="Grant access to the system" processType="auto" />
+            <process id="reject" x="600" y="250" input="Request More Info" description="Ask for additional information" processType="manual" />
+            <end id="complete" x="500" y="400" input="Complete Process" description="User onboarding completed successfully" />
+          </nodes>
+          
+          <edges>
+            <edge id="e1" source="start" target="collect" />
+            <edge id="e2" source="collect" target="validate" />
+            <edge id="e3" source="validate" target="approve" label="Valid" />
+            <edge id="e4" source="validate" target="reject" label="Invalid" />
+            <edge id="e5" source="approve" target="complete" />
+            <edge id="e6" source="reject" target="collect" label="Retry" />
+          </edges>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Widget Integration Benefits</h2>
+      <div data-widget="card" class="p-6">
+        <div data-widget="markdown">
+          ## Composable Architecture
+
+          The X-Render widgets are designed to work together seamlessly:
+
+          ### 1. **FormRender Integration**
+          - Uses `useForm()` hook for proper form state management
+          - Supports complex validation and dynamic forms
+          - Node settings in XFlow use FormRender for configuration
+
+          ### 2. **TableRender Integration**
+          - Proper column definitions with `dataIndex` and `valueType`
+          - Built-in search functionality with form-render schemas
+          - Toolbar actions can trigger form dialogs
+
+          ### 3. **XFlow Integration**
+          - Node settings use FormRender for configuration forms
+          - Each node type has its own schema for customization
+          - Workflow data can populate tables and forms
+
+          ### 4. **Shared Benefits**
+          - **Consistent API**: All widgets follow similar patterns
+          - **Type Safety**: Proper TypeScript definitions
+          - **Extensible**: Easy to add custom node types and form fields
+          - **Performant**: Uses official React components
+        </div>
+      </div>
+    </section>
+
+    <!-- API Reference -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">API Reference</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div data-widget="card" class="p-4">
+          <h3 class="font-bold mb-3">FormRender</h3>
+          <div data-widget="code" language="typescript" class="text-xs">
+import FormRender, { useForm } from 'form-render';
+
+const form = useForm();
+
+&lt;FormRender
+  form={form}
+  schema={schema}
+  onFinish={onFinish}
+  footer={true}
+/&gt;
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-4">
+          <h3 class="font-bold mb-3">TableRender</h3>
+          <div data-widget="code" language="typescript" class="text-xs">
+import TableRender from 'table-render';
+
+&lt;TableRender
+  columns={columns}
+  request={searchApi}
+  search={{ schema }}
+  toolbarRender={toolbar}
+/&gt;
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-4">
+          <h3 class="font-bold mb-3">XFlow</h3>
+          <div data-widget="code" language="typescript" class="text-xs">
+import XFlow from '@xrenders/xflow';
+
+&lt;XFlow
+  initialValues={{ nodes, edges }}
+  settings={nodeSettings}
+  onNodesChange={onNodesChange}
+/&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

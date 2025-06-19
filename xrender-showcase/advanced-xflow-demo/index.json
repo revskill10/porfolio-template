@@ -1,0 +1,26 @@
+[
+  {
+    "key": "pageTitle",
+    "value": "Advanced XFlow Demo - AI Workflow System"
+  },
+  {
+    "key": "pageDescription", 
+    "value": "Comprehensive demonstration of advanced XFlow features with custom node widgets, FormRender integration, and full widget composability"
+  },
+  {
+    "key": "workflowName",
+    "value": "AI Customer Support Workflow"
+  },
+  {
+    "key": "totalNodes",
+    "value": "9"
+  },
+  {
+    "key": "avgProcessingTime",
+    "value": "1.2s"
+  },
+  {
+    "key": "successRate",
+    "value": "96.8%"
+  }
+]

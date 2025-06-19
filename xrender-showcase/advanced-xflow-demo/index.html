@@ -1,0 +1,229 @@
+<div>
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Advanced XFlow Demo - AI Workflow System</h1>
+    <p class="text-muted-foreground mb-8">
+      Demonstration of advanced XFlow features with custom node widgets, complex settings using FormRender, 
+      and full widget composition capabilities.
+    </p>
+
+    <!-- Advanced AI Workflow -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">AI-Powered Customer Support Workflow</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="xflow" data-height="600px" data-readonly="false">
+          <nodes>
+            <!-- Start Node -->
+            <start id="start" x="50" y="300" 
+                   input="客户咨询" 
+                   description="客户提交问题或咨询" />
+            
+            <!-- LLM Node for Initial Processing -->
+            <llm id="llm1" x="250" y="200" 
+                 input="问题理解"
+                 description="使用AI理解客户问题的意图和内容"
+                 model="GPT-4"
+                 temperature="0.3"
+                 maxTokens="500"
+                 systemPrompt="你是一个专业的客服助手，请分析客户问题的类型和紧急程度。" />
+            
+            <!-- Classifier Node -->
+            <classifier id="classifier" x="450" y="200"
+                       input="问题分类"
+                       description="根据问题内容进行智能分类"
+                       categories='["技术问题", "账单问题", "产品咨询", "投诉建议"]'
+                       rules="根据关键词和语义分析进行分类"
+                       defaultCategory="产品咨询" />
+            
+            <!-- HTTP API Call for Technical Issues -->
+            <http id="tech_api" x="650" y="100"
+                  input="技术支持API"
+                  description="调用技术支持系统API"
+                  method="POST"
+                  url="https://api.techsupport.com/tickets"
+                  headers='{"Content-Type": "application/json", "Authorization": "Bearer token"}'
+                  body='{"type": "technical", "priority": "normal"}' />
+            
+            <!-- LLM Node for Response Generation -->
+            <llm id="llm2" x="850" y="200"
+                 input="回复生成"
+                 description="生成个性化的客户回复"
+                 model="GPT-4"
+                 temperature="0.7"
+                 maxTokens="300"
+                 systemPrompt="基于分类结果和处理情况，生成友好、专业的客户回复。" />
+            
+            <!-- HTTP Node for Billing Issues -->
+            <http id="billing_api" x="650" y="300"
+                  input="账单系统API"
+                  description="查询客户账单信息"
+                  method="GET"
+                  url="https://api.billing.com/customer/{customerId}"
+                  headers='{"Authorization": "Bearer billing_token"}'
+                  body='{}' />
+            
+            <!-- Decision Node for Quality Check -->
+            <decision id="quality_check" x="1050" y="200"
+                     input="质量检查"
+                     description="检查回复质量是否满足标准" />
+            
+            <!-- Process Node for Human Review -->
+            <process id="human_review" x="1050" y="350"
+                    input="人工审核"
+                    description="转交给人工客服进行处理"
+                    processType="manual" />
+            
+            <!-- End Node -->
+            <end id="end" x="1250" y="200"
+                 input="完成处理"
+                 description="客户问题处理完成，发送回复" />
+          </nodes>
+          
+          <edges>
+            <!-- Main Flow -->
+            <edge id="e1" source="start" target="llm1" />
+            <edge id="e2" source="llm1" target="classifier" />
+            
+            <!-- Technical Issues Path -->
+            <edge id="e3" source="classifier" target="tech_api" label="技术问题" />
+            <edge id="e4" source="tech_api" target="llm2" />
+            
+            <!-- Billing Issues Path -->
+            <edge id="e5" source="classifier" target="billing_api" label="账单问题" />
+            <edge id="e6" source="billing_api" target="llm2" />
+            
+            <!-- General Inquiries Path -->
+            <edge id="e7" source="classifier" target="llm2" label="一般咨询" />
+            
+            <!-- Quality Control -->
+            <edge id="e8" source="llm2" target="quality_check" />
+            <edge id="e9" source="quality_check" target="end" label="质量合格" />
+            <edge id="e10" source="quality_check" target="human_review" label="需要改进" />
+            <edge id="e11" source="human_review" target="end" />
+          </edges>
+        </div>
+      </div>
+    </section>
+
+    <!-- Configuration Panel -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Node Configuration Panel</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- LLM Configuration -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-bold mb-4">LLM Node Settings</h3>
+          <div data-widget="xform" data-display-type="column" data-label-width="100">
+            <select name="model" title="AI Model" required>
+              <option value="GPT-4">GPT-4</option>
+              <option value="GPT-3.5">GPT-3.5 Turbo</option>
+              <option value="Claude">Claude</option>
+            </select>
+            
+            <number name="temperature" title="Temperature" min="0" max="1" step="0.1" default="0.7" />
+            <number name="maxTokens" title="Max Tokens" min="50" max="2000" default="500" />
+            
+            <textarea name="systemPrompt" title="System Prompt" 
+                     placeholder="Enter the system prompt for the AI model..."
+                     default="You are a helpful AI assistant." />
+          </div>
+        </div>
+        
+        <!-- HTTP Configuration -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-bold mb-4">HTTP API Settings</h3>
+          <div data-widget="xform" data-display-type="column" data-label-width="100">
+            <select name="method" title="Method" required>
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+              <option value="PUT">PUT</option>
+              <option value="DELETE">DELETE</option>
+            </select>
+            
+            <input name="url" type="string" title="API URL" 
+                   placeholder="https://api.example.com/endpoint"
+                   required />
+            
+            <textarea name="headers" title="Headers (JSON)" 
+                     placeholder='{"Content-Type": "application/json"}'
+                     default='{"Content-Type": "application/json"}' />
+            
+            <textarea name="body" title="Request Body (JSON)" 
+                     placeholder='{"key": "value"}'
+                     default='{}' />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Analytics -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Workflow Analytics</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="xtable" data-search="true" data-pagination="true" data-toolbar="true">
+          <columns>
+            <text name="nodeId" title="Node ID" width="100" />
+            <text name="nodeType" title="Node Type" width="120">
+              <option value="LLM">LLM Processing</option>
+              <option value="HTTP">API Call</option>
+              <option value="Classifier">Classification</option>
+              <option value="Decision">Decision</option>
+            </text>
+            <text name="status" title="Status" width="100" />
+            <number name="executionTime" title="Execution Time (ms)" width="150" sorter="true" />
+            <number name="successRate" title="Success Rate %" width="130" />
+            <date name="lastRun" title="Last Run" width="150" />
+            <tag name="performance" title="Performance" width="120">
+              <option value="excellent">Excellent</option>
+              <option value="good">Good</option>
+              <option value="average">Average</option>
+              <option value="poor">Poor</option>
+            </tag>
+          </columns>
+          
+          <data>
+            <row nodeId="llm1" nodeType="LLM" status="Active" executionTime="1200" successRate="98.5" lastRun="2024-01-20" performance="excellent" />
+            <row nodeId="classifier" nodeType="Classifier" status="Active" executionTime="300" successRate="95.2" lastRun="2024-01-20" performance="good" />
+            <row nodeId="tech_api" nodeType="HTTP" status="Active" executionTime="800" successRate="99.1" lastRun="2024-01-20" performance="excellent" />
+            <row nodeId="llm2" nodeType="LLM" status="Active" executionTime="1500" successRate="97.8" lastRun="2024-01-20" performance="excellent" />
+            <row nodeId="billing_api" nodeType="HTTP" status="Warning" executionTime="2100" successRate="89.3" lastRun="2024-01-19" performance="average" />
+          </data>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Advanced Features Demonstrated</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-3">🤖 Custom Node Widgets</h3>
+          <div data-widget="markdown">
+            - **LLM Nodes**: AI model configuration with temperature, tokens, prompts
+            - **HTTP Nodes**: API integration with headers, methods, body
+            - **Classifier Nodes**: Smart categorization with rules and categories
+            - **Visual Representation**: Custom widgets using our card/badge system
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-3">⚙️ FormRender Integration</h3>
+          <div data-widget="markdown">
+            - **Dynamic Settings**: Each node type has custom form schemas
+            - **Complex Controls**: Sliders, selects, text areas, number inputs
+            - **Validation**: Built-in form validation and error handling
+            - **Real-time Updates**: Settings changes update node behavior
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-3">📊 Full Composability</h3>
+          <div data-widget="markdown">
+            - **Workflow Analytics**: TableRender for performance monitoring
+            - **Configuration Panels**: FormRender for node settings
+            - **Visual Flow**: XFlow for workflow design
+            - **Documentation**: Markdown widgets for explanations
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
