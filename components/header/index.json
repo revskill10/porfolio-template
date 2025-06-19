@@ -1,13 +1,13 @@
-{
-  "name": "Header",
-  "description": "Main navigation header component",
-  "version": "1.0.0",
-  "dependencies": [],
-  "props": {
+[
+  {"key": "name", "value": "Header"},
+  {"key": "description", "value": "Main navigation header component"},
+  {"key": "version", "value": "1.0.0"},
+  {"key": "dependencies", "value": []},
+  {"key": "props", "value": {
     "theme": {
       "type": "string",
       "default": "dark",
       "options": ["light", "dark"]
     }
-  }
-}
+  }}
+]
