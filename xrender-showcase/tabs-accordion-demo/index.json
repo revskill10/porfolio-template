@@ -1,0 +1,10 @@
+[
+  {
+    "key": "pageTitle",
+    "value": "Tabs & Accordion Widgets Demo"
+  },
+  {
+    "key": "pageDescription", 
+    "value": "Showcase of custom **tabs** and **accordion** widgets built with shadcn/ui components. These widgets support native XML syntax for easy content organization."
+  }
+]

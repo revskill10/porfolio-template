@@ -1,0 +1,26 @@
+[
+  {
+    "key": "pageTitle",
+    "value": "X-Render Widget Showcase"
+  },
+  {
+    "key": "pageDescription",
+    "value": "Explore powerful **X-Render** widgets for creating dynamic forms, interactive flowcharts, and advanced data tables. Perfect for building admin dashboards and business applications."
+  },
+  {
+    "key": "xflowSchema",
+    "value": "{\"nodes\":[{\"id\":\"start\",\"type\":\"start\",\"position\":{\"x\":100,\"y\":100},\"data\":{\"label\":\"Start Process\"}},{\"id\":\"decision\",\"type\":\"decision\",\"position\":{\"x\":300,\"y\":100},\"data\":{\"label\":\"Check Condition\"}},{\"id\":\"process1\",\"type\":\"process\",\"position\":{\"x\":200,\"y\":250},\"data\":{\"label\":\"Process A\"}},{\"id\":\"process2\",\"type\":\"process\",\"position\":{\"x\":400,\"y\":250},\"data\":{\"label\":\"Process B\"}},{\"id\":\"end\",\"type\":\"end\",\"position\":{\"x\":300,\"y\":400},\"data\":{\"label\":\"End\"}}],\"edges\":[{\"id\":\"e1-2\",\"source\":\"start\",\"target\":\"decision\"},{\"id\":\"e2-3\",\"source\":\"decision\",\"target\":\"process1\",\"label\":\"Yes\"},{\"id\":\"e2-4\",\"source\":\"decision\",\"target\":\"process2\",\"label\":\"No\"},{\"id\":\"e3-5\",\"source\":\"process1\",\"target\":\"end\"},{\"id\":\"e4-5\",\"source\":\"process2\",\"target\":\"end\"}]}"
+  },
+  {
+    "key": "xformSchema",
+    "value": "{\"type\":\"object\",\"properties\":{\"personalInfo\":{\"title\":\"Personal Information\",\"type\":\"object\",\"properties\":{\"firstName\":{\"title\":\"First Name\",\"type\":\"string\",\"required\":true,\"placeholder\":\"Enter your first name\"},\"lastName\":{\"title\":\"Last Name\",\"type\":\"string\",\"required\":true,\"placeholder\":\"Enter your last name\"},\"email\":{\"title\":\"Email Address\",\"type\":\"string\",\"format\":\"email\",\"required\":true,\"placeholder\":\"your.email@example.com\"},\"phone\":{\"title\":\"Phone Number\",\"type\":\"string\",\"placeholder\":\"+1 (555) 123-4567\"}}},\"preferences\":{\"title\":\"Preferences\",\"type\":\"object\",\"properties\":{\"role\":{\"title\":\"Role\",\"type\":\"string\",\"enum\":[\"developer\",\"designer\",\"manager\",\"other\"],\"enumNames\":[\"Developer\",\"Designer\",\"Manager\",\"Other\"],\"required\":true},\"skills\":{\"title\":\"Skills\",\"type\":\"array\",\"items\":{\"type\":\"string\"},\"widget\":\"multiSelect\",\"enum\":[\"JavaScript\",\"React\",\"Node.js\",\"Python\",\"TypeScript\",\"Vue.js\",\"Angular\"],\"enumNames\":[\"JavaScript\",\"React\",\"Node.js\",\"Python\",\"TypeScript\",\"Vue.js\",\"Angular\"]},\"experience\":{\"title\":\"Years of Experience\",\"type\":\"number\",\"minimum\":0,\"maximum\":50},\"bio\":{\"title\":\"Bio\",\"type\":\"string\",\"format\":\"textarea\",\"placeholder\":\"Tell us about yourself...\"},\"newsletter\":{\"title\":\"Subscribe to newsletter\",\"type\":\"boolean\",\"default\":true}}}}}"
+  },
+  {
+    "key": "xformData",
+    "value": "{\"personalInfo\":{\"firstName\":\"John\",\"lastName\":\"Doe\",\"email\":\"john.doe@example.com\"},\"preferences\":{\"role\":\"developer\",\"skills\":[\"JavaScript\",\"React\",\"TypeScript\"],\"experience\":5,\"newsletter\":true}}"
+  },
+  {
+    "key": "xtableSchema",
+    "value": "{\"type\":\"object\",\"properties\":{\"id\":{\"title\":\"ID\",\"type\":\"number\",\"width\":60},\"name\":{\"title\":\"Name\",\"type\":\"string\",\"width\":120},\"email\":{\"title\":\"Email\",\"type\":\"string\",\"width\":200},\"role\":{\"title\":\"Role\",\"type\":\"string\",\"enum\":[\"admin\",\"user\",\"guest\"],\"enumNames\":[\"Admin\",\"User\",\"Guest\"],\"width\":100},\"department\":{\"title\":\"Department\",\"type\":\"string\",\"enum\":[\"engineering\",\"design\",\"marketing\",\"sales\"],\"enumNames\":[\"Engineering\",\"Design\",\"Marketing\",\"Sales\"],\"width\":120},\"status\":{\"title\":\"Status\",\"type\":\"string\",\"enum\":[\"active\",\"inactive\",\"pending\"],\"enumNames\":[\"Active\",\"Inactive\",\"Pending\"],\"widget\":\"tag\",\"width\":100},\"salary\":{\"title\":\"Salary\",\"type\":\"number\",\"format\":\"money\",\"width\":120},\"joinDate\":{\"title\":\"Join Date\",\"type\":\"string\",\"format\":\"date\",\"width\":120},\"actions\":{\"title\":\"Actions\",\"type\":\"string\",\"widget\":\"actions\",\"width\":120}}}"
+  }
+]

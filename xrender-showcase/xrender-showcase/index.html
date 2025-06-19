@@ -1,0 +1,246 @@
+<div>
+  <!-- Include Header -->
+  <div data-include="../creative-portfolio/components/header"></div>
+
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div data-widget="badge" variant="outline" class="mb-6">
+          X-Render Integration
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold text-foreground mb-6">
+          {{pageTitle}}
+        </h1>
+        <div data-widget="markdown" class="text-xl text-muted-foreground max-w-4xl mx-auto">
+          {{pageDescription}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- X-Render Components Tabs -->
+  <section class="py-16 bg-background">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl font-bold text-foreground mb-4">X-Render Components</h2>
+        <p class="text-muted-foreground mb-8">Explore the powerful X-Render widgets for creating dynamic forms, interactive flowcharts, and advanced data tables.</p>
+      </div>
+
+      <div data-widget="tabs" data-default-value="xflow" class="w-full">
+        <!-- XFlow Tab -->
+        <tab value="xflow" label="XFlow - Process Designer">
+          <div class="py-8">
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold text-foreground mb-4">XFlow - Process Flow Designer</h3>
+              <p class="text-muted-foreground mb-6">Create interactive flowcharts and process diagrams with drag-and-drop functionality.</p>
+            </div>
+
+            <div data-widget="card" class="p-6">
+              <div data-widget="xflow"
+                   data-height="400px"
+                   data-width="100%"
+                   data-readonly="false"
+                   data-schema='{{xflowSchema}}'
+                   class="border rounded-lg">
+              </div>
+            </div>
+          </div>
+        </tab>
+
+        <!-- XForm Tab -->
+        <tab value="xform" label="XForm - Dynamic Forms">
+          <div class="py-8">
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold text-foreground mb-4">XForm - Dynamic Form Generator</h3>
+              <p class="text-muted-foreground mb-6">Generate beautiful forms from JSON schema with validation and custom widgets.</p>
+            </div>
+
+            <div data-widget="card" class="p-6">
+              <div data-widget="xform"
+                   data-display-type="row"
+                   data-label-width="140px"
+                   data-max-width="100%"
+                   data-readonly="false"
+                   data-schema='{{xformSchema}}'
+                   data-form-data='{{xformData}}'>
+              </div>
+            </div>
+          </div>
+        </tab>
+
+        <!-- XTable Tab -->
+        <tab value="xtable" label="XTable - Data Tables">
+          <div class="py-8">
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold text-foreground mb-4">XTable - Advanced Data Table</h3>
+              <p class="text-muted-foreground mb-6">Display data with search, pagination, sorting, and custom actions.</p>
+            </div>
+
+            <div data-widget="card" class="p-6">
+              <div data-widget="xtable"
+                   data-search="true"
+                   data-pagination="true"
+                   data-toolbar="true"
+                   data-height="400"
+                   data-schema='{{xtableSchema}}'>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Examples -->
+  <section class="py-16 bg-muted/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-foreground mb-4">Usage Examples</h2>
+        <p class="text-muted-foreground mb-8">Learn how to integrate X-Render widgets into your portfolio.</p>
+      </div>
+
+      <div data-widget="accordion" data-type="single" data-collapsible="true" data-default-value="xflow-code">
+        <!-- XFlow Example -->
+        <item value="xflow-code" title="XFlow Widget - JSON Schema">
+          <div class="pt-4">
+            <p class="text-muted-foreground mb-4">Create flowcharts using JSON schema data attribute:</p>
+            <div data-widget="code" language="html">
+&lt;div data-widget="xflow"
+     data-height="400px"
+     data-readonly="false"
+     data-schema='{"nodes":[{"id":"start","type":"start","position":{"x":100,"y":100},"data":{"label":"Start"}}],"edges":[]}'&gt;
+&lt;/div&gt;
+            </div>
+          </div>
+        </item>
+
+        <!-- XFlow XML Example -->
+        <item value="xflow-xml" title="XFlow Widget - Native XML">
+          <div class="pt-4">
+            <p class="text-muted-foreground mb-4">Create flowcharts using native XML syntax:</p>
+            <div data-widget="code" language="html">
+&lt;div data-widget="xflow" data-height="400px" data-readonly="false"&gt;
+  &lt;nodes&gt;
+    &lt;start id="start" x="100" y="100" input="Start Process" /&gt;
+    &lt;process id="task" x="300" y="100" input="Process Data" /&gt;
+    &lt;end id="end" x="500" y="100" input="End Process" /&gt;
+  &lt;/nodes&gt;
+  &lt;edges&gt;
+    &lt;edge source="start" target="task" /&gt;
+    &lt;edge source="task" target="end" /&gt;
+  &lt;/edges&gt;
+&lt;/div&gt;
+            </div>
+          </div>
+        </item>
+
+        <!-- XForm Example -->
+        <item value="xform-code" title="XForm Widget - JSON Schema">
+          <div class="pt-4">
+            <p class="text-muted-foreground mb-4">Generate forms using JSON schema data attribute:</p>
+            <div data-widget="code" language="html">
+&lt;div data-widget="xform"
+     data-display-type="row"
+     data-label-width="120px"
+     data-schema='{"type":"object","properties":{"name":{"title":"Name","type":"string","required":true}}}'&gt;
+&lt;/div&gt;
+            </div>
+          </div>
+        </item>
+
+        <!-- XForm XML Example -->
+        <item value="xform-xml" title="XForm Widget - Native XML">
+          <div class="pt-4">
+            <p class="text-muted-foreground mb-4">Generate forms using native XML syntax:</p>
+            <div data-widget="code" language="html">
+&lt;div data-widget="xform" data-display-type="column" data-label-width="120px"&gt;
+  &lt;input name="name" type="string" title="Full Name" required /&gt;
+  &lt;input name="email" type="string" format="email" title="Email" /&gt;
+  &lt;select name="role" title="Role"&gt;
+    &lt;option value="user"&gt;User&lt;/option&gt;
+    &lt;option value="admin"&gt;Admin&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+            </div>
+          </div>
+        </item>
+
+        <!-- XTable Example -->
+        <item value="xtable-code" title="XTable Widget - JSON Schema">
+          <div class="pt-4">
+            <p class="text-muted-foreground mb-4">Create data tables using JSON schema data attribute:</p>
+            <div data-widget="code" language="html">
+&lt;div data-widget="xtable"
+     data-search="true"
+     data-pagination="true"
+     data-toolbar="true"
+     data-height="400"
+     data-schema='{"columns":[{"title":"Name","dataIndex":"name"}]}'&gt;
+&lt;/div&gt;
+            </div>
+          </div>
+        </item>
+
+        <!-- XTable XML Example -->
+        <item value="xtable-xml" title="XTable Widget - Native XML">
+          <div class="pt-4">
+            <p class="text-muted-foreground mb-4">Create data tables using native XML syntax:</p>
+            <div data-widget="code" language="html">
+&lt;div data-widget="xtable" data-search="false" data-pagination="false"&gt;
+  &lt;columns&gt;
+    &lt;text name="name" title="Name" width="150" /&gt;
+    &lt;text name="email" title="Email" width="200" /&gt;
+    &lt;tag name="status" title="Status"&gt;
+      &lt;option value="active"&gt;Active&lt;/option&gt;
+      &lt;option value="inactive"&gt;Inactive&lt;/option&gt;
+    &lt;/tag&gt;
+  &lt;/columns&gt;
+  &lt;data&gt;
+    &lt;row name="John Doe" email="john@example.com" status="active" /&gt;
+  &lt;/data&gt;
+&lt;/div&gt;
+            </div>
+          </div>
+        </item>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation Links -->
+  <section class="py-16 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-foreground mb-6">Learn More</h2>
+      <p class="text-muted-foreground mb-8">Explore the official X-Render documentation for advanced features and customization.</p>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div data-widget="card" class="p-6 text-center">
+          <h3 class="text-lg font-bold text-foreground mb-3">XFlow Docs</h3>
+          <p class="text-muted-foreground mb-4">Learn about flow design and node customization</p>
+          <div data-widget="button" variant="outline" href="https://xrender.fun/xflow">
+            View Docs
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6 text-center">
+          <h3 class="text-lg font-bold text-foreground mb-3">FormRender Docs</h3>
+          <p class="text-muted-foreground mb-4">Discover form schema and widget options</p>
+          <div data-widget="button" variant="outline" href="https://xrender.fun/form-render">
+            View Docs
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6 text-center">
+          <h3 class="text-lg font-bold text-foreground mb-3">TableRender Docs</h3>
+          <p class="text-muted-foreground mb-4">Master table configuration and APIs</p>
+          <div data-widget="button" variant="outline" href="https://xrender.fun/table-render">
+            View Docs
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include Footer -->
+  <div data-include="../creative-portfolio/components/footer"></div>
+</div>

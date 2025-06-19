@@ -2,191 +2,203 @@
   <div class="max-w-6xl mx-auto px-4 py-8">
     <h1 class="text-3xl font-bold mb-8">Table-Render Documentation Examples</h1>
     <p class="text-muted-foreground mb-8">
-      Exact implementation of examples from table-render.md documentation using our XML renderer.
+      Exact implementation of examples from table-render.md documentation using our XML renderer, organized in tabs for easy navigation.
     </p>
 
-    <!-- Example 1: Basic Table from Docs -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4">Basic Table (Exact from docs)</h2>
-      <div class="border rounded-lg p-6">
-        <div data-widget="xtable" data-search="false" data-pagination="false" data-toolbar="false">
-          <columns>
-            <text name="title" title="酒店名称" width="20%" />
-            <text name="address" title="酒店地址" width="25%" ellipsis="true" copyable="true" />
-            <text name="state" title="酒店状态">
-              <option value="open">营业中</option>
-              <option value="closed">已打烊</option>
-            </text>
-            <tags name="labels" title="酒店星级" width="90" />
-            <money name="money" title="酒店GMV" sorter="true" />
-            <date name="created_at" title="成立时间" />
-          </columns>
-          
-          <data>
-            <row title="豪华大酒店" 
-                 address="余杭区聚橙路和文昌路交叉口" 
-                 state="open" 
-                 labels='[{"text":"五星级","color":"gold"}]' 
-                 money="9999999" 
-                 created_at="2020-05-26T09:42:56Z" />
-            <row title="商务精品酒店" 
-                 address="西湖区文三路互联网金融大厦" 
-                 state="closed" 
-                 labels='[{"text":"四星级","color":"blue"}]' 
-                 money="5555555" 
-                 created_at="2020-06-15T10:30:00Z" />
-            <row title="经济连锁酒店" 
-                 address="拱墅区莫干山路科技园区" 
-                 state="open" 
-                 labels='[{"text":"三星级","color":"green"}]' 
-                 money="2222222" 
-                 created_at="2020-07-20T14:15:30Z" />
-          </data>
-        </div>
-      </div>
-    </section>
+    <div data-widget="tabs" data-default-value="basic">
+      <!-- Basic Table Tab -->
+      <tab value="basic" label="Basic Table">
+        <div class="py-6">
+          <h2 class="text-2xl font-bold mb-4">Basic Table (Exact from docs)</h2>
+          <div class="border rounded-lg p-6">
+            <div data-widget="xtable" data-search="false" data-pagination="false" data-toolbar="false">
+              <columns>
+                <text name="title" title="酒店名称" width="20%" />
+                <text name="address" title="酒店地址" width="25%" ellipsis="true" copyable="true" />
+                <text name="state" title="酒店状态">
+                  <option value="open">营业中</option>
+                  <option value="closed">已打烊</option>
+                </text>
+                <tags name="labels" title="酒店星级" width="90" />
+                <money name="money" title="酒店GMV" sorter="true" />
+                <date name="created_at" title="成立时间" />
+              </columns>
 
-    <!-- Example 2: Advanced Table with All Features -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4">Advanced Table with All Features</h2>
-      <div class="border rounded-lg p-6">
-        <div data-widget="xtable" data-search="true" data-pagination="true" data-toolbar="true">
-          <columns>
-            <image name="imgSrc" title="图片" />
-            <link name="link" title="链接" width="200px" />
-            <text name="address" title="复制、省略" ellipsis="true" copyable="true" width="120px" />
-            <text name="state" title="标题气泡" tooltip="气泡提示" width="120px">
-              <option value="open">营业中</option>
-              <option value="closed">已打烊</option>
-            </text>
-            <money name="money" title="金额" sorter="true" />
-            <tag name="tagText" title="标签">
-              <option value="1">失败</option>
-            </tag>
-            <tags name="tags" title="多标签" width="160" />
-            <progress name="progressNum" title="进度条" width="140px" />
-            <text name="status" title="枚举转换">
-              <option value="success">成功</option>
-              <option value="default">失败</option>
-            </text>
-            <date name="created_at" title="时间-切换格式" width="140px" />
-            <daterange name="dateRange" title="时间区间" width="220px" />
-          </columns>
-          
-          <data>
-            <row imgSrc="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                 link="https://xrender.fun/"
-                 address="余杭区聚橙路和文昌路交叉口"
-                 state="open"
-                 money="9999999"
-                 tagText="1"
-                 tags='[{"text":"三星1","color":"cyan"},{"text":"三星2","color":"cyan"}]'
-                 progressNum="10"
-                 status="success"
-                 created_at="2020-05-26T09:42:56Z"
-                 dateRange='["2020-05-26T09:42:56Z","2020-05-26T09:42:56Z"]' />
-          </data>
-        </div>
-      </div>
-    </section>
-
-    <!-- Example 3: Simple Data Table -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4">Simple User Data Table</h2>
-      <div class="border rounded-lg p-6">
-        <div data-widget="xtable" data-search="false" data-pagination="false" data-toolbar="false">
-          <columns>
-            <text name="id" title="ID" width="60" />
-            <text name="name" title="姓名" width="120" />
-            <text name="email" title="邮箱" width="200" />
-            <text name="role" title="角色" width="100">
-              <option value="admin">管理员</option>
-              <option value="user">用户</option>
-              <option value="guest">访客</option>
-            </text>
-            <tag name="status" title="状态" width="80">
-              <option value="active">活跃</option>
-              <option value="inactive">非活跃</option>
-            </tag>
-            <date name="joinDate" title="加入时间" width="120" />
-          </columns>
-          
-          <data>
-            <row id="1" name="张三" email="zhangsan@example.com" role="admin" status="active" joinDate="2024-01-15" />
-            <row id="2" name="李四" email="lisi@example.com" role="user" status="active" joinDate="2024-01-16" />
-            <row id="3" name="王五" email="wangwu@example.com" role="user" status="inactive" joinDate="2024-01-17" />
-            <row id="4" name="赵六" email="zhaoliu@example.com" role="guest" status="active" joinDate="2024-01-18" />
-          </data>
-        </div>
-      </div>
-    </section>
-
-    <!-- Example 4: Empty Table (Should show no data message) -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4">Empty Table Test</h2>
-      <div class="border rounded-lg p-6">
-        <div data-widget="xtable" data-search="false" data-pagination="false" data-toolbar="false">
-          <columns>
-            <text name="name" title="Name" width="150" />
-            <text name="email" title="Email" width="200" />
-            <text name="status" title="Status" width="100" />
-          </columns>
-          
-          <data>
-            <!-- No rows - should show empty state -->
-          </data>
-        </div>
-      </div>
-    </section>
-
-    <!-- Debug Information -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4">Debug Information</h2>
-      <div data-widget="card" class="p-6">
-        <div data-widget="markdown">
-          ## Table-Render Implementation Notes
-
-          ### Expected API (from docs):
-          ```javascript
-          const searchApi = () => {
-            const list = [/* data array */];
-            return {
-              data: list,
-              total: list.length
-            };
-          };
-
-          <TableRender 
-            ref={tableRef}
-            search={{ schema }}
-            request={searchApi}
-            columns={columns}
-            toolbarRender={toolbarRender}
-          />
-          ```
-
-          ### Our XML Implementation:
-          ```html
-          <div data-widget="xtable">
-            <columns>
-              <text name="title" title="Title" />
-              <!-- ... more columns -->
-            </columns>
-            
-            <data>
-              <row title="Value 1" />
-              <!-- ... more rows -->
-            </data>
+              <data>
+                <row title="豪华大酒店"
+                     address="余杭区聚橙路和文昌路交叉口"
+                     state="open"
+                     labels='[{"text":"五星级","color":"gold"}]'
+                     money="9999999"
+                     created_at="2020-05-26T09:42:56Z" />
+                <row title="商务精品酒店"
+                     address="西湖区文三路互联网金融大厦"
+                     state="closed"
+                     labels='[{"text":"四星级","color":"blue"}]'
+                     money="5555555"
+                     created_at="2020-06-15T10:30:00Z" />
+                <row title="经济连锁酒店"
+                     address="拱墅区莫干山路科技园区"
+                     state="open"
+                     labels='[{"text":"三星级","color":"green"}]'
+                     money="2222222"
+                     created_at="2020-07-20T14:15:30Z" />
+              </data>
+            </div>
           </div>
-          ```
-
-          ### Debugging Steps:
-          1. Check browser console for parsed data logs
-          2. Verify columns are being parsed correctly
-          3. Ensure data rows are being converted properly
-          4. Check if request function is being called
         </div>
-      </div>
-    </section>
+      </tab>
+
+      <!-- Advanced Table Tab -->
+      <tab value="advanced" label="Advanced Features">
+        <div class="py-6">
+          <h2 class="text-2xl font-bold mb-4">Advanced Table with All Features</h2>
+          <div class="border rounded-lg p-6">
+            <div data-widget="xtable" data-search="true" data-pagination="true" data-toolbar="true">
+              <columns>
+                <image name="imgSrc" title="图片" />
+                <link name="link" title="链接" width="200px" />
+                <text name="address" title="复制、省略" ellipsis="true" copyable="true" width="120px" />
+                <text name="state" title="标题气泡" tooltip="气泡提示" width="120px">
+                  <option value="open">营业中</option>
+                  <option value="closed">已打烊</option>
+                </text>
+                <money name="money" title="金额" sorter="true" />
+                <tag name="tagText" title="标签">
+                  <option value="1">失败</option>
+                </tag>
+                <tags name="tags" title="多标签" width="160" />
+                <progress name="progressNum" title="进度条" width="140px" />
+                <text name="status" title="枚举转换">
+                  <option value="success">成功</option>
+                  <option value="default">失败</option>
+                </text>
+                <date name="created_at" title="时间-切换格式" width="140px" />
+                <daterange name="dateRange" title="时间区间" width="220px" />
+              </columns>
+
+              <data>
+                <row imgSrc="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                     link="https://xrender.fun/"
+                     address="余杭区聚橙路和文昌路交叉口"
+                     state="open"
+                     money="9999999"
+                     tagText="1"
+                     tags='[{"text":"三星1","color":"cyan"},{"text":"三星2","color":"cyan"}]'
+                     progressNum="10"
+                     status="success"
+                     created_at="2020-05-26T09:42:56Z"
+                     dateRange='["2020-05-26T09:42:56Z","2020-05-26T09:42:56Z"]' />
+              </data>
+            </div>
+          </div>
+        </div>
+      </tab>
+
+      <!-- Simple Data Table Tab -->
+      <tab value="simple" label="Simple Data">
+        <div class="py-6">
+          <h2 class="text-2xl font-bold mb-4">Simple User Data Table</h2>
+          <div class="border rounded-lg p-6">
+            <div data-widget="xtable" data-search="false" data-pagination="false" data-toolbar="false">
+              <columns>
+                <text name="id" title="ID" width="60" />
+                <text name="name" title="姓名" width="120" />
+                <text name="email" title="邮箱" width="200" />
+                <text name="role" title="角色" width="100">
+                  <option value="admin">管理员</option>
+                  <option value="user">用户</option>
+                  <option value="guest">访客</option>
+                </text>
+                <tag name="status" title="状态" width="80">
+                  <option value="active">活跃</option>
+                  <option value="inactive">非活跃</option>
+                </tag>
+                <date name="joinDate" title="加入时间" width="120" />
+              </columns>
+
+              <data>
+                <row id="1" name="张三" email="zhangsan@example.com" role="admin" status="active" joinDate="2024-01-15" />
+                <row id="2" name="李四" email="lisi@example.com" role="user" status="active" joinDate="2024-01-16" />
+                <row id="3" name="王五" email="wangwu@example.com" role="user" status="inactive" joinDate="2024-01-17" />
+                <row id="4" name="赵六" email="zhaoliu@example.com" role="guest" status="active" joinDate="2024-01-18" />
+              </data>
+            </div>
+          </div>
+        </div>
+      </tab>
+
+      <!-- Empty Table Tab -->
+      <tab value="empty" label="Empty State">
+        <div class="py-6">
+          <h2 class="text-2xl font-bold mb-4">Empty Table Test</h2>
+          <div class="border rounded-lg p-6">
+            <div data-widget="xtable" data-search="false" data-pagination="false" data-toolbar="false">
+              <columns>
+                <text name="name" title="Name" width="150" />
+                <text name="email" title="Email" width="200" />
+                <text name="status" title="Status" width="100" />
+              </columns>
+
+              <data>
+                <!-- No rows - should show empty state -->
+              </data>
+            </div>
+          </div>
+        </div>
+      </tab>
+
+      <!-- Debug Information Tab -->
+      <tab value="debug" label="Debug Info">
+        <div class="py-6">
+          <h2 class="text-2xl font-bold mb-4">Debug Information</h2>
+          <div data-widget="card" class="p-6">
+            <div data-widget="markdown">
+              ## Table-Render Implementation Notes
+
+              ### Expected API (from docs):
+              ```javascript
+              const searchApi = () => {
+                const list = [/* data array */];
+                return {
+                  data: list,
+                  total: list.length
+                };
+              };
+
+              <TableRender
+                ref={tableRef}
+                search={{ schema }}
+                request={searchApi}
+                columns={columns}
+                toolbarRender={toolbarRender}
+              />
+              ```
+
+              ### Our XML Implementation:
+              ```html
+              <div data-widget="xtable">
+                <columns>
+                  <text name="title" title="Title" />
+                  <!-- ... more columns -->
+                </columns>
+
+                <data>
+                  <row title="Value 1" />
+                  <!-- ... more rows -->
+                </data>
+              </div>
+              ```
+
+              ### Debugging Steps:
+              1. Check browser console for parsed data logs
+              2. Verify columns are being parsed correctly
+              3. Ensure data rows are being converted properly
+              4. Check if request function is being called
+            </div>
+          </div>
+        </div>
+      </tab>
+    </div>
   </div>
 </div>

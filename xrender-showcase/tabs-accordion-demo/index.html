@@ -1,0 +1,222 @@
+<div>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">{{pageTitle}}</h1>
+    <p class="text-muted-foreground mb-8">{{pageDescription}}</p>
+
+    <!-- Basic Tabs Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Basic Tabs</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="tabs" data-default-value="overview">
+          <tab value="overview" label="Overview">
+            <div data-widget="markdown">
+              ## Project Overview
+              
+              This is the **overview** tab content. You can include any HTML or markdown content here.
+              
+              - Feature 1: Advanced functionality
+              - Feature 2: Easy to use
+              - Feature 3: Highly customizable
+            </div>
+          </tab>
+          
+          <tab value="features" label="Features">
+            <div data-widget="card" class="p-4">
+              <h3 class="text-lg font-bold mb-3">Key Features</h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div data-widget="badge" variant="default">Fast Performance</div>
+                <div data-widget="badge" variant="secondary">Easy Setup</div>
+                <div data-widget="badge" variant="outline">Customizable</div>
+                <div data-widget="badge" variant="destructive">Secure</div>
+              </div>
+            </div>
+          </tab>
+          
+          <tab value="documentation" label="Documentation">
+            <div data-widget="markdown">
+              ## Documentation
+              
+              ### Getting Started
+              
+              1. Install the package
+              2. Configure your settings
+              3. Start using the features
+              
+              ### API Reference
+              
+              ```javascript
+              const config = {
+                theme: 'dark',
+                features: ['tabs', 'accordion']
+              };
+              ```
+            </div>
+          </tab>
+          
+          <tab value="disabled" label="Disabled Tab" disabled>
+            This tab is disabled and cannot be accessed.
+          </tab>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vertical Tabs Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Vertical Tabs</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="tabs" data-orientation="vertical" data-default-value="profile">
+          <tab value="profile" label="Profile">
+            <div data-widget="card" class="p-4">
+              <h3 class="text-lg font-bold mb-3">User Profile</h3>
+              <p>Manage your profile information and settings.</p>
+            </div>
+          </tab>
+          
+          <tab value="settings" label="Settings">
+            <div data-widget="card" class="p-4">
+              <h3 class="text-lg font-bold mb-3">Account Settings</h3>
+              <p>Configure your account preferences and security options.</p>
+            </div>
+          </tab>
+          
+          <tab value="notifications" label="Notifications">
+            <div data-widget="card" class="p-4">
+              <h3 class="text-lg font-bold mb-3">Notification Preferences</h3>
+              <p>Choose how you want to receive notifications.</p>
+            </div>
+          </tab>
+        </div>
+      </div>
+    </section>
+
+    <!-- Basic Accordion Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Basic Accordion (Single)</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="accordion" data-type="single" data-collapsible="true" data-default-value="faq1">
+          <item value="faq1" title="What is this widget system?">
+            <div data-widget="markdown">
+              This is a **custom widget system** that allows you to create rich, interactive content using simple XML-like syntax. It supports various components including tabs, accordions, cards, and more.
+            </div>
+          </item>
+          
+          <item value="faq2" title="How do I use tabs and accordions?">
+            <div data-widget="markdown">
+              ### Using Tabs
+              ```html
+              &lt;div data-widget="tabs"&gt;
+                &lt;tab value="tab1" label="Tab 1"&gt;Content&lt;/tab&gt;
+              &lt;/div&gt;
+              ```
+              
+              ### Using Accordions
+              ```html
+              &lt;div data-widget="accordion"&gt;
+                &lt;item value="item1" title="Title"&gt;Content&lt;/item&gt;
+              &lt;/div&gt;
+              ```
+            </div>
+          </item>
+          
+          <item value="faq3" title="Can I nest widgets inside tabs and accordions?">
+            <div data-widget="markdown">
+              **Yes!** You can nest any widget inside tabs and accordion items. This includes:
+              
+              - Cards and buttons
+              - Markdown content
+              - Images and code blocks
+              - Even other tabs and accordions
+            </div>
+          </item>
+          
+          <item value="faq4" title="Are there any limitations?" disabled>
+            This item is disabled and cannot be expanded.
+          </item>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multiple Accordion Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Multiple Accordion</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="accordion" data-type="multiple" data-default-value="step1,step3">
+          <item value="step1" title="Step 1: Installation">
+            <div data-widget="markdown">
+              ## Installation
+              
+              Install the required packages:
+              
+              ```bash
+              npm install @radix-ui/react-accordion
+              npm install @radix-ui/react-tabs
+              ```
+            </div>
+          </item>
+          
+          <item value="step2" title="Step 2: Configuration">
+            <div data-widget="card" class="p-4">
+              <h3 class="text-lg font-bold mb-3">Configuration</h3>
+              <p>Set up your configuration files and import the necessary components.</p>
+              <div data-widget="button" variant="outline" class="mt-3">View Config</div>
+            </div>
+          </item>
+          
+          <item value="step3" title="Step 3: Usage">
+            <div data-widget="markdown">
+              ## Usage Examples
+              
+              Start using the widgets in your content:
+              
+              - Create tabbed interfaces
+              - Build FAQ sections
+              - Organize content hierarchically
+            </div>
+          </item>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nested Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Nested Tabs and Accordion</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="tabs" data-default-value="components">
+          <tab value="components" label="Components">
+            <div data-widget="accordion" data-type="single" data-collapsible="true">
+              <item value="tabs-info" title="Tabs Component">
+                <div data-widget="markdown">
+                  ### Tabs Component Features
+                  
+                  - **Horizontal and vertical orientation**
+                  - **Keyboard navigation support**
+                  - **Disabled tab states**
+                  - **Custom styling with shadcn/ui**
+                </div>
+              </item>
+              
+              <item value="accordion-info" title="Accordion Component">
+                <div data-widget="markdown">
+                  ### Accordion Component Features
+                  
+                  - **Single or multiple expansion**
+                  - **Collapsible behavior**
+                  - **Disabled item states**
+                  - **Smooth animations**
+                </div>
+              </item>
+            </div>
+          </tab>
+          
+          <tab value="examples" label="Examples">
+            <div data-widget="markdown">
+              ## Code Examples
+              
+              Check out the source code of this page to see how these components are implemented using the XML widget syntax.
+            </div>
+          </tab>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
