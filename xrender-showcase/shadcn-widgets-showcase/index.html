@@ -1,0 +1,220 @@
+<div>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Shadcn/UI Widgets Showcase</h1>
+    <p class="text-muted-foreground mb-8">
+      Demonstration of all form and table widgets using shadcn/ui components for consistent design.
+    </p>
+
+    <!-- Form Widgets Showcase -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Form Widgets with Shadcn/UI</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="xform" data-display-type="column" data-label-width="150">
+          <fieldset title="Basic Input Controls">
+            <input name="name" type="string" title="Text Input" placeholder="Enter your name" required />
+            <input name="email" type="string" format="email" title="Email Input" placeholder="your@email.com" />
+            <number name="age" title="Number Input" min="0" max="120" placeholder="Enter your age" />
+            <textarea name="bio" title="Textarea" placeholder="Tell us about yourself..." rows="3" />
+          </fieldset>
+          
+          <fieldset title="Selection Controls">
+            <select name="country" title="Select Dropdown" required>
+              <option value="us">United States</option>
+              <option value="uk">United Kingdom</option>
+              <option value="ca">Canada</option>
+              <option value="au">Australia</option>
+            </select>
+            
+            <multiselect name="skills" title="Multi-Select" type="array">
+              <option value="javascript">JavaScript</option>
+              <option value="react">React</option>
+              <option value="vue">Vue.js</option>
+              <option value="angular">Angular</option>
+              <option value="nodejs">Node.js</option>
+            </multiselect>
+          </fieldset>
+          
+          <fieldset title="Boolean Controls">
+            <checkbox name="newsletter" title="Subscribe to Newsletter" default="true" />
+            <checkbox name="terms" title="Accept Terms and Conditions" required />
+            <switch name="notifications" title="Enable Notifications" default="false" />
+          </fieldset>
+          
+          <fieldset title="Advanced Controls">
+            <number name="experience" title="Years of Experience (Slider)" min="0" max="20" step="1" widget="slider" default="5" />
+            <number name="salary" title="Expected Salary" min="30000" max="200000" step="5000" placeholder="Enter amount" />
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Widgets Showcase -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Table Widgets with Shadcn/UI</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="xtable" data-search="false" data-pagination="false" data-toolbar="false">
+          <columns>
+            <image name="avatar" title="Avatar" width="80" />
+            <text name="name" title="Name" width="120" copyable="true" />
+            <text name="email" title="Email" width="200" ellipsis="true" />
+            <tag name="status" title="Status" width="100">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="pending">Pending</option>
+            </tag>
+            <tags name="skills" title="Skills" width="200" />
+            <money name="salary" title="Salary" width="120" sorter="true" />
+            <progress name="completion" title="Profile %" width="150" />
+            <date name="joinDate" title="Join Date" width="120" />
+            <link name="portfolio" title="Portfolio" width="120" />
+          </columns>
+          
+          <data>
+            <row avatar="https://github.com/shadcn.png"
+                 name="John Doe"
+                 email="john.doe@example.com"
+                 status="active"
+                 skills='[{"text":"React","color":"blue"},{"text":"TypeScript","color":"green"}]'
+                 salary="75000"
+                 completion="85"
+                 joinDate="2024-01-15"
+                 portfolio="https://johndoe.dev" />
+            <row avatar="https://github.com/vercel.png"
+                 name="Jane Smith"
+                 email="jane.smith@example.com"
+                 status="pending"
+                 skills='[{"text":"Vue.js","color":"green"},{"text":"Python","color":"yellow"}]'
+                 salary="68000"
+                 completion="92"
+                 joinDate="2024-01-20"
+                 portfolio="https://janesmith.com" />
+            <row avatar="https://github.com/microsoft.png"
+                 name="Bob Johnson"
+                 email="bob.johnson@example.com"
+                 status="inactive"
+                 skills='[{"text":"Angular","color":"red"},{"text":"C#","color":"purple"}]'
+                 salary="82000"
+                 completion="67"
+                 joinDate="2024-01-10"
+                 portfolio="https://bobjohnson.net" />
+          </data>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced Form Example -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Advanced Form with Validation</h2>
+      <div class="border rounded-lg p-6">
+        <div data-widget="xform" data-display-type="row" data-label-width="140">
+          <fieldset title="User Registration">
+            <input name="username" type="string" title="Username" placeholder="Choose a username" required />
+            <input name="password" type="string" title="Password" widget="password" placeholder="Enter password" required />
+            <input name="confirmPassword" type="string" title="Confirm Password" widget="password" placeholder="Confirm password" required />
+          </fieldset>
+          
+          <fieldset title="Personal Details">
+            <input name="firstName" type="string" title="First Name" placeholder="John" required />
+            <input name="lastName" type="string" title="Last Name" placeholder="Doe" required />
+            <input name="phone" type="string" title="Phone Number" placeholder="+1 (555) 123-4567" />
+          </fieldset>
+          
+          <fieldset title="Preferences">
+            <select name="theme" title="Theme Preference">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="system">System</option>
+            </select>
+            
+            <select name="language" title="Language">
+              <option value="en">English</option>
+              <option value="zh">中文</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+            
+            <number name="fontSize" title="Font Size" min="12" max="24" step="1" widget="slider" default="16" />
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+    <!-- Widget Comparison -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Shadcn/UI vs Default Widgets</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-4">✅ With Shadcn/UI (Our Implementation)</h3>
+          <div data-widget="markdown">
+            - **Consistent Design**: All components follow the same design system
+            - **Accessibility**: Built-in ARIA attributes and keyboard navigation
+            - **Theming**: Automatic dark/light mode support
+            - **Modern UI**: Clean, professional appearance
+            - **Type Safety**: Full TypeScript support
+            - **Customizable**: Easy to modify styles and behavior
+          </div>
+        </div>
+        
+        <div data-widget="card" class="p-6">
+          <h3 class="font-bold mb-4">❌ Default Form-Render Widgets</h3>
+          <div data-widget="markdown">
+            - **Inconsistent**: Mixed design patterns
+            - **Limited Theming**: Hard to customize appearance
+            - **Basic Styling**: Generic, outdated look
+            - **Accessibility Issues**: May lack proper ARIA support
+            - **Framework Dependent**: Tied to specific UI libraries
+            - **Hard to Customize**: Requires deep CSS overrides
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Guide -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Implementation Guide</h2>
+      <div data-widget="card" class="p-6">
+        <div data-widget="markdown">
+          ## How It Works
+
+          ### 1. Custom Widget Registration
+          ```typescript
+          import { shadcnWidgets } from './form-widgets/shadcn-widgets';
+          import { shadcnTableWidgets } from './table-widgets/shadcn-table-widgets';
+
+          // Form widgets
+          <FormRender widgets={shadcnWidgets} />
+
+          // Table widgets  
+          <TableRender widgets={shadcnTableWidgets} />
+          ```
+
+          ### 2. XML Syntax Remains the Same
+          ```html
+          <!-- Forms -->
+          <div data-widget="xform">
+            <input name="name" type="string" title="Name" />
+            <select name="role" title="Role">
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <!-- Tables -->
+          <div data-widget="xtable">
+            <columns>
+              <tag name="status" title="Status">
+                <option value="active">Active</option>
+              </tag>
+            </columns>
+          </div>
+          ```
+
+          ### 3. Automatic Widget Mapping
+          - `<input>` → `ShadcnInput` component
+          - `<select>` → `ShadcnSelect` component  
+          - `<tag>` → `ShadcnTag` component
+          - All widgets use shadcn/ui components internally
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

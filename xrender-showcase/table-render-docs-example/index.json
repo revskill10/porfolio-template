@@ -1,0 +1,10 @@
+[
+  {
+    "key": "pageTitle",
+    "value": "Table-Render Documentation Examples"
+  },
+  {
+    "key": "pageDescription",
+    "value": "Exact implementation of table-render.md examples using XML renderer"
+  }
+]

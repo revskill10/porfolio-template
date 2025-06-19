@@ -1,0 +1,91 @@
+<div>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Simple X-Render XML Test</h1>
+    
+    <!-- Simple Form Test with Shadcn/UI -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold mb-4">Simple Form (Shadcn/UI Widgets)</h2>
+      <div class="border rounded-lg p-4">
+        <div data-widget="xform" data-display-type="column" data-label-width="120px">
+          <input name="name" type="string" title="Full Name" required placeholder="Enter your full name" />
+          <input name="email" type="string" format="email" title="Email Address" placeholder="your@email.com" />
+          <number name="age" title="Age" min="18" max="120" placeholder="Enter your age" />
+          <select name="role" title="Role" required>
+            <option value="user">User</option>
+            <option value="admin">Administrator</option>
+            <option value="moderator">Moderator</option>
+          </select>
+          <checkbox name="subscribe" title="Subscribe to Newsletter" default="true" />
+          <switch name="notifications" title="Enable Notifications" default="false" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple Table Test with Shadcn/UI -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold mb-4">Simple Table (Shadcn/UI Widgets)</h2>
+      <div class="border rounded-lg p-4">
+        <div data-widget="xtable" data-search="false" data-pagination="false" data-toolbar="false">
+          <columns>
+            <text name="name" title="Name" width="150" copyable="true" />
+            <text name="email" title="Email" width="200" ellipsis="true" />
+            <tag name="status" title="Status" width="100">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="pending">Pending</option>
+            </tag>
+            <tags name="skills" title="Skills" width="200" />
+            <money name="salary" title="Salary" width="120" />
+            <progress name="completion" title="Progress" width="150" />
+            <date name="joinDate" title="Join Date" width="120" />
+          </columns>
+
+          <data>
+            <row name="John Doe"
+                 email="john.doe@example.com"
+                 status="active"
+                 skills='[{"text":"React","color":"blue"},{"text":"TypeScript","color":"green"}]'
+                 salary="75000"
+                 completion="85"
+                 joinDate="2024-01-15" />
+            <row name="Jane Smith"
+                 email="jane.smith@example.com"
+                 status="pending"
+                 skills='[{"text":"Vue.js","color":"green"},{"text":"Python","color":"yellow"}]'
+                 salary="68000"
+                 completion="92"
+                 joinDate="2024-01-20" />
+            <row name="Bob Johnson"
+                 email="bob.johnson@example.com"
+                 status="inactive"
+                 skills='[{"text":"Angular","color":"red"},{"text":"C#","color":"purple"}]'
+                 salary="82000"
+                 completion="67"
+                 joinDate="2024-01-10" />
+          </data>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple Flow Test -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold mb-4">Simple Flow</h2>
+      <div class="border rounded-lg p-4">
+        <div data-widget="xflow" data-height="300px" data-readonly="false">
+          <nodes>
+            <start id="start" x="100" y="100" input="Start Process" description="Begin the workflow" />
+            <process id="task" x="300" y="100" input="Process Data" description="Process the input data" />
+            <decision id="check" x="500" y="100" input="Check Result" description="Validate the processed data" />
+            <end id="end" x="700" y="100" input="End Process" description="Complete the workflow" />
+          </nodes>
+
+          <edges>
+            <edge id="e1" source="start" target="task" />
+            <edge id="e2" source="task" target="check" />
+            <edge id="e3" source="check" target="end" />
+          </edges>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
