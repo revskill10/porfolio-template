@@ -1,5 +1,8 @@
 <div>
-  <div class="max-w-6xl mx-auto px-4 py-8">
+  <!-- Include Header -->
+  <div data-include="../components/header"></div>
+
+  <div class="max-w-6xl mx-auto px-4 py-8 pt-24">
     
     <!-- Header -->
     <div class="text-center mb-12">
@@ -31,7 +34,7 @@
       <div data-widget="card" class="p-6">
         <h3 class="text-lg font-semibold mb-4">Including Creative Portfolio Header</h3>
         <div class="border-l-4 border-blue-500 pl-4">
-          <include data-include="../creative-portfolio/components/header/index.html"></include>
+          <div data-include="../components/header"></div>
         </div>
       </div>
     </section>
@@ -132,4 +135,7 @@ Resolved: /examples/creative-portfolio/about
     </section>
 
   </div>
+
+  <!-- Include Footer -->
+  <div data-include="../components/footer"></div>
 </div>
