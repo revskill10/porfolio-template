@@ -1,0 +1,13 @@
+{
+  "name": "Header",
+  "description": "Main navigation header component",
+  "version": "1.0.0",
+  "dependencies": [],
+  "props": {
+    "theme": {
+      "type": "string",
+      "default": "dark",
+      "options": ["light", "dark"]
+    }
+  }
+}

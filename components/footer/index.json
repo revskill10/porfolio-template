@@ -1,0 +1,7 @@
+{
+  "name": "Footer",
+  "description": "Site footer with links and contact info",
+  "version": "1.0.0",
+  "dependencies": [],
+  "props": {}
+}
