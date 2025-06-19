@@ -1,10 +1,10 @@
 <div>
   <!-- Hero Section with Enhanced Widgets -->
-  <div class="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
+  <div class="min-h-screen flex items-center justify-center bg-background text-foreground relative overflow-hidden">
     <!-- Animated Background -->
     <div class="absolute inset-0 opacity-20">
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-accent to-primary rounded-full blur-3xl animate-pulse delay-1000"></div>
     </div>
 
     <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8">
@@ -12,19 +12,19 @@
         <div data-widget="image"
              src="{{profileImage}}"
              alt="{{name}}"
-             class="w-40 h-40 mx-auto mb-8 rounded-full border-4 border-gradient-to-r from-pink-500 to-purple-500 shadow-2xl">
+             class="w-40 h-40 mx-auto mb-8 rounded-full border-4 border-primary shadow-2xl">
         </div>
       </div>
 
       <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-        <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">{{name}}</span>
+        <span class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">{{name}}</span>
       </h1>
 
-      <p class="text-2xl md:text-3xl text-gray-300 mb-4">
+      <p class="text-2xl md:text-3xl text-muted-foreground mb-4">
         {{title}}
       </p>
 
-      <div data-widget="markdown" class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+      <div data-widget="markdown" class="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
         {{tagline}}
       </div>
 
@@ -32,15 +32,13 @@
         <div data-widget="button"
              variant="default"
              size="lg"
-             href="./portfolio"
-             class="group relative bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+             href="./portfolio">
           View My Work
         </div>
         <div data-widget="button"
              variant="outline"
              size="lg"
-             href="./contact"
-             class="border-2 border-white/30 text-white hover:border-white hover:bg-white/10 text-lg px-8 py-4 rounded-full transition-all duration-300 backdrop-blur-sm">
+             href="./contact">
           Let's Collaborate
         </div>
       </div>
@@ -48,7 +46,7 @@
       <!-- Social Links -->
       <div class="flex justify-center space-x-8">
         <div data-each="socialLinks" data-as="social">
-          <a href="{{social.url}}" target="_blank" class="text-white hover:text-pink-300 transition-colors duration-300">
+          <a href="{{social.url}}" target="_blank" class="text-foreground hover:text-primary transition-colors duration-300">
             <div class="w-8 h-8 flex items-center justify-center">
               <span class="text-2xl">{{social.icon}}</span>
             </div>
@@ -59,40 +57,40 @@
   </div>
 
   <!-- About Section with Math Examples -->
-  <section class="py-20 bg-gray-900">
+  <section class="py-20 bg-muted/50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-pink-400 border-pink-400 text-lg">
+        <div data-widget="badge" variant="outline" class="mb-4">
           About Me
         </div>
-        <h2 class="text-4xl font-bold text-white mb-6">{{aboutTitle}}</h2>
-        <div data-widget="markdown" class="text-xl text-gray-400 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-foreground mb-6">{{aboutTitle}}</h2>
+        <div data-widget="markdown" class="text-xl text-muted-foreground max-w-4xl mx-auto">
           {{aboutDescription}}
         </div>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <div data-widget="markdown" class="prose prose-lg prose-invert max-w-none mb-8">
+          <div data-widget="markdown" class="prose prose-lg max-w-none mb-8">
             {{aboutContent}}
           </div>
 
           <!-- Mathematical Expertise -->
-          <div data-widget="card" class="p-6 bg-gray-800/50 border border-gray-700">
-            <h3 class="text-xl font-bold text-white mb-4">Mathematical Modeling</h3>
-            <p class="text-gray-400 mb-4">I specialize in algorithm optimization and complexity analysis:</p>
+          <div data-widget="card" class="p-6">
+            <h3 class="text-xl font-bold text-foreground mb-4">Mathematical Modeling</h3>
+            <p class="text-muted-foreground mb-4">I specialize in algorithm optimization and complexity analysis:</p>
 
             <div class="space-y-4">
               <div class="flex items-center space-x-4">
-                <span class="text-gray-300">Time Complexity:</span>
+                <span class="text-foreground">Time Complexity:</span>
                 <div data-widget="inline-math">O(n \log n)</div>
               </div>
               <div class="flex items-center space-x-4">
-                <span class="text-gray-300">Space Complexity:</span>
+                <span class="text-foreground">Space Complexity:</span>
                 <div data-widget="inline-math">O(n)</div>
               </div>
               <div class="mt-6">
-                <p class="text-gray-400 mb-3">Recursive relation for divide-and-conquer algorithms:</p>
+                <p class="text-muted-foreground mb-3">Recursive relation for divide-and-conquer algorithms:</p>
                 <div data-widget="block-math">
                   T(n) = \begin{cases}
                   O(1) & \text{if } n \leq 1 \\
@@ -108,12 +106,12 @@
           <!-- Skills Grid -->
           <div class="grid grid-cols-2 gap-6">
             <div data-each="skills" data-as="skill">
-              <div data-widget="card" class="p-6 bg-gray-800/50 border border-gray-700 text-center hover:border-pink-500/50 transition-colors duration-300">
-                <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span class="text-white text-xl">{{skill.icon}}</span>
+              <div data-widget="card" class="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span class="text-primary-foreground text-xl">{{skill.icon}}</span>
                 </div>
-                <h4 class="font-semibold text-white mb-2">{{skill.name}}</h4>
-                <p class="text-gray-400 text-sm">{{skill.level}}</p>
+                <h4 class="font-semibold text-foreground mb-2">{{skill.name}}</h4>
+                <p class="text-muted-foreground text-sm">{{skill.level}}</p>
               </div>
             </div>
           </div>
@@ -121,9 +119,9 @@
           <!-- Statistics -->
           <div class="grid grid-cols-2 gap-6">
             <div data-each="stats" data-as="stat">
-              <div data-widget="card" class="p-6 bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20 text-center">
-                <div class="text-3xl font-bold text-pink-400 mb-2">{{stat.value}}</div>
-                <div class="text-gray-400">{{stat.label}}</div>
+              <div data-widget="card" class="p-6 text-center bg-gradient-to-br from-primary/10 to-secondary/10">
+                <div class="text-3xl font-bold text-primary mb-2">{{stat.value}}</div>
+                <div class="text-muted-foreground">{{stat.label}}</div>
               </div>
             </div>
           </div>
@@ -133,33 +131,33 @@
   </section>
 
   <!-- Services Section -->
-  <section class="py-20 bg-black">
+  <section class="py-20 bg-background">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-purple-400 border-purple-400 text-lg">
+        <div data-widget="badge" variant="outline" class="mb-4">
           Services
         </div>
-        <h2 class="text-4xl font-bold text-white mb-6">{{servicesTitle}}</h2>
-        <div data-widget="markdown" class="text-xl text-gray-400 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-foreground mb-6">{{servicesTitle}}</h2>
+        <div data-widget="markdown" class="text-xl text-muted-foreground max-w-4xl mx-auto">
           {{servicesDescription}}
         </div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         <div data-each="services" data-as="service">
-          <div data-widget="card" class="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div data-widget="card" class="group relative hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative z-10 p-8">
-              <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center mb-6">
                 <span class="text-2xl">{{service.icon}}</span>
               </div>
-              <h3 class="text-xl font-bold text-white mb-4">{{service.title}}</h3>
-              <div data-widget="markdown" class="text-gray-400 mb-6">
+              <h3 class="text-xl font-bold text-foreground mb-4">{{service.title}}</h3>
+              <div data-widget="markdown" class="text-muted-foreground mb-6">
                 {{service.description}}
               </div>
               <div class="flex flex-wrap gap-2">
                 <div data-each="service.tools" data-as="tool">
-                  <div data-widget="badge" variant="secondary" class="text-xs bg-gray-700 text-gray-300">
+                  <div data-widget="badge" variant="secondary" class="text-xs">
                     {{tool}}
                   </div>
                 </div>
@@ -172,21 +170,21 @@
   </section>
 
   <!-- Code Showcase Section -->
-  <section class="py-20 bg-gray-900">
+  <section class="py-20 bg-muted/50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-blue-400 border-blue-400 text-lg">
+        <div data-widget="badge" variant="outline" class="mb-4">
           Code Showcase
         </div>
-        <h2 class="text-4xl font-bold text-white mb-6">Featured Code</h2>
-        <p class="text-xl text-gray-400">Examples of my technical expertise and problem-solving approach</p>
+        <h2 class="text-4xl font-bold text-foreground mb-6">Featured Code</h2>
+        <p class="text-xl text-muted-foreground">Examples of my technical expertise and problem-solving approach</p>
       </div>
 
       <div class="space-y-12">
         <div data-each="codeExamples" data-as="example">
           <div>
-            <h3 class="text-2xl font-bold text-white mb-4">{{example.title}}</h3>
-            <div data-widget="markdown" class="text-gray-400 mb-6 prose prose-invert">
+            <h3 class="text-2xl font-bold text-foreground mb-4">{{example.title}}</h3>
+            <div data-widget="markdown" class="text-muted-foreground mb-6 prose">
               {{example.description}}
             </div>
 
@@ -200,20 +198,20 @@
 
             <!-- Algorithm Analysis -->
             <div data-condition="example.complexity">
-              <div data-widget="card" class="p-6 bg-blue-900/20 border border-blue-500/30">
-                <h4 class="font-semibold text-white mb-4">Algorithm Analysis:</h4>
+              <div data-widget="card" class="p-6 bg-accent/10">
+                <h4 class="font-semibold text-foreground mb-4">Algorithm Analysis:</h4>
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
-                    <span class="text-gray-300">Time Complexity: </span>
+                    <span class="text-foreground">Time Complexity: </span>
                     <div data-widget="inline-math">{{example.complexity.time}}</div>
                   </div>
                   <div>
-                    <span class="text-gray-300">Space Complexity: </span>
+                    <span class="text-foreground">Space Complexity: </span>
                     <div data-widget="inline-math">{{example.complexity.space}}</div>
                   </div>
                 </div>
                 <div class="mt-4">
-                  <div data-widget="markdown" class="text-gray-400 prose prose-invert prose-sm">
+                  <div data-widget="markdown" class="text-muted-foreground prose prose-sm">
                     {{example.complexity.explanation}}
                   </div>
                 </div>
@@ -226,36 +224,36 @@
   </section>
 
   <!-- Research & Publications -->
-  <section class="py-20 bg-black">
+  <section class="py-20 bg-background">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-green-400 border-green-400 text-lg">
+        <div data-widget="badge" variant="outline" class="mb-4">
           Research
         </div>
-        <h2 class="text-4xl font-bold text-white mb-6">Publications & Research</h2>
-        <p class="text-xl text-gray-400">Academic contributions and research work</p>
+        <h2 class="text-4xl font-bold text-foreground mb-6">Publications & Research</h2>
+        <p class="text-xl text-muted-foreground">Academic contributions and research work</p>
       </div>
 
       <div class="space-y-8">
         <div data-each="publications" data-as="paper">
-          <div data-widget="card" class="p-8 bg-gray-800/50 border border-gray-700 hover:border-green-500/50 transition-colors duration-300">
+          <div data-widget="card" class="p-8 hover:shadow-lg transition-shadow duration-300">
             <div class="flex flex-col lg:flex-row gap-8">
               <div class="flex-1">
-                <h3 class="text-2xl font-bold text-white mb-3">{{paper.title}}</h3>
-                <div class="text-lg text-gray-400 mb-4">{{paper.authors}}</div>
-                <div class="text-green-400 font-medium mb-4">{{paper.venue}} • {{paper.year}}</div>
+                <h3 class="text-2xl font-bold text-foreground mb-3">{{paper.title}}</h3>
+                <div class="text-lg text-muted-foreground mb-4">{{paper.authors}}</div>
+                <div class="text-primary font-medium mb-4">{{paper.venue}} • {{paper.year}}</div>
 
-                <div data-widget="markdown" class="prose prose-invert mb-6">
+                <div data-widget="markdown" class="prose mb-6">
                   {{paper.abstract}}
                 </div>
 
                 <!-- Mathematical Contributions -->
-                <div class="bg-gray-900/50 p-6 rounded-lg mb-6">
-                  <h4 class="font-semibold text-white mb-4">Key Mathematical Contributions:</h4>
+                <div data-widget="card" class="p-6 bg-muted/50 mb-6">
+                  <h4 class="font-semibold text-foreground mb-4">Key Mathematical Contributions:</h4>
                   <div class="space-y-4">
                     <div data-each="paper.keyFormulas" data-as="formula">
                       <div>
-                        <p class="text-gray-400 mb-2">{{formula.description}}:</p>
+                        <p class="text-muted-foreground mb-2">{{formula.description}}:</p>
                         <div data-widget="block-math">{{formula.equation}}</div>
                       </div>
                     </div>
@@ -266,15 +264,13 @@
                   <div data-widget="button"
                        variant="default"
                        href="{{paper.pdfUrl}}"
-                       target="_blank"
-                       class="bg-green-600 hover:bg-green-700">
+                       target="_blank">
                     📄 Read Paper
                   </div>
                   <div data-widget="button"
                        variant="outline"
                        href="{{paper.codeUrl}}"
-                       target="_blank"
-                       class="border-green-500 text-green-400 hover:bg-green-500/10">
+                       target="_blank">
                     💻 View Code
                   </div>
                 </div>
@@ -288,9 +284,9 @@
                 </div>
 
                 <!-- Citation Info -->
-                <div class="p-4 bg-gray-900/50 rounded-lg">
-                  <div class="text-sm text-gray-400 mb-2">Citations: {{paper.citations}}</div>
-                  <div class="text-xs text-gray-500">Impact Factor: {{paper.impactFactor}}</div>
+                <div data-widget="card" class="p-4 bg-muted/50">
+                  <div class="text-sm text-muted-foreground mb-2">Citations: {{paper.citations}}</div>
+                  <div class="text-xs text-muted-foreground">Impact Factor: {{paper.impactFactor}}</div>
                 </div>
               </div>
             </div>
@@ -301,45 +297,43 @@
   </section>
 
   <!-- Featured Work Preview -->
-  <section class="py-20 bg-gray-900">
+  <section class="py-20 bg-muted/50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <div data-widget="badge" variant="outline" class="mb-4 px-6 py-2 text-purple-400 border-purple-400 text-lg">
+        <div data-widget="badge" variant="outline" class="mb-4">
           Featured Work
         </div>
-        <h2 class="text-4xl font-bold text-white mb-6">{{featuredTitle}}</h2>
-        <div data-widget="markdown" class="text-xl text-gray-400 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-foreground mb-6">{{featuredTitle}}</h2>
+        <div data-widget="markdown" class="text-xl text-muted-foreground max-w-4xl mx-auto">
           {{featuredDescription}}
         </div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
         <div data-each="featuredWork" data-as="project">
-          <div data-widget="card" class="group relative overflow-hidden bg-gray-800 hover:transform hover:scale-105 transition-all duration-500">
+          <div data-widget="card" class="group relative overflow-hidden hover:transform hover:scale-105 transition-all duration-500">
             <div data-widget="image"
                  src="{{project.image}}"
                  alt="{{project.title}}"
                  class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 class="text-xl font-bold mb-2">{{project.title}}</h3>
-              <p class="text-gray-300 mb-4">{{project.description}}</p>
+              <p class="text-muted-foreground mb-4">{{project.description}}</p>
               <div class="flex space-x-3">
                 <div data-widget="button"
                      variant="default"
                      size="sm"
                      href="{{project.liveUrl}}"
-                     target="_blank"
-                     class="bg-white/20 backdrop-blur-sm hover:bg-white/30">
+                     target="_blank">
                   Live Demo
                 </div>
                 <div data-widget="button"
                      variant="outline"
                      size="sm"
                      href="{{project.githubUrl}}"
-                     target="_blank"
-                     class="border-white/30 text-white hover:bg-white/20">
+                     target="_blank">
                   Code
                 </div>
               </div>
@@ -349,7 +343,7 @@
                 <div data-widget="badge" variant="secondary" class="text-xs">
                   {{project.category}}
                 </div>
-                <span class="text-sm text-gray-500">{{project.year}}</span>
+                <span class="text-sm text-muted-foreground">{{project.year}}</span>
               </div>
             </div>
           </div>
@@ -360,12 +354,10 @@
         <div data-widget="button"
              variant="default"
              size="lg"
-             href="./portfolio"
-             class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+             href="./portfolio">
           View All Work
         </div>
       </div>
     </div>
   </section>
-</div>
 </div>
