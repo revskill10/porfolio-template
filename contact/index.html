@@ -1,4 +1,29 @@
 <div>
+  <!-- Header Navigation -->
+  <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50">
+    <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-between h-16">
+        <!-- Logo/Home Link -->
+        <a href="../" className="text-xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent hover:from-pink-300 hover:to-blue-300 transition-all duration-300">
+          {{name}}
+        </a>
+        
+        <!-- Navigation Links -->
+        <div className="flex items-center space-x-8">
+          <a href="../portfolio" className="text-gray-300 hover:text-white transition-colors duration-300 font-medium">
+            Portfolio
+          </a>
+          <a href="../about" className="text-gray-300 hover:text-white transition-colors duration-300 font-medium">
+            About
+          </a>
+          <a href="../contact" className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-medium border-2 border-pink-500">
+            Contact
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
   <div data-include="./components/hero" />
 
   <div className="min-h-screen bg-black text-white relative overflow-hidden">
