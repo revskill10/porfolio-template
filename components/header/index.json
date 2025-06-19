@@ -9,5 +9,6 @@
       "default": "dark",
       "options": ["light", "dark"]
     }
-  }}
+  }},
+  { "key": "basePath", "value": "revskill10/portfolio-template"}
 ]

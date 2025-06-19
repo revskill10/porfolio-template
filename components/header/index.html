@@ -5,7 +5,7 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="../" class="flex items-center space-x-3">
+          <a href="{{basePath}}" class="flex items-center space-x-3">
             <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
               <span class="text-white font-bold text-lg">AC</span>
             </div>
@@ -15,23 +15,23 @@
         
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center space-x-6">
-          <a href="../" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Home</a>
-          <a href="../portfolio" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Portfolio</a>
-          <a href="../blog" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Blog</a>
-          <a href="../research" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Research</a>
-          <a href="../code-widget-test" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Code Demo</a>
-          <a href="../markdown-showcase" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Markdown</a>
-          <a href="../math-test" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Math</a>
-          <a href="../include-demo" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Includes</a>
-          <a href="../contact" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Contact</a>
+          <a href="{{basePath}}" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Home</a>
+          <a href="{{basePath}}/portfolio" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Portfolio</a>
+          <a href="{{basePath}}/blog" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Blog</a>
+          <a href="{{basePath}}/research" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Research</a>
+          <a href="{{basePath}}/code-widget-test" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Code Demo</a>
+          <a href="{{basePath}}/markdown-showcase" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Markdown</a>
+          <a href="{{basePath}}/math-test" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Math</a>
+          <a href="{{basePath}}/include-demo" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Includes</a>
+          <a href="{{basePath}}/contact" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Contact</a>
         </nav>
         
         <!-- CTA Button -->
         <div class="hidden md:block">
-          <div data-widget="button" 
-               variant="default" 
+          <div data-widget="button"
+               variant="default"
                size="sm"
-               href="../contact"
+               href="{{basePath}}/contact"
                class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-full transition-all duration-300">
             Let's Talk
           </div>
@@ -51,20 +51,20 @@
     <!-- Mobile Menu (hidden by default) -->
     <div class="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200/50">
       <div class="px-4 pt-2 pb-3 space-y-1">
-        <a href="../" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Home</a>
-        <a href="../portfolio" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Portfolio</a>
-        <a href="../blog" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Blog</a>
-        <a href="../research" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Research</a>
-        <a href="../code-widget-test" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Code Demo</a>
-        <a href="../markdown-showcase" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Markdown</a>
-        <a href="../math-test" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Math</a>
-        <a href="../include-demo" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Includes</a>
-        <a href="../contact" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Contact</a>
+        <a href="{{basePath}}" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Home</a>
+        <a href="{{basePath}}/portfolio" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Portfolio</a>
+        <a href="{{basePath}}/blog" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Blog</a>
+        <a href="{{basePath}}/research" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Research</a>
+        <a href="{{basePath}}/code-widget-test" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Code Demo</a>
+        <a href="{{basePath}}/markdown-showcase" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Markdown</a>
+        <a href="{{basePath}}/math-test" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Math</a>
+        <a href="{{basePath}}/include-demo" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Includes</a>
+        <a href="{{basePath}}/contact" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-300">Contact</a>
         <div class="pt-4">
-          <div data-widget="button" 
-               variant="default" 
+          <div data-widget="button"
+               variant="default"
                size="sm"
-               href="../contact"
+               href="{{basePath}}/contact"
                class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-full transition-all duration-300">
             Let's Talk
           </div>
