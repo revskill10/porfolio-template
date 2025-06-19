@@ -1,168 +1,256 @@
 <div>
-  <!-- Include Header -->
-  <div data-include="../components/header"></div>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-8">X-Render XML Syntax Demo</h1>
+    <p class="text-center text-muted-foreground mb-12">
+      Use native XML elements to define schemas instead of JSON strings
+    </p>
 
-  <!-- Hero Section -->
-  <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <div data-widget="badge" variant="outline" class="mb-6">
-          X-Render Integration
-        </div>
-        <h1 class="text-5xl md:text-6xl font-bold text-foreground mb-6">
-          {{pageTitle}}
-        </h1>
-        <div data-widget="markdown" class="text-xl text-muted-foreground max-w-4xl mx-auto">
-          {{pageDescription}}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- XFlow Demo -->
-  <section class="py-16 bg-background">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold text-foreground mb-4">XFlow - Process Flow Designer</h2>
-        <p class="text-muted-foreground mb-8">Create interactive flowcharts and process diagrams with drag-and-drop functionality.</p>
-      </div>
-
-      <div data-widget="card" class="p-6">
-        <div data-widget="xflow" 
-             data-height="400px" 
-             data-width="100%" 
-             data-readonly="false"
-             data-schema='{{xflowSchema}}'
-             class="border rounded-lg">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- XForm Demo -->
-  <section class="py-16 bg-muted/30">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold text-foreground mb-4">XForm - Dynamic Form Generator</h2>
-        <p class="text-muted-foreground mb-8">Generate beautiful forms from JSON schema with validation and custom widgets.</p>
-      </div>
-
-      <div data-widget="card" class="p-6">
-        <div data-widget="xform" 
-             data-display-type="row" 
-             data-label-width="140px"
-             data-max-width="100%"
-             data-readonly="false"
-             data-schema='{{xformSchema}}'
-             data-form-data='{{xformData}}'>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- XTable Demo -->
-  <section class="py-16 bg-background">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold text-foreground mb-4">XTable - Advanced Data Table</h2>
-        <p class="text-muted-foreground mb-8">Display data with search, pagination, sorting, and custom actions.</p>
-      </div>
-
-      <div data-widget="card" class="p-6">
-        <div data-widget="xtable" 
-             data-search="true" 
-             data-pagination="true" 
-             data-toolbar="true"
-             data-height="400"
-             data-schema='{{xtableSchema}}'>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Code Examples -->
-  <section class="py-16 bg-muted/30">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold text-foreground mb-4">Usage Examples</h2>
-        <p class="text-muted-foreground mb-8">Learn how to integrate X-Render widgets into your portfolio.</p>
-      </div>
-
-      <div class="grid md:grid-cols-1 gap-8">
-        <!-- XFlow Example -->
-        <div data-widget="card" class="p-6">
-          <h3 class="text-xl font-bold text-foreground mb-4">XFlow Widget</h3>
-          <div data-widget="code" language="html" class="mb-4">
-&lt;div data-widget="xflow" 
-     data-height="400px" 
-     data-readonly="false"
-     data-schema='{"nodes":[{"id":"start","type":"start","position":{"x":100,"y":100},"data":{"label":"Start"}}],"edges":[]}'&gt;
-&lt;/div&gt;
-          </div>
-        </div>
-
-        <!-- XForm Example -->
-        <div data-widget="card" class="p-6">
-          <h3 class="text-xl font-bold text-foreground mb-4">XForm Widget</h3>
-          <div data-widget="code" language="html" class="mb-4">
-&lt;div data-widget="xform" 
-     data-display-type="row" 
-     data-label-width="120px"
-     data-schema='{"type":"object","properties":{"name":{"title":"Name","type":"string","required":true}}}'&gt;
-&lt;/div&gt;
-          </div>
-        </div>
-
-        <!-- XTable Example -->
-        <div data-widget="card" class="p-6">
-          <h3 class="text-xl font-bold text-foreground mb-4">XTable Widget</h3>
-          <div data-widget="code" language="html" class="mb-4">
-&lt;div data-widget="xtable" 
-     data-search="true" 
-     data-pagination="true" 
-     data-toolbar="true"
-     data-height="400"&gt;
-&lt;/div&gt;
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Documentation Links -->
-  <section class="py-16 bg-background">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-foreground mb-6">Learn More</h2>
-      <p class="text-muted-foreground mb-8">Explore the official X-Render documentation for advanced features and customization.</p>
+    <!-- XForm XML Demo -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">XForm with XML Schema</h2>
       
-      <div class="grid md:grid-cols-3 gap-6">
-        <div data-widget="card" class="p-6 text-center">
-          <h3 class="text-lg font-bold text-foreground mb-3">XFlow Docs</h3>
-          <p class="text-muted-foreground mb-4">Learn about flow design and node customization</p>
-          <div data-widget="button" variant="outline" href="https://xrender.fun/xflow">
-            View Docs
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Form Widget -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-bold mb-4">Live Form</h3>
+          
+          <div data-widget="xform" data-display-type="row" data-label-width="140px">
+            <fieldset title="Personal Information">
+              <input name="firstName" type="string" title="First Name" required placeholder="Enter first name" />
+              <input name="lastName" type="string" title="Last Name" required placeholder="Enter last name" />
+              <input name="email" type="string" format="email" title="Email" required placeholder="your@email.com" />
+              <input name="phone" type="string" title="Phone" placeholder="+1 (555) 123-4567" />
+              <input name="birthDate" type="string" format="date" title="Birth Date" />
+            </fieldset>
+            
+            <fieldset title="Preferences">
+              <select name="role" title="Role" required>
+                <option value="admin">Administrator</option>
+                <option value="user">Regular User</option>
+                <option value="guest">Guest</option>
+              </select>
+              
+              <multiselect name="skills" title="Skills" type="array" item-type="string">
+                <option value="javascript">JavaScript</option>
+                <option value="react">React</option>
+                <option value="vue">Vue.js</option>
+                <option value="angular">Angular</option>
+                <option value="nodejs">Node.js</option>
+                <option value="python">Python</option>
+              </multiselect>
+              
+              <number name="experience" title="Years of Experience" min="0" max="50" />
+              <textarea name="bio" title="Biography" placeholder="Tell us about yourself..." />
+              <checkbox name="newsletter" title="Subscribe to Newsletter" default="true" />
+            </fieldset>
           </div>
         </div>
-        
-        <div data-widget="card" class="p-6 text-center">
-          <h3 class="text-lg font-bold text-foreground mb-3">FormRender Docs</h3>
-          <p class="text-muted-foreground mb-4">Discover form schema and widget options</p>
-          <div data-widget="button" variant="outline" href="https://xrender.fun/form-render">
-            View Docs
-          </div>
-        </div>
-        
-        <div data-widget="card" class="p-6 text-center">
-          <h3 class="text-lg font-bold text-foreground mb-3">TableRender Docs</h3>
-          <p class="text-muted-foreground mb-4">Master table configuration and APIs</p>
-          <div data-widget="button" variant="outline" href="https://xrender.fun/table-render">
-            View Docs
+
+        <!-- XML Code -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-bold mb-4">XML Schema</h3>
+          <div data-widget="code" language="html" class="text-sm">
+&lt;div data-widget="xform" data-display-type="row"&gt;
+  &lt;fieldset title="Personal Information"&gt;
+    &lt;input name="firstName" type="string" title="First Name" required /&gt;
+    &lt;input name="lastName" type="string" title="Last Name" required /&gt;
+    &lt;input name="email" type="string" format="email" title="Email" required /&gt;
+    &lt;input name="phone" type="string" title="Phone" /&gt;
+    &lt;input name="birthDate" type="string" format="date" title="Birth Date" /&gt;
+  &lt;/fieldset&gt;
+  
+  &lt;fieldset title="Preferences"&gt;
+    &lt;select name="role" title="Role" required&gt;
+      &lt;option value="admin"&gt;Administrator&lt;/option&gt;
+      &lt;option value="user"&gt;Regular User&lt;/option&gt;
+      &lt;option value="guest"&gt;Guest&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;multiselect name="skills" title="Skills" type="array"&gt;
+      &lt;option value="javascript"&gt;JavaScript&lt;/option&gt;
+      &lt;option value="react"&gt;React&lt;/option&gt;
+      &lt;option value="vue"&gt;Vue.js&lt;/option&gt;
+    &lt;/multiselect&gt;
+    
+    &lt;number name="experience" title="Years of Experience" min="0" max="50" /&gt;
+    &lt;textarea name="bio" title="Biography" /&gt;
+    &lt;checkbox name="newsletter" title="Subscribe to Newsletter" default="true" /&gt;
+  &lt;/fieldset&gt;
+&lt;/div&gt;
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Include Footer -->
-  <div data-include="../components/footer"></div>
+    <!-- XTable XML Demo -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">XTable with XML Schema</h2>
+      
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Table Widget -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-bold mb-4">Live Table</h3>
+          
+          <div data-widget="xtable" data-search="true" data-pagination="true" data-toolbar="true">
+            <columns>
+              <text name="id" title="ID" width="60" />
+              <text name="name" title="Name" width="150" />
+              <email name="email" title="Email" width="200" />
+              <select name="role" title="Role" width="120">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="guest">Guest</option>
+              </select>
+              <tag name="status" title="Status" width="100">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="pending">Pending</option>
+              </tag>
+              <date name="joinDate" title="Join Date" width="120" />
+            </columns>
+            
+            <data>
+              <row id="1" name="John Doe" email="john@example.com" role="admin" status="active" joinDate="2024-01-15" />
+              <row id="2" name="Jane Smith" email="jane@example.com" role="user" status="active" joinDate="2024-01-16" />
+              <row id="3" name="Bob Johnson" email="bob@example.com" role="user" status="inactive" joinDate="2024-01-17" />
+              <row id="4" name="Alice Brown" email="alice@example.com" role="guest" status="pending" joinDate="2024-01-18" />
+            </data>
+            
+            <config>
+              <search placeholder="Search users..." allow-clear="true" />
+              <pagination page-size="10" show-size-changer="true" show-quick-jumper="true" />
+              <toolbar title="User Management">
+                <action text="Add User" type="primary" />
+                <action text="Export" type="default" />
+              </toolbar>
+            </config>
+          </div>
+        </div>
+
+        <!-- XML Code -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-bold mb-4">XML Schema</h3>
+          <div data-widget="code" language="html" class="text-sm">
+&lt;div data-widget="xtable" data-search="true" data-pagination="true"&gt;
+  &lt;columns&gt;
+    &lt;text name="id" title="ID" width="60" /&gt;
+    &lt;text name="name" title="Name" width="150" /&gt;
+    &lt;email name="email" title="Email" width="200" /&gt;
+    &lt;select name="role" title="Role" width="120"&gt;
+      &lt;option value="admin"&gt;Admin&lt;/option&gt;
+      &lt;option value="user"&gt;User&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;tag name="status" title="Status" width="100"&gt;
+      &lt;option value="active"&gt;Active&lt;/option&gt;
+      &lt;option value="inactive"&gt;Inactive&lt;/option&gt;
+    &lt;/tag&gt;
+    &lt;date name="joinDate" title="Join Date" width="120" /&gt;
+  &lt;/columns&gt;
+  
+  &lt;data&gt;
+    &lt;row id="1" name="John Doe" email="john@example.com" role="admin" status="active" /&gt;
+    &lt;row id="2" name="Jane Smith" email="jane@example.com" role="user" status="active" /&gt;
+  &lt;/data&gt;
+  
+  &lt;config&gt;
+    &lt;search placeholder="Search users..." /&gt;
+    &lt;pagination page-size="10" /&gt;
+    &lt;toolbar title="User Management"&gt;
+      &lt;action text="Add User" type="primary" /&gt;
+    &lt;/toolbar&gt;
+  &lt;/config&gt;
+&lt;/div&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- XFlow XML Demo -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">XFlow with XML Schema</h2>
+      
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Flow Widget -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-bold mb-4">Live Flow</h3>
+          
+          <div data-widget="xflow" data-height="400px" data-readonly="false">
+            <nodes>
+              <start id="start" x="100" y="100" label="Start Process" description="Begin the workflow" />
+              <process id="input" x="300" y="100" label="Data Input" description="Collect user input" />
+              <decision id="validate" x="500" y="100" label="Validate Data" description="Check data integrity" />
+              <process id="process1" x="400" y="250" label="Process Valid Data" />
+              <process id="error" x="600" y="250" label="Handle Error" />
+              <end id="end" x="500" y="400" label="End Process" />
+            </nodes>
+            
+            <edges>
+              <edge source="start" target="input" label="Begin" />
+              <edge source="input" target="validate" label="Submit" />
+              <edge source="validate" target="process1" label="Valid" />
+              <edge source="validate" target="error" label="Invalid" />
+              <edge source="process1" target="end" label="Success" />
+              <edge source="error" target="end" label="Error" />
+            </edges>
+            
+            <config>
+              <readonly>false</readonly>
+              <minimap>true</minimap>
+              <controls>true</controls>
+            </config>
+          </div>
+        </div>
+
+        <!-- XML Code -->
+        <div data-widget="card" class="p-6">
+          <h3 class="text-lg font-bold mb-4">XML Schema</h3>
+          <div data-widget="code" language="html" class="text-sm">
+&lt;div data-widget="xflow" data-height="400px"&gt;
+  &lt;nodes&gt;
+    &lt;start id="start" x="100" y="100" label="Start Process" /&gt;
+    &lt;process id="input" x="300" y="100" label="Data Input" /&gt;
+    &lt;decision id="validate" x="500" y="100" label="Validate Data" /&gt;
+    &lt;process id="process1" x="400" y="250" label="Process Valid Data" /&gt;
+    &lt;process id="error" x="600" y="250" label="Handle Error" /&gt;
+    &lt;end id="end" x="500" y="400" label="End Process" /&gt;
+  &lt;/nodes&gt;
+  
+  &lt;edges&gt;
+    &lt;edge source="start" target="input" label="Begin" /&gt;
+    &lt;edge source="input" target="validate" label="Submit" /&gt;
+    &lt;edge source="validate" target="process1" label="Valid" /&gt;
+    &lt;edge source="validate" target="error" label="Invalid" /&gt;
+    &lt;edge source="process1" target="end" label="Success" /&gt;
+    &lt;edge source="error" target="end" label="Error" /&gt;
+  &lt;/edges&gt;
+&lt;/div&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="mb-16">
+      <div data-widget="card" class="p-8 text-center">
+        <h2 class="text-2xl font-bold mb-6">Benefits of XML Syntax</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div>
+            <div class="text-3xl mb-3">📝</div>
+            <h3 class="font-bold mb-2">More Readable</h3>
+            <p class="text-muted-foreground">XML syntax is more intuitive and easier to read than JSON strings</p>
+          </div>
+          <div>
+            <div class="text-3xl mb-3">🔧</div>
+            <h3 class="font-bold mb-2">Better Tooling</h3>
+            <p class="text-muted-foreground">IDE support with syntax highlighting and auto-completion</p>
+          </div>
+          <div>
+            <div class="text-3xl mb-3">🎯</div>
+            <h3 class="font-bold mb-2">Type Safety</h3>
+            <p class="text-muted-foreground">Structured elements with clear attribute definitions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
