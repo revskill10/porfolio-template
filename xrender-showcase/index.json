@@ -1,10 +1,6 @@
 [
   {
     "key": "pageTitle",
-    "value": "X-Render XML Syntax Demo"
-  },
-  {
-    "key": "pageDescription",
-    "value": "Demonstration of using native XML elements to define X-Render widget schemas instead of JSON strings"
+    "value": "Simple X-Render XML Test"
   }
 ]
