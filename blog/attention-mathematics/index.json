@@ -1,0 +1,9 @@
+[
+  { "key": "title", "value": "The Mathematics Behind Attention Mechanisms" },
+  { "key": "subtitle", "value": "A comprehensive exploration of the **mathematical foundations** underlying transformer attention, from scaled dot-product to multi-head attention mechanisms that power modern AI systems." },
+  { "key": "category", "value": "Mathematics" },
+  { "key": "publishDate", "value": "December 20, 2024" },
+  { "key": "readTime", "value": "18" },
+  { "key": "views", "value": "3,247" },
+  { "key": "likes", "value": "127" }
+]

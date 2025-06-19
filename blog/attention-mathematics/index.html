@@ -1,0 +1,178 @@
+<div>
+  <!-- Include Header -->
+  <include src="../../components/header/index.html"></include>
+
+  <!-- Article Header -->
+  <article class="py-16 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Article Meta -->
+      <div class="mb-8">
+        <div class="flex items-center space-x-4 mb-4">
+          <div data-widget="badge" variant="outline">
+            {{category}}
+          </div>
+          <span class="text-sm text-muted-foreground">{{publishDate}}</span>
+          <span class="text-sm text-muted-foreground">{{readTime}} min read</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+          {{title}}
+        </h1>
+        
+        <div data-widget="markdown" class="text-xl text-muted-foreground leading-relaxed">
+          {{subtitle}}
+        </div>
+      </div>
+
+      <!-- Main Content from Markdown File -->
+      <div class="prose prose-lg max-w-none">
+        <div data-widget="markdown" 
+             src="./content.md" 
+             type="markdown"
+             class="markdown-content">
+          <!-- Fallback content while loading -->
+          <div class="flex items-center justify-center p-8">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            <span class="ml-3 text-muted-foreground">Loading article content...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Examples Section -->
+      <section class="mt-12 pt-8 border-t border-border">
+        <h2 class="text-3xl font-bold text-foreground mb-6">Implementation Examples</h2>
+        
+        <div class="space-y-8">
+          <!-- PyTorch Implementation -->
+          <div data-widget="card" class="p-6">
+            <h3 class="text-xl font-semibold text-foreground mb-4">PyTorch Implementation</h3>
+            <div data-widget="code"
+                 language="python"
+                 src="../../code/attention.py"
+                 title="attention.py"
+                 show-line-numbers="true"
+                 class="mb-4">
+            </div>
+            <div data-widget="markdown" class="text-sm text-muted-foreground">
+              Complete implementation of multi-head attention with **optimized memory usage** and **numerical stability** considerations.
+            </div>
+          </div>
+
+          <!-- Mathematical Derivation -->
+          <div data-widget="card" class="p-6 bg-accent/10">
+            <h3 class="text-xl font-semibold text-foreground mb-4">Mathematical Derivation</h3>
+            
+            <div data-widget="markdown">
+The **gradient** of the attention mechanism with respect to the query matrix is:
+
+$$\frac{\partial \text{Attention}}{\partial Q} = \frac{\partial}{\partial Q}\left[\text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V\right]$$
+
+Using the chain rule and the derivative of softmax:
+
+$$\frac{\partial \text{Attention}}{\partial Q} = \frac{1}{\sqrt{d_k}} \cdot \text{diag}(A) \cdot V \cdot K^T - \frac{1}{\sqrt{d_k}} \cdot A \cdot (V \cdot K^T) \cdot A^T$$
+
+Where $A$ is the attention weight matrix and $\text{diag}(A)$ creates a diagonal matrix from the row sums of $A$.
+            </div>
+          </div>
+
+          <!-- Performance Analysis -->
+          <div data-widget="card" class="p-6">
+            <h3 class="text-xl font-semibold text-foreground mb-4">Performance Analysis</h3>
+            
+            <div data-widget="markdown">
+| Sequence Length | Standard Attention | Linear Attention | Sparse Attention |
+|----------------|-------------------|------------------|------------------|
+| 512 | 1.0x | 0.8x | 0.6x |
+| 1024 | 1.0x | 0.7x | 0.4x |
+| 2048 | 1.0x | 0.6x | 0.3x |
+| 4096 | 1.0x | 0.5x | 0.2x |
+
+*Relative computational cost compared to standard attention*
+
+### Key Insights:
+
+- **Linear attention** scales better with sequence length
+- **Sparse attention** provides the best performance for long sequences  
+- **Memory usage** grows quadratically with standard attention
+- **Quality trade-offs** exist between efficiency and model performance
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Examples -->
+      <section class="mt-12 pt-8 border-t border-border">
+        <h2 class="text-3xl font-bold text-foreground mb-6">Interactive Attention Visualization</h2>
+        
+        <div data-widget="card" class="p-6">
+          <div data-widget="markdown">
+## Attention Pattern Analysis
+
+The following examples show how different attention heads focus on various aspects of the input:
+
+### Example Sentence: "The cat sat on the mat"
+
+**Head 1 (Syntactic)**: Focuses on subject-verb relationships
+- "cat" → "sat" (0.8)
+- "The" → "cat" (0.6)
+
+**Head 2 (Semantic)**: Captures semantic relationships  
+- "cat" → "mat" (0.7)
+- "sat" → "on" (0.9)
+
+**Head 3 (Positional)**: Attends to nearby tokens
+- Each word → adjacent words (0.5-0.7)
+
+### Mathematical Representation
+
+For the word "cat" (position 2), the attention distribution might be:
+
+$$\text{Attention}(\text{"cat"}) = [0.1, 0.2, 0.3, 0.2, 0.1, 0.1]$$
+
+Corresponding to: ["The", "cat", "sat", "on", "the", "mat"]
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Footer -->
+      <div class="border-t border-border pt-8 mt-12">
+        <div class="flex items-center justify-between">
+          <div class="flex space-x-4">
+            <div data-widget="button" variant="outline" size="sm">
+              Share on Twitter
+            </div>
+            <div data-widget="button" variant="outline" size="sm">
+              Share on LinkedIn
+            </div>
+            <div data-widget="button" variant="outline" size="sm">
+              Copy Link
+            </div>
+          </div>
+          
+          <div class="text-sm text-muted-foreground">
+            {{views}} views • {{likes}} likes
+          </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="mt-8 pt-8 border-t border-border">
+          <h3 class="text-lg font-semibold text-foreground mb-4">Related Articles</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div data-widget="card" class="p-4 hover:shadow-md transition-shadow">
+              <h4 class="font-medium text-foreground mb-2">Transformer Architecture Deep Dive</h4>
+              <p class="text-sm text-muted-foreground">Exploring the complete transformer architecture beyond just attention mechanisms.</p>
+            </div>
+            <div data-widget="card" class="p-4 hover:shadow-md transition-shadow">
+              <h4 class="font-medium text-foreground mb-2">Optimizing Attention for Long Sequences</h4>
+              <p class="text-sm text-muted-foreground">Techniques for scaling attention mechanisms to handle very long input sequences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Include Footer -->
+  <include src="../../components/footer/index.html"></include>
+</div>
