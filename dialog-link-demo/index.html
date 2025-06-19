@@ -1,0 +1,268 @@
+<div>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    
+    <h1 class="text-3xl font-bold text-foreground mb-8">Dialog Link Widget Demo</h1>
+    
+    <div class="mb-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      <h2 class="text-lg font-semibold text-blue-800 mb-2">What is Dialog Link?</h2>
+      <p class="text-blue-700">
+        The dialog-link widget opens GitHub content in a modal dialog without navigating away from the current page. 
+        Perfect for previews, details, or additional content that enhances the user experience.
+      </p>
+    </div>
+
+    <div class="space-y-12">
+      
+      <!-- Portfolio Content in Dialog -->
+      <section>
+        <h2 class="text-2xl font-bold text-foreground mb-6">Portfolio Content in Dialog</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div data-widget="card" class="p-6">
+            <h3 class="text-lg font-semibold mb-4">About Page Preview</h3>
+            <p class="text-muted-foreground mb-4">
+              Click to view the about page content in a dialog without leaving this page.
+            </p>
+            
+            <div data-widget="dialog-link" 
+                 href="../creative-portfolio/about"
+                 title="About Me"
+                 description="Learn more about my background and experience"
+                 content-type="portfolio"
+                 dialog-size="lg"
+                 trigger-variant="default">
+              View About Page
+            </div>
+          </div>
+
+          <div data-widget="card" class="p-6">
+            <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+            <p class="text-muted-foreground mb-4">
+              Quick access to contact details in a compact dialog.
+            </p>
+            
+            <div data-widget="dialog-link" 
+                 href="../creative-portfolio/contact"
+                 title="Contact Information"
+                 description="Get in touch with me"
+                 content-type="portfolio"
+                 dialog-size="md"
+                 trigger-variant="outline">
+              Show Contact Info
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Markdown Content in Dialog -->
+      <section>
+        <h2 class="text-2xl font-bold text-foreground mb-6">Markdown Content in Dialog</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div data-widget="card" class="p-6">
+            <h3 class="text-lg font-semibold mb-4">Documentation Preview</h3>
+            <p class="text-muted-foreground mb-4">
+              View markdown documentation in a dialog with full formatting support.
+            </p>
+            
+            <div data-widget="dialog-link" 
+                 href="../creative-portfolio/content/comprehensive-guide.md"
+                 title="Comprehensive Guide"
+                 description="Complete documentation and examples"
+                 content-type="markdown"
+                 dialog-size="xl"
+                 trigger-variant="secondary">
+              Read Documentation
+            </div>
+          </div>
+
+          <div data-widget="card" class="p-6">
+            <h3 class="text-lg font-semibold mb-4">Blog Post Preview</h3>
+            <p class="text-muted-foreground mb-4">
+              Quick preview of blog content without navigation.
+            </p>
+            
+            <div data-widget="dialog-link" 
+                 href="../creative-portfolio/blog/attention-mathematics/content.md"
+                 title="Attention Mathematics"
+                 description="Mathematical foundations of attention mechanisms"
+                 content-type="markdown"
+                 dialog-size="lg"
+                 trigger-variant="ghost">
+              Preview Blog Post
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Custom Trigger Content -->
+      <section>
+        <h2 class="text-2xl font-bold text-foreground mb-6">Custom Trigger Content</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Image as Trigger -->
+          <div data-widget="card" class="p-6 text-center">
+            <div data-widget="dialog-link" 
+                 href="../creative-portfolio/portfolio"
+                 title="Portfolio Gallery"
+                 description="Browse my complete portfolio"
+                 content-type="portfolio"
+                 dialog-size="full">
+              <div data-widget="image" 
+                   src="../creative-portfolio/assets/portfolio-preview.jpg"
+                   alt="Portfolio Preview"
+                   class="w-full h-32 object-cover rounded-lg mb-4 cursor-pointer hover:opacity-80 transition-opacity">
+              </div>
+              <p class="text-sm text-muted-foreground">Click image to view portfolio</p>
+            </div>
+          </div>
+
+          <!-- Card as Trigger -->
+          <div data-widget="dialog-link" 
+               href="../creative-portfolio/research"
+               title="Research Publications"
+               description="Academic papers and research work"
+               content-type="portfolio"
+               dialog-size="xl">
+            <div data-widget="card" class="p-6 cursor-pointer hover:shadow-lg transition-shadow">
+              <h3 class="text-lg font-semibold mb-2">Research Papers</h3>
+              <p class="text-muted-foreground text-sm mb-4">
+                View my published research and academic contributions.
+              </p>
+              <div data-widget="badge" variant="secondary">Click to explore</div>
+            </div>
+          </div>
+
+          <!-- Text Link as Trigger -->
+          <div data-widget="card" class="p-6">
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <div class="space-y-3">
+              <div>
+                <div data-widget="dialog-link" 
+                     href="../creative-portfolio/blog"
+                     title="Blog Posts"
+                     content-type="portfolio"
+                     dialog-size="lg"
+                     class="text-primary hover:underline">
+                  📝 View All Blog Posts
+                </div>
+              </div>
+              <div>
+                <div data-widget="dialog-link" 
+                     href="../markdown-showcase/content/advanced-features.md"
+                     title="Advanced Features"
+                     content-type="markdown"
+                     dialog-size="lg"
+                     class="text-primary hover:underline">
+                  🚀 Advanced Features Guide
+                </div>
+              </div>
+              <div>
+                <div data-widget="dialog-link" 
+                     href="../code-widget-test"
+                     title="Code Examples"
+                     content-type="portfolio"
+                     dialog-size="xl"
+                     class="text-primary hover:underline">
+                  💻 Code Widget Examples
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dialog Sizes Demo -->
+      <section>
+        <h2 class="text-2xl font-bold text-foreground mb-6">Dialog Sizes</h2>
+        
+        <div class="flex flex-wrap gap-4">
+          <div data-widget="dialog-link" 
+               href="../creative-portfolio/contact"
+               title="Small Dialog"
+               content-type="portfolio"
+               dialog-size="sm"
+               trigger-variant="outline"
+               trigger-size="sm">
+            Small (sm)
+          </div>
+          
+          <div data-widget="dialog-link" 
+               href="../creative-portfolio/about"
+               title="Medium Dialog"
+               content-type="portfolio"
+               dialog-size="md"
+               trigger-variant="outline">
+            Medium (md)
+          </div>
+          
+          <div data-widget="dialog-link" 
+               href="../creative-portfolio/portfolio"
+               title="Large Dialog"
+               content-type="portfolio"
+               dialog-size="lg"
+               trigger-variant="outline">
+            Large (lg)
+          </div>
+          
+          <div data-widget="dialog-link" 
+               href="../creative-portfolio/research"
+               title="Extra Large Dialog"
+               content-type="portfolio"
+               dialog-size="xl"
+               trigger-variant="outline">
+            Extra Large (xl)
+          </div>
+          
+          <div data-widget="dialog-link" 
+               href="../creative-portfolio"
+               title="Full Screen Dialog"
+               content-type="portfolio"
+               dialog-size="full"
+               trigger-variant="outline">
+            Full Screen (full)
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Details -->
+      <section>
+        <h2 class="text-2xl font-bold text-foreground mb-6">Technical Features</h2>
+        
+        <div data-widget="card" class="p-6">
+          <div data-widget="markdown">
+## Dialog Link Widget Features
+
+### Content Types
+- **`portfolio`**: Loads `index.html` + `index.json` from GitHub (default)
+- **`markdown`**: Loads and renders markdown files with full formatting
+- **`html`**: Loads raw HTML content
+
+### Dialog Sizes
+- **`sm`**: Small dialog (max-w-md)
+- **`md`**: Medium dialog (max-w-lg) 
+- **`lg`**: Large dialog (max-w-2xl)
+- **`xl`**: Extra large dialog (max-w-4xl)
+- **`full`**: Full screen dialog (max-w-7xl)
+
+### Trigger Options
+- **Button triggers**: Use `trigger-variant` and `trigger-size`
+- **Custom triggers**: Wrap any content as the trigger
+- **Styling**: Full CSS class support
+
+### Path Resolution
+- **Relative paths**: `./about`, `../blog/post.md`
+- **GitHub integration**: Loads from raw.githubusercontent.com
+- **Error handling**: Graceful fallbacks with retry options
+
+### Performance
+- **Lazy loading**: Content loads only when dialog opens
+- **Caching**: Content cached after first load
+- **Async**: Non-blocking UI with loading indicators
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
